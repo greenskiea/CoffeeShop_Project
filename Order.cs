@@ -15,6 +15,7 @@ namespace PTPMUD_Project
         public Order()
         {
             InitializeComponent();
+            int a = 5;
         }
     }
 }
