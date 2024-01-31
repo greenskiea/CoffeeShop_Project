@@ -39,7 +39,7 @@ namespace PTPMUD_Project
             if (accountBUS.IsValidUser(username, pass))
             {
                 this.Hide();
-                Menu menu = new Menu();
+                Menu menu = new Menu(username);
                 menu.Show();
             }
             else

@@ -121,6 +121,12 @@
   <data name="Table_icon_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\Table_icon_clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Plus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Plus_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home_icon_click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\home_icon_click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Table_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\Table_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,13 +142,13 @@
   <data name="order_icon_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\order_icon_clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="home_icon_click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\home_icon_click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="employee_icon_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\employee_icon_clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\home_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="employee_icon_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\employee_icon_clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Update_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Update_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

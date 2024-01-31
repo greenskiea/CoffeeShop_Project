@@ -34,20 +34,21 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(236, 91);
+            label1.Location = new Point(270, 121);
             label1.Name = "label1";
-            label1.Size = new Size(34, 15);
+            label1.Size = new Size(44, 20);
             label1.TabIndex = 0;
             label1.Text = "Table";
             // 
             // Table
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(680, 499);
+            ClientSize = new Size(1346, 781);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Table";
             Text = "Table";
             ResumeLayout(false);

@@ -34,20 +34,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(186, 155);
+            label1.Font = new Font("Segoe UI", 60F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(213, 207);
             label1.Name = "label1";
-            label1.Size = new Size(49, 15);
+            label1.Size = new Size(403, 133);
             label1.TabIndex = 0;
             label1.Text = "Prodcut";
             // 
             // Product
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(680, 499);
+            ClientSize = new Size(1346, 781);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Product";
             Text = "Product";
             ResumeLayout(false);
