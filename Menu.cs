@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PTPMUD_Project.BUS;
+using PTPMUD_Project.DAO;
+using PTPMUD_Project.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,15 +10,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PTPMUD_Project
 {
     public partial class Menu : Form
     {
-        public Menu()
+
+        public Menu(string account)
         {
             InitializeComponent();
+            Account = account;
+            accountBUS = new AccountBUS();
         }
+
+        private AccountBUS accountBUS;
+
+        string Account;
 
         public void AddControl(Form f)
         {
@@ -24,7 +35,6 @@ namespace PTPMUD_Project
             f.TopLevel = false;
             CenterPanel.Controls.Add(f);
             f.Show();
-
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
@@ -60,6 +70,24 @@ namespace PTPMUD_Project
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             AddControl(new Admin());
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            List<Account> Names = accountBUS.GetName(Account);
+            foreach (Account Name in Names)
+            {
+                label2.Text = Name.Name;
+                if (Name.Type != "Admin")
+                {
+                    btnAdmin.Visible = false;
+                }
+            }
+        }
+
+        private void CenterPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

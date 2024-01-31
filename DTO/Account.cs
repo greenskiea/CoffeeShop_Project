@@ -12,15 +12,28 @@ namespace PTPMUD_Project.DTO
         public string Username { get; set; }
         public string Password { get; set; }
         public string Type { get; set; }
+        public string Name { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Personal_ID { get; set; }
+        public string DOB { get; set; }
+        public int Gender { get; set; }
+        public string Address { get; set; }
+
 
         public Account() { }
 
-        public Account(string email, string username, string password, string type)
+        public Account(string username, string password, string email, string type, string name,string address,  string phonenumber, string personal_ID, string dob, int gender)
         {
-            Email = email;
             Username = username;
             Password = password;
+            Email = email;
             Type = type;
+            Name = name;
+            Address = address;
+            PhoneNumber = phonenumber;
+            Personal_ID = personal_ID;
+            DOB = dob;
+            Gender = gender;
         }
 
         public Account(string username, string password)

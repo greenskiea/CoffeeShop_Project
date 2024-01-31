@@ -17,19 +17,40 @@ namespace PTPMUD_Project.DAO
             sqlSystem = new SqlSystem();
         }
 
-        public DataTable getAccount()
+        public DataTable GetName(string username)
         {
             DataTable dt = new DataTable();
-            string query = "select * from Account";
+            string query = "SELECT * FROM Account WHERE Username = @Username";
+
             try
             {
-                dt = sqlSystem.ExecuteSelectAllQuery(query);
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@Username", username)
+                };
+
+                dt = sqlSystem.ExecuteSelectQuery(query, parameters);
             }
             catch (Exception ex)
             {
                 Console.Write(ex.Message);
             }
 
+            return dt;
+        }
+
+        public DataTable getAllStaff()
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT * from Account Where Type = 'Employee'";
+            try
+            {
+                dt = sqlSystem.ExecuteSelectAllQuery(query);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in getAllStaff: " + ex.Message);
+            }
             return dt;
         }
 
@@ -54,6 +75,52 @@ namespace PTPMUD_Project.DAO
                 }
 
                 return isValid;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
+
+        public bool InsertAccount(string Username, string Password, string Email, string Type, string Name,string Personal_ID, string Address, string Phone, string DOB, int Gender)
+        {
+            try { 
+                string query = "INSERT INTO Account (Email, Personal_ID, Username, Password, Type, Name, Address, Phone, Gender, DOB) Values (@Email, @Personal_ID, @Username, @Password, @Type, @Name, @Address, @Phone, @Gender, @DOB)";
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@Email", SqlDbType.NVarChar) { Value = Email },
+                    new SqlParameter("@Personal_ID", SqlDbType.NVarChar) { Value = Personal_ID },
+                    new SqlParameter("@Username", SqlDbType.NVarChar) { Value = Username },
+                    new SqlParameter("@Password", SqlDbType.NVarChar) { Value = Password },
+                    new SqlParameter("@Type", SqlDbType.NVarChar) { Value = Type },
+                    new SqlParameter("@Name", SqlDbType.NVarChar) { Value = Name },
+                    new SqlParameter("@Address", SqlDbType.NVarChar) { Value = Address },
+                    new SqlParameter("@Phone", SqlDbType.NVarChar) { Value = Phone },
+                    new SqlParameter("@Gender", SqlDbType.Int) { Value = Gender },
+                    new SqlParameter("@DOB", SqlDbType.NVarChar) { Value = DOB }
+                };
+                return sqlSystem.ExecuteInsertQuery(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
+
+        public bool DeleteAccount(string Email)
+        {
+            try
+            {
+                string query = "DELETE FROM Account WHERE Email = @Email";
+
+                SqlParameter[] parameters =
+                {
+            new SqlParameter("@Email", SqlDbType.NVarChar) { Value = Email }
+            };
+
+                return sqlSystem.ExecuteDeleteQuery(query, parameters);
             }
             catch (Exception ex)
             {

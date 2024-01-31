@@ -123,6 +123,16 @@ namespace PTPMUD_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Plus_icon {
+            get {
+                object obj = ResourceManager.GetObject("Plus_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Product_icon_clicked {
             get {
                 object obj = ResourceManager.GetObject("Product_icon_clicked", resourceCulture);
@@ -146,6 +156,16 @@ namespace PTPMUD_Project.Properties {
         internal static System.Drawing.Bitmap Table_icon_clicked {
             get {
                 object obj = ResourceManager.GetObject("Table_icon_clicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Update_icon {
+            get {
+                object obj = ResourceManager.GetObject("Update_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

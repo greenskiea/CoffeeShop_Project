@@ -35,20 +35,21 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(303, 154);
+            label1.Location = new Point(346, 205);
             label1.Name = "label1";
-            label1.Size = new Size(89, 37);
+            label1.Size = new Size(111, 46);
             label1.TabIndex = 0;
             label1.Text = "Home";
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(696, 538);
+            ClientSize = new Size(1346, 781);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Home";
             Text = "Home";
             ResumeLayout(false);
