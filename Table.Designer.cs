@@ -56,10 +56,10 @@
             guna2Panel2.CustomizableEdges = customizableEdges5;
             guna2Panel2.Dock = DockStyle.Bottom;
             guna2Panel2.FillColor = Color.Gainsboro;
-            guna2Panel2.Location = new Point(0, 522);
+            guna2Panel2.Location = new Point(0, 638);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Panel2.Size = new Size(777, 143);
+            guna2Panel2.Size = new Size(1346, 143);
             guna2Panel2.TabIndex = 3;
             // 
             // btnClose
@@ -114,7 +114,7 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel1.Size = new Size(777, 125);
+            guna2Panel1.Size = new Size(1346, 125);
             guna2Panel1.TabIndex = 2;
             // 
             // label2
@@ -145,7 +145,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(777, 665);
+            ClientSize = new Size(1346, 781);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;

@@ -56,7 +56,7 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel1.Size = new Size(1183, 159);
+            guna2Panel1.Size = new Size(1346, 159);
             guna2Panel1.TabIndex = 0;
             // 
             // label1
@@ -87,7 +87,7 @@
             treeView1.Dock = DockStyle.Fill;
             treeView1.Location = new Point(0, 0);
             treeView1.Name = "treeView1";
-            treeView1.Size = new Size(250, 593);
+            treeView1.Size = new Size(250, 622);
             treeView1.TabIndex = 1;
             // 
             // panel1
@@ -96,7 +96,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 159);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 593);
+            panel1.Size = new Size(250, 622);
             panel1.TabIndex = 2;
             // 
             // panel2
@@ -105,7 +105,7 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(250, 159);
             panel2.Name = "panel2";
-            panel2.Size = new Size(933, 593);
+            panel2.Size = new Size(1096, 622);
             panel2.TabIndex = 3;
             // 
             // listView1
@@ -114,7 +114,7 @@
             listView1.Dock = DockStyle.Fill;
             listView1.Location = new Point(0, 0);
             listView1.Name = "listView1";
-            listView1.Size = new Size(933, 593);
+            listView1.Size = new Size(1096, 622);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -126,7 +126,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.White;
-            ClientSize = new Size(1183, 752);
+            ClientSize = new Size(1346, 781);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(guna2Panel1);
