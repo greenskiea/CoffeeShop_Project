@@ -15,6 +15,7 @@ namespace PTPMUD_Project
         public Product()
         {
             InitializeComponent();
+            int a = 5;
         }
 
     }
