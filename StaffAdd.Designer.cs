@@ -32,6 +32,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -52,12 +54,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             btnAdd = new Guna.UI2.WinForms.Guna2Button();
             btnClose = new Guna.UI2.WinForms.Guna2Button();
             label2 = new Label();
@@ -78,7 +79,6 @@
             label9 = new Label();
             txtGender = new Guna.UI2.WinForms.Guna2ComboBox();
             label10 = new Label();
-            btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2Panel2.SuspendLayout();
@@ -131,6 +131,24 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Panel2.Size = new Size(1042, 71);
             guna2Panel2.TabIndex = 0;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.BorderRadius = 30;
+            btnUpdate.CustomizableEdges = customizableEdges3;
+            btnUpdate.DisabledState.BorderColor = Color.DarkGray;
+            btnUpdate.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnUpdate.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnUpdate.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnUpdate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(12, 8);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnUpdate.Size = new Size(154, 56);
+            btnUpdate.TabIndex = 1;
+            btnUpdate.Text = "UPDATE";
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnAdd
             // 
@@ -197,7 +215,7 @@
             txtUsername.SelectedText = "";
             txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtUsername.Size = new Size(286, 51);
-            txtUsername.TabIndex = 2;
+            txtUsername.TabIndex = 1;
             // 
             // label3
             // 
@@ -257,7 +275,7 @@
             txtPerID.SelectedText = "";
             txtPerID.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtPerID.Size = new Size(286, 51);
-            txtPerID.TabIndex = 2;
+            txtPerID.TabIndex = 3;
             // 
             // label5
             // 
@@ -287,7 +305,7 @@
             txtName.SelectedText = "";
             txtName.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtName.Size = new Size(286, 51);
-            txtName.TabIndex = 2;
+            txtName.TabIndex = 4;
             // 
             // label6
             // 
@@ -317,7 +335,7 @@
             txtAddress.SelectedText = "";
             txtAddress.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtAddress.Size = new Size(286, 51);
-            txtAddress.TabIndex = 2;
+            txtAddress.TabIndex = 5;
             // 
             // label7
             // 
@@ -348,7 +366,7 @@
             txtPhone.SelectedText = "";
             txtPhone.ShadowDecoration.CustomizableEdges = customizableEdges22;
             txtPhone.Size = new Size(286, 51);
-            txtPhone.TabIndex = 2;
+            txtPhone.TabIndex = 6;
             txtPhone.TextChanged += txtPhone_TextChanged;
             txtPhone.KeyPress += txtPhone_KeyPress;
             // 
@@ -380,7 +398,7 @@
             txtEmail.SelectedText = "";
             txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges24;
             txtEmail.Size = new Size(286, 51);
-            txtEmail.TabIndex = 2;
+            txtEmail.TabIndex = 7;
             // 
             // txtDOB
             // 
@@ -389,7 +407,7 @@
             txtDOB.Mask = "00/00/0000";
             txtDOB.Name = "txtDOB";
             txtDOB.Size = new Size(173, 36);
-            txtDOB.TabIndex = 3;
+            txtDOB.TabIndex = 8;
             txtDOB.ValidatingType = typeof(DateTime);
             // 
             // label9
@@ -417,7 +435,7 @@
             txtGender.Name = "txtGender";
             txtGender.ShadowDecoration.CustomizableEdges = customizableEdges26;
             txtGender.Size = new Size(176, 36);
-            txtGender.TabIndex = 4;
+            txtGender.TabIndex = 9;
             // 
             // label10
             // 
@@ -427,24 +445,6 @@
             label10.Size = new Size(69, 25);
             label10.TabIndex = 1;
             label10.Text = "Gender";
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.BorderRadius = 30;
-            btnUpdate.CustomizableEdges = customizableEdges3;
-            btnUpdate.DisabledState.BorderColor = Color.DarkGray;
-            btnUpdate.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnUpdate.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnUpdate.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnUpdate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUpdate.ForeColor = Color.White;
-            btnUpdate.Location = new Point(12, 8);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnUpdate.Size = new Size(154, 56);
-            btnUpdate.TabIndex = 1;
-            btnUpdate.Text = "UPDATE";
-            btnUpdate.Click += btnUpdate_Click;
             // 
             // StaffAdd
             // 
