@@ -65,8 +65,11 @@ namespace PTPMUD_Project.BUS
                 foreach(DataRow row in dt.Rows)
                 {
                     Account account = new Account();
+                    string idString = row["User_ID"].ToString();
+                    account.Id = int.Parse(idString);
                     account.Username = row["Username"].ToString();
                     account.Password = row["Password"].ToString();
+                    account.Type = row["Type"].ToString();
                     account.Email = row["Email"].ToString();
                     account.Name = row["Name"].ToString();
                     account.Address = row["Address"].ToString();
@@ -107,11 +110,24 @@ namespace PTPMUD_Project.BUS
             }
         }
 
-        public bool DeleteAccount(string Email)
+        public bool DeleteAccount(string User_ID)
         {
             try
             {
-                return accountDAO.DeleteAccount(Email);
+                return accountDAO.DeleteAccount(User_ID);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
+
+        public bool UpdateAccount(int Id, string Username, string Password, string Email, string Type, string Name, string Personal_ID, string Address, string Phone, string DOB, int Gender)
+        {
+            try
+            {
+                return accountDAO.Update(Id, Username, Password, Email, Type, Name, Personal_ID, Address, Phone, DOB, Gender);
             }
             catch (Exception ex)
             {

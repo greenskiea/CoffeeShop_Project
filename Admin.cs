@@ -1,4 +1,5 @@
 ﻿using PTPMUD_Project.BUS;
+using PTPMUD_Project.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,17 +24,24 @@ namespace PTPMUD_Project
         private void btnAdd_Click(object sender, EventArgs e)
         {
             StaffAdd staffAdd = new StaffAdd();
-            staffAdd.Show();
+            staffAdd.FormClosed += (s, args) => RefreshDataGridView();
+            staffAdd.ShowDialog();
+        }
+
+        private void RefreshDataGridView()
+        {
+            EmployeeDataGridView.DataSource = accountBUS.GetAllStaff();
         }
 
         private void Admin_Load(object sender, EventArgs e)
         {
             EmployeeDataGridView.DataSource = accountBUS.GetAllStaff();
+            EmployeeDataGridView.Columns["ID"].Visible = false;
         }
 
         private void EmployeeDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == 8 && e.Value != null)
+            if (e.ColumnIndex == 9 && e.Value != null)
             {
                 int genderValue = (int)e.Value;
 
@@ -47,13 +55,13 @@ namespace PTPMUD_Project
         {
             if (EmployeeDataGridView.SelectedRows.Count > 0)
             {
-                string Email = EmployeeDataGridView.SelectedRows[0].Cells["Email"].Value.ToString();
+                string User_ID = EmployeeDataGridView.SelectedRows[0].Cells["Id"].Value.ToString();
 
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
-                    bool success = accountBUS.DeleteAccount(Email);
+                    bool success = accountBUS.DeleteAccount(User_ID);
 
                     if (success)
                     {
@@ -74,7 +82,14 @@ namespace PTPMUD_Project
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if(EmployeeDataGridView.SelectedRows.Count > 0)
+            {
+                Account selectedAccount = (Account)EmployeeDataGridView.SelectedRows[0].DataBoundItem;
 
+                StaffAdd staffAdd = new StaffAdd(selectedAccount);
+                staffAdd.FormClosed += (s, args) => RefreshDataGridView();
+                staffAdd.ShowDialog();
+            }
         }
     }
 }

@@ -14,12 +14,45 @@ namespace PTPMUD_Project
 {
     public partial class StaffAdd : Form
     {
+        public new DialogResult DialogResult { get; private set; }
         public StaffAdd()
         {
             InitializeComponent();
             accountBUS = new AccountBUS();
             txtPhone.KeyPress += new KeyPressEventHandler(txtPhone_KeyPress);
+            txtUsername.Text = "";
+            txtPass.Text = "";
+            txtEmail.Text = "";
+            txtName.Text = "";
+            txtPerID.Text = "";
+            txtAddress.Text = "";
+            txtPhone.Text = "";
+            txtDOB.Text = "";
+            txtGender.SelectedIndex = -1;
+            btnUpdate.Visible = false;
         }
+
+        public StaffAdd(Account account)
+        {
+            InitializeComponent();
+            accountBUS = new AccountBUS();
+            txtPhone.KeyPress += new KeyPressEventHandler(txtPhone_KeyPress);
+            SelectedAccount = account;
+            txtUsername.Text = SelectedAccount.Username;
+            txtPass.Text = SelectedAccount.Password;
+            txtEmail.Text = SelectedAccount.Email;
+            txtName.Text = SelectedAccount.Name;
+            txtPerID.Text = SelectedAccount.Personal_ID;
+            txtAddress.Text = SelectedAccount.Address;
+            txtPhone.Text = SelectedAccount.PhoneNumber;
+            txtDOB.Text = SelectedAccount.DOB;
+            txtGender.SelectedIndex = SelectedAccount.Gender;
+            btnAdd.Visible = false;
+        }
+
+        public Account SelectedAccount;
+
+
         private AccountBUS accountBUS;
 
 
@@ -75,7 +108,8 @@ namespace PTPMUD_Project
                     }
                     else
                     {
-                        this.Close();
+                        DialogResult = DialogResult.OK; // Cập nhật DialogResult
+                        Close();
                     }
                 }
                 else
@@ -91,7 +125,8 @@ namespace PTPMUD_Project
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult = DialogResult.Cancel; // Đặt DialogResult là Cancel khi đóng form
+            Close();
         }
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
@@ -99,6 +134,41 @@ namespace PTPMUD_Project
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; // Suppress non-numeric input
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int Id = SelectedAccount.Id;
+            string Username = txtUsername.Text;
+            string Password = txtPass.Text;
+            string Email = txtEmail.Text;
+            string Type = "Employee";
+            string Name = txtName.Text;
+            string Personal_ID = txtPerID.Text;
+            string Address = txtAddress.Text;
+            string Phone = txtPhone.Text;
+            string DOB = txtDOB.Text;
+            int Gender = -1;
+            if (txtGender.SelectedItem.ToString() == "Nam")
+            {
+                Gender = 0;
+            }
+            else if (txtGender.SelectedItem.ToString() == "Nữ")
+            {
+                Gender = 1;
+            }
+
+            bool result = accountBUS.UpdateAccount(Id, Username, Password, Email, Type, Name, Personal_ID, Address, Phone, DOB, Gender);
+            if (result)
+            {
+                MessageBox.Show("Cập nhật thành công!");
+                DialogResult = DialogResult.OK; // Cập nhật DialogResult
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thất bại!");
             }
         }
     }
