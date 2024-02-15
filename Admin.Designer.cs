@@ -72,7 +72,7 @@
             btnAdd.Location = new Point(47, 88);
             btnAdd.Name = "btnAdd";
             btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnAdd.Size = new Size(75, 75);
+            btnAdd.Size = new Size(64, 64);
             btnAdd.SizeMode = PictureBoxSizeMode.Zoom;
             btnAdd.TabIndex = 1;
             btnAdd.TabStop = false;

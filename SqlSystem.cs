@@ -20,7 +20,8 @@ namespace PTPMUD_Project
         public SqlSystem()
         {
             myAdapter = new SqlDataAdapter();
-            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["PTPMUD_Project.Properties.Settings.Setting"].ConnectionString);
+            //conn = new SqlConnection(ConfigurationManager.ConnectionStrings["PTPMUD_Project.Properties.Settings.Setting"].ConnectionString);
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["CoffeeShop"].ConnectionString);
         }
 
         /// <method>
@@ -107,7 +108,7 @@ namespace PTPMUD_Project
                 myCommand.Connection = OpenConnection();
                 myCommand.CommandText = _query;
                 myCommand.Parameters.AddRange(sqlParameter);
-                myAdapter.InsertCommand = myCommand;
+               // myAdapter.InsertCommand = myCommand;
                 myCommand.ExecuteNonQuery();
             }
             catch (SqlException e)
