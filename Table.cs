@@ -149,7 +149,13 @@ namespace PTPMUD_Project
 
         private void btnSwitchTable_Click(object sender, EventArgs e)
         {
-
+            int id1 = (lsvBill.Tag as TableFood).idTable;
+            int id2 = (cboTable.SelectedItem as TableFood).idTable;
+            if (MessageBox.Show(string.Format("Do you really want to move table {0} to table {1} ?", (lsvBill.Tag as TableFood).tableName, (cboTable.SelectedItem as TableFood).tableName), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+               tableFoodBus.SwitchTable(id1, id2);
+                loadTable();
+            }
         }
         #endregion
 

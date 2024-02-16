@@ -20,7 +20,7 @@ namespace PTPMUD_Project.DAO
 
         public int getUnCheckBillIDByTableID(int id)
         {
-            string query = "Select * from Bill where idTable = " + id + " and status = 0";
+            string query = "Select * from Bill where Table_ID = " + id + " and Status_Bill = 0";
             DataTable dt = sqlSystem.ExecuteQuery(query);
             if (dt.Rows.Count > 0)
             {
@@ -46,11 +46,11 @@ namespace PTPMUD_Project.DAO
         //}
         public void insertBill(int idTable)
         {
-            DataTable dt = new DataTable();
+            
             try
             {
 
-                dt = sqlSystem.ExecuteSelectAllQuery("exec USP_InsertBill @idTable", new object[] { idTable});
+                sqlSystem.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[] { idTable});
             }
             catch (Exception ex)
             {

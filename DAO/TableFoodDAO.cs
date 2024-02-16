@@ -32,5 +32,20 @@ namespace PTPMUD_Project.DAO
             }
             return dt;
         }
+
+        public void switchTable(int id1, int id2)
+        {
+
+            try
+            {
+
+                sqlSystem.ExecuteQuery("USP_SwitchTabel @idTable1 , @idTable2", new object[] { id1, id2 });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+        }
     }
 }

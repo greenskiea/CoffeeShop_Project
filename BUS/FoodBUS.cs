@@ -80,6 +80,11 @@ namespace PTPMUD_Project.BUS
                 return false;
             }
         }
+
+        public bool DeleteFood(int idFood)
+        {
+            return foodDAO.deleteFood(idFood);
+        }
     }
 }
  

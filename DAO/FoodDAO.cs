@@ -87,5 +87,13 @@ namespace PTPMUD_Project.DAO
             }
 
         }
+
+        public bool deleteFood(int idFood)
+        {
+            BillInfoDAO.Instance.DeleteBillInfoByFoodID(idFood);
+            string query = string.Format("Delete Food where Food_ID = {0}", idFood);
+            int result = sqlSystem.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 }

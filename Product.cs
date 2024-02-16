@@ -1,4 +1,5 @@
 ﻿using PTPMUD_Project.BUS;
+using PTPMUD_Project.DAO;
 using PTPMUD_Project.DTO;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace PTPMUD_Project
             foodBus = new FoodBUS();
             categoryBus = new CategoryBUS();
             catelist = new List<Category>();
-            listView1.View = View.Details;
+            lsvProduct.View = View.Details;
             load();
         }
 
@@ -35,7 +36,7 @@ namespace PTPMUD_Project
         }
         void loadListFood()
         {
-            listView1.Items.Clear();
+            lsvProduct.Items.Clear();
             List<Food> foodList = foodBus.getALLFood();
             foreach (Food f in foodList)
             {
@@ -46,7 +47,7 @@ namespace PTPMUD_Project
                 item.SubItems.Add(f.categoryID.ToString());
                 item.SubItems.Add(f.quantity.ToString());
                 item.SubItems.Add(f.type.ToString());
-                listView1.Items.Add(item);
+                lsvProduct.Items.Add(item);
 
             }
         }
@@ -75,7 +76,7 @@ namespace PTPMUD_Project
 
             TreeNode node = e.Node;
             List<Food> foodList = foodBus.GetFoodByCategoryID((int)node.Tag);
-            listView1.Items.Clear();
+            lsvProduct.Items.Clear();
             List<Category> categoryList = categoryBus.getALLCategory();
             foreach (Food f in foodList)
             {
@@ -87,7 +88,7 @@ namespace PTPMUD_Project
                 item.SubItems.Add(f.categoryID.ToString(category.categoryName));
                 item.SubItems.Add(f.quantity.ToString());
                 item.SubItems.Add(f.type.ToString());
-                listView1.Items.Add(item);
+                lsvProduct.Items.Add(item);
 
             }
         }
@@ -109,8 +110,6 @@ namespace PTPMUD_Project
         {
 
         }
-        #endregion
-
         private void btnEditFood_Click(object sender, EventArgs e)
         {
             EditProduct editProduct = new EditProduct();
@@ -118,5 +117,33 @@ namespace PTPMUD_Project
             editProduct.ShowDialog();
             this.Show();
         }
+
+        private void btnDeleteFood_Click(object sender, EventArgs e)
+        {
+            if (lsvProduct.SelectedItems.Count > 0) {
+                ListViewItem selectedItem = lsvProduct.SelectedItems[0];
+
+                int id = Convert.ToInt32(selectedItem.SubItems[0].Text);
+                if (foodBus.DeleteFood(id))
+                {
+                    MessageBox.Show("Xóa món thành công");
+                    loadListFood();
+                    //if (deleteFood != null)
+                    //    deleteFood(this, new EventArgs());
+
+                }
+                else
+                {
+                    MessageBox.Show("Có lối khi Xóa món ăn");
+                }
+
+
+
+            }
+                
+        }
+        #endregion
+
+
     }
 }

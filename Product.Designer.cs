@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             label2 = new Label();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,7 +49,7 @@
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             tabPage1 = new TabPage();
             panel2 = new Panel();
-            listView1 = new ListView();
+            lsvProduct = new ListView();
             colFood_ID = new ColumnHeader();
             colFoodName = new ColumnHeader();
             colPrice = new ColumnHeader();
@@ -79,12 +79,12 @@
             guna2Panel1.Controls.Add(guna2TextBox1);
             guna2Panel1.Controls.Add(guna2PictureBox1);
             guna2Panel1.Controls.Add(label1);
-            guna2Panel1.CustomizableEdges = customizableEdges5;
+            guna2Panel1.CustomizableEdges = customizableEdges16;
             guna2Panel1.Dock = DockStyle.Top;
             guna2Panel1.FillColor = Color.FromArgb(50, 55, 89);
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges17;
             guna2Panel1.Size = new Size(1430, 134);
             guna2Panel1.TabIndex = 0;
             guna2Panel1.Paint += guna2Panel1_Paint;
@@ -103,7 +103,7 @@
             // 
             // guna2TextBox1
             // 
-            guna2TextBox1.CustomizableEdges = customizableEdges1;
+            guna2TextBox1.CustomizableEdges = customizableEdges12;
             guna2TextBox1.DefaultText = "";
             guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -120,21 +120,21 @@
             guna2TextBox1.PasswordChar = '\0';
             guna2TextBox1.PlaceholderText = "Search Here";
             guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges13;
             guna2TextBox1.Size = new Size(342, 44);
             guna2TextBox1.TabIndex = 3;
             // 
             // guna2PictureBox1
             // 
             guna2PictureBox1.BackColor = Color.Transparent;
-            guna2PictureBox1.CustomizableEdges = customizableEdges3;
+            guna2PictureBox1.CustomizableEdges = customizableEdges14;
             guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.InitialImage = (Image)resources.GetObject("guna2PictureBox1.InitialImage");
             guna2PictureBox1.Location = new Point(46, 23);
             guna2PictureBox1.MinimumSize = new Size(60, 60);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges15;
             guna2PictureBox1.Size = new Size(60, 60);
             guna2PictureBox1.TabIndex = 2;
             guna2PictureBox1.TabStop = false;
@@ -193,27 +193,27 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(listView1);
+            panel2.Controls.Add(lsvProduct);
             panel2.Controls.Add(guna2Panel2);
             panel2.Location = new Point(3, -5);
             panel2.Name = "panel2";
             panel2.Size = new Size(1171, 504);
             panel2.TabIndex = 3;
             // 
-            // listView1
+            // lsvProduct
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { colFood_ID, colFoodName, colPrice, colCategoryID, colQuantity, colType });
-            listView1.Dock = DockStyle.Fill;
-            listView1.FullRowSelect = true;
-            listView1.GridLines = true;
-            listView1.ImeMode = ImeMode.NoControl;
-            listView1.Location = new Point(0, 0);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(1171, 436);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged_1;
+            lsvProduct.Columns.AddRange(new ColumnHeader[] { colFood_ID, colFoodName, colPrice, colCategoryID, colQuantity, colType });
+            lsvProduct.Dock = DockStyle.Fill;
+            lsvProduct.FullRowSelect = true;
+            lsvProduct.GridLines = true;
+            lsvProduct.ImeMode = ImeMode.NoControl;
+            lsvProduct.Location = new Point(0, 0);
+            lsvProduct.Name = "lsvProduct";
+            lsvProduct.Size = new Size(1171, 436);
+            lsvProduct.TabIndex = 0;
+            lsvProduct.UseCompatibleStateImageBehavior = false;
+            lsvProduct.View = View.Details;
+            lsvProduct.SelectedIndexChanged += listView1_SelectedIndexChanged_1;
             // 
             // colFood_ID
             // 
@@ -249,11 +249,11 @@
             guna2Panel2.Controls.Add(btnAddFood);
             guna2Panel2.Controls.Add(btnDeleteFood);
             guna2Panel2.Controls.Add(btnEditFood);
-            guna2Panel2.CustomizableEdges = customizableEdges10;
+            guna2Panel2.CustomizableEdges = customizableEdges21;
             guna2Panel2.Dock = DockStyle.Bottom;
             guna2Panel2.Location = new Point(0, 436);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2Panel2.Size = new Size(1171, 68);
             guna2Panel2.TabIndex = 4;
             // 
@@ -269,7 +269,7 @@
             btnAddFood.Location = new Point(13, 6);
             btnAddFood.Name = "btnAddFood";
             btnAddFood.PressedState.ImageSize = new Size(64, 64);
-            btnAddFood.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            btnAddFood.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnAddFood.Size = new Size(62, 54);
             btnAddFood.TabIndex = 2;
             btnAddFood.Click += btnAddFood_Click;
@@ -286,9 +286,10 @@
             btnDeleteFood.Location = new Point(727, 3);
             btnDeleteFood.Name = "btnDeleteFood";
             btnDeleteFood.PressedState.ImageSize = new Size(64, 64);
-            btnDeleteFood.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnDeleteFood.ShadowDecoration.CustomizableEdges = customizableEdges19;
             btnDeleteFood.Size = new Size(68, 55);
             btnDeleteFood.TabIndex = 5;
+            btnDeleteFood.Click += btnDeleteFood_Click;
             // 
             // btnEditFood
             // 
@@ -302,7 +303,7 @@
             btnEditFood.Location = new Point(334, 8);
             btnEditFood.Name = "btnEditFood";
             btnEditFood.PressedState.ImageSize = new Size(64, 64);
-            btnEditFood.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            btnEditFood.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnEditFood.Size = new Size(66, 55);
             btnEditFood.TabIndex = 4;
             btnEditFood.Click += btnEditFood_Click;
@@ -374,7 +375,7 @@
         private TreeView treeView1;
         private Panel panel1;
         private Panel panel2;
-        private ListView listView1;
+        private ListView lsvProduct;
         private ColumnHeader colFood_ID;
         private Guna.UI2.WinForms.Guna2ImageButton btnAddFood;
         private Guna.UI2.WinForms.Guna2ImageButton btnDeleteFood;

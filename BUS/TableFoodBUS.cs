@@ -48,5 +48,10 @@ namespace PTPMUD_Project.BUS
             }
             return list;
         }
+
+        public void SwitchTable(int id1, int id2)
+        {
+            tableFoodDAO.switchTable(id1, id2);
+        }
     }
 }

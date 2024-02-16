@@ -11,6 +11,12 @@ namespace PTPMUD_Project.DAO
     internal class BillInfoDAO
     {
         private SqlSystem sqlSystem;
+        private static BillInfoDAO instance;
+        public static BillInfoDAO Instance
+        {
+            get { if (instance == null) instance = new BillInfoDAO(); return BillInfoDAO.instance; }
+            private set { BillInfoDAO.instance = value; }
+        }
         public BillInfoDAO()
         {
             sqlSystem = new SqlSystem();
@@ -63,6 +69,11 @@ namespace PTPMUD_Project.DAO
                 Console.WriteLine(ex.Message);
             }
             return dt;
+        }
+
+        public void DeleteBillInfoByFoodID(int id)
+        {
+            sqlSystem.ExecuteQuery("Delete Bill_Info where Food_ID = " + id);
         }
     }
 }

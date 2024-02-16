@@ -22,7 +22,7 @@ namespace PTPMUD_Project.DTO
         {
             this.idBill = (int)row["Bill_ID"];
             this.dateChecked = (DateTime?)row["Date_Checked"];
-            this.totalPrice = (float)row["TotalPrice"];
+            this.totalPrice = (float)Convert.ToDouble(row["TotalPrice"].ToString());
             this.tableID = (int)row["Table_ID"];
             this.statusBill = (int)row["Status_Bill"];
             this.voucherID = (int)row["Voucher_ID"];
