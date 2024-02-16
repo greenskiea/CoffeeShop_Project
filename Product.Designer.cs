@@ -56,7 +56,6 @@
             colCategoryID = new ColumnHeader();
             colQuantity = new ColumnHeader();
             colType = new ColumnHeader();
-            colPromotionID = new ColumnHeader();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             btnAddFood = new Guna.UI2.WinForms.Guna2ImageButton();
             btnDeleteFood = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -146,7 +145,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(97, 37);
+            label1.Location = new Point(103, 38);
             label1.Name = "label1";
             label1.Size = new Size(96, 32);
             label1.TabIndex = 1;
@@ -203,15 +202,18 @@
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { colFood_ID, colFoodName, colPrice, colCategoryID, colQuantity, colType, colPromotionID });
+            listView1.Columns.AddRange(new ColumnHeader[] { colFood_ID, colFoodName, colPrice, colCategoryID, colQuantity, colType });
             listView1.Dock = DockStyle.Fill;
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
+            listView1.ImeMode = ImeMode.NoControl;
             listView1.Location = new Point(0, 0);
             listView1.Name = "listView1";
             listView1.Size = new Size(1171, 436);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged_1;
             // 
             // colFood_ID
             // 
@@ -220,12 +222,12 @@
             // colFoodName
             // 
             colFoodName.Text = "Name";
-            colFoodName.Width = 100;
+            colFoodName.Width = 220;
             // 
             // colPrice
             // 
             colPrice.Text = "Price";
-            colPrice.Width = 80;
+            colPrice.Width = 85;
             // 
             // colCategoryID
             // 
@@ -235,16 +237,12 @@
             // colQuantity
             // 
             colQuantity.Text = "Quantity";
-            colQuantity.Width = 100;
+            colQuantity.Width = 80;
             // 
             // colType
             // 
             colType.Text = "Type";
-            // 
-            // colPromotionID
-            // 
-            colPromotionID.Text = "Promotion";
-            colPromotionID.Width = 100;
+            colType.Width = 100;
             // 
             // guna2Panel2
             // 
@@ -307,6 +305,7 @@
             btnEditFood.ShadowDecoration.CustomizableEdges = customizableEdges9;
             btnEditFood.Size = new Size(66, 55);
             btnEditFood.TabIndex = 4;
+            btnEditFood.Click += btnEditFood_Click;
             // 
             // tabPage2
             // 
@@ -386,7 +385,6 @@
         private ColumnHeader colCategoryID;
         private ColumnHeader colQuantity;
         private ColumnHeader colType;
-        private ColumnHeader colPromotionID;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
         private TabPage tabPage1;

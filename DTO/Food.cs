@@ -10,12 +10,11 @@ namespace PTPMUD_Project.DTO
     {
         public Food() { }
 
-        public int foodID;
-        public string foodName;
-        public float price;
-        public int categoryID;
-        public int quantity;
-        public int type;
-        public int promotionID;
+        public int foodID { get; set; }
+        public string foodName { get; set; }
+        public float price { get; set; }
+        public int categoryID { get; set; }
+        public int quantity { get; set; }
+        public int type { get; set; }
     }
 }

@@ -40,7 +40,41 @@ namespace PTPMUD_Project
         /// Select Query
         /// </method>
         /// 
-        public DataTable ExecuteSelectAllQuery(String _query)
+
+        public DataTable ExecuteQuery(string query, object[] parameter = null)
+        {
+            DataTable data = new DataTable();
+            using (SqlConnection connection = new SqlConnection("Data Source=LAPTOP-R68U37J3\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True"))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
+                    {
+                        if (item.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+                    }
+                }
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                adapter.Fill(data);
+
+                connection.Close();
+            }
+
+            return data;
+
+        }
+        public DataTable ExecuteSelectAllQuery(String _query, object[] parameter = null)
         {
             SqlCommand myCommand = new SqlCommand();
             DataTable dataTable = new DataTable();
@@ -95,7 +129,37 @@ namespace PTPMUD_Project
             return dataTable;
         }
 
+        public object ExecuteScala(string query, object[] parameter = null)
+        {
+            object data = 0;
+            using (SqlConnection connection = new SqlConnection("Data Source=LAPTOP-R68U37J3\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True"))
+            {
+                connection.Open();
 
+                SqlCommand command = new SqlCommand(query, connection);
+
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
+                    {
+                        if (item.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+                    }
+                }
+
+                data = command.ExecuteScalar();
+
+                connection.Close();
+            }
+
+            return data;
+
+        }
 
         /// <method>
         /// Insert Query
@@ -168,5 +232,6 @@ namespace PTPMUD_Project
             }
             return true;
         }
+
     }
 }

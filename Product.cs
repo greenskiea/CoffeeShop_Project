@@ -21,12 +21,37 @@ namespace PTPMUD_Project
             categoryBus = new CategoryBUS();
             catelist = new List<Category>();
             listView1.View = View.Details;
+            load();
         }
 
         List<Category> catelist;
         FoodBUS foodBus;
         CategoryBUS categoryBus;
 
+        #region Methods
+        void load()
+        {
+            loadListFood();
+        }
+        void loadListFood()
+        {
+            listView1.Items.Clear();
+            List<Food> foodList = foodBus.getALLFood();
+            foreach (Food f in foodList)
+            {
+
+                ListViewItem item = new ListViewItem(new string[] { f.foodID.ToString() });
+                item.SubItems.Add(f.foodName.ToString());
+                item.SubItems.Add(f.price.ToString());
+                item.SubItems.Add(f.categoryID.ToString());
+                item.SubItems.Add(f.quantity.ToString());
+                item.SubItems.Add(f.type.ToString());
+                listView1.Items.Add(item);
+
+            }
+        }
+        #endregion
+        #region Events
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -62,7 +87,6 @@ namespace PTPMUD_Project
                 item.SubItems.Add(f.categoryID.ToString(category.categoryName));
                 item.SubItems.Add(f.quantity.ToString());
                 item.SubItems.Add(f.type.ToString());
-                item.SubItems.Add(f.promotionID.ToString());
                 listView1.Items.Add(item);
 
             }
@@ -79,6 +103,20 @@ namespace PTPMUD_Project
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        private void btnEditFood_Click(object sender, EventArgs e)
+        {
+            EditProduct editProduct = new EditProduct();
+            this.Hide();
+            editProduct.ShowDialog();
+            this.Show();
         }
     }
 }

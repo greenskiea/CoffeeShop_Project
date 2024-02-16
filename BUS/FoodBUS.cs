@@ -41,7 +41,6 @@ namespace PTPMUD_Project.BUS
                     food.categoryID = Int32.Parse(dr["Category_ID"].ToString());
                     food.quantity = Int32.Parse(dr["quantity"].ToString());
                     food.type = Int32.Parse(dr["Type"].ToString());
-                    food.promotionID = Int32.Parse(dr["Promotion_ID"].ToString());
                     list.Add(food);
 
                 }
@@ -63,15 +62,23 @@ namespace PTPMUD_Project.BUS
                 f.categoryID = Int32.Parse(dr["Category_ID"].ToString());
                 f.quantity = Int32.Parse(dr["quantity"].ToString());
                 f.type = Int32.Parse(dr["Type"].ToString());
-                f.promotionID = Int32.Parse(dr["Promotion_ID"].ToString());
                 foddList.Add(f);
             }
             return foddList;
         }
 
-        public bool InsertFood(Food food)
+        public bool InsertFood(string foodName, float price, int categoryID, int quantity, int type)
         {
-            return foodDAO.InsertFood(food);
+            try
+            {
+                return foodDAO.InsertFood(foodName, price, categoryID, quantity, type);
+
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
         }
     }
 }

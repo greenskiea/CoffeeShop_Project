@@ -101,7 +101,7 @@
             // txtUsername
             // 
             txtUsername.CustomizableEdges = customizableEdges5;
-            txtUsername.DefaultText = "";
+            txtUsername.DefaultText = "admin";
             txtUsername.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtUsername.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtUsername.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -122,7 +122,7 @@
             // txtPass
             // 
             txtPass.CustomizableEdges = customizableEdges7;
-            txtPass.DefaultText = "";
+            txtPass.DefaultText = "1";
             txtPass.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtPass.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtPass.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -192,8 +192,10 @@
             // 
             // Login
             // 
+            AcceptButton = btnLogin;
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnExit;
             ClientSize = new Size(356, 681);
             Controls.Add(btnExit);
             Controls.Add(btnLogin);

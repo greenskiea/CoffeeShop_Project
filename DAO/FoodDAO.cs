@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PTPMUD_Project.DTO;
+using System.Diagnostics;
 
 namespace PTPMUD_Project.DAO
 {
@@ -43,44 +44,48 @@ namespace PTPMUD_Project.DAO
                 Value = _id
             };
             return sqlSystem.ExecuteSelectQuery(query, sqlParameters);
-
         }
 
-        public bool InsertFood(Food food)
+        public bool InsertFood(string foodName, float price, int categoryID, int quantity, int type)
         {
-            string query = string.Format("Insert into [Food] (Food_Name, Price, Category_ID, quantity, Type, Promotion_ID) values  (@foodName,  @price, @categoryID, @quantity, @type, @promotionID)");
-            SqlParameter[] sqlParameters = new SqlParameter[6];
-
-            sqlParameters[0] = new SqlParameter("@foodName", SqlDbType.NVarChar)
+            try
             {
-                Value = (object)food.foodName ?? DBNull.Value
-            };
+                string query = string.Format("Insert into [Food] (Food_Name, Price, Category_ID, quantity, Type) values  (@foodName,  @price, @categoryID, @quantity, @type)");
+                SqlParameter[] sqlParameters = new SqlParameter[5];
 
-            sqlParameters[1] = new SqlParameter("@price", SqlDbType.Float)
-            {
-                Value = (object)food.price ?? DBNull.Value
-            };
+                sqlParameters[0] = new SqlParameter("@foodName", SqlDbType.NVarChar)
+                {
+                    Value = foodName
+                };
 
-            sqlParameters[2] = new SqlParameter("@categoryID", SqlDbType.Int)
-            {
-                Value = (object)food.categoryID ?? DBNull.Value
-            };
+                sqlParameters[1] = new SqlParameter("@price", SqlDbType.Float)
+                {
+                    Value = price
+                };
 
-            sqlParameters[3] = new SqlParameter("@quantity", SqlDbType.Int)
-            {
-                Value = (object)food.quantity ?? DBNull.Value
-            };
+                sqlParameters[2] = new SqlParameter("@categoryID", SqlDbType.Int)
+                {
+                    Value = categoryID
+                };
 
-            sqlParameters[4] = new SqlParameter("@type", SqlDbType.Int)
-            {
-                Value = (object)food.type ?? DBNull.Value
-            };
+                sqlParameters[3] = new SqlParameter("@quantity", SqlDbType.Int)
+                {
+                    Value = quantity
+                };
 
-            sqlParameters[5] = new SqlParameter("@promotionID", SqlDbType.Int)
+                sqlParameters[4] = new SqlParameter("@type", SqlDbType.Int)
+                {
+                    Value = type
+                };
+
+                return sqlSystem.ExecuteInsertQuery(query, sqlParameters);
+            }
+            catch (Exception ex)
             {
-                Value = (object)food.promotionID ?? DBNull.Value
-            };
-            return sqlSystem.ExecuteInsertQuery(query, sqlParameters);
+                Console.Write(ex.Message);
+                return false;
+            }
+
         }
     }
 }

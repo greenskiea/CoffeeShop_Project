@@ -46,9 +46,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            label4 = new Label();
             label6 = new Label();
             txtFood_Name = new Guna.UI2.WinForms.Guna2TextBox();
             label8 = new Label();
@@ -66,22 +63,12 @@
             label9 = new Label();
             label10 = new Label();
             cboType = new Guna.UI2.WinForms.Guna2ComboBox();
-            cboPromotion_ID = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2Panel2.SuspendLayout();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nmPrice).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nmQuantity).BeginInit();
             SuspendLayout();
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(383, 261);
-            label4.Name = "label4";
-            label4.Size = new Size(132, 20);
-            label4.TabIndex = 5;
-            label4.Text = "Choose Promotion";
             // 
             // label6
             // 
@@ -104,7 +91,7 @@
             txtFood_Name.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtFood_Name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtFood_Name.Location = new Point(22, 188);
-            txtFood_Name.Margin = new Padding(3, 4, 3, 4);
+            txtFood_Name.Margin = new Padding(3, 5, 3, 5);
             txtFood_Name.Name = "txtFood_Name";
             txtFood_Name.PasswordChar = '\0';
             txtFood_Name.PlaceholderText = "";
@@ -116,7 +103,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(-60, 377);
+            label8.Location = new Point(-59, 377);
             label8.Name = "label8";
             label8.Size = new Size(46, 20);
             label8.TabIndex = 7;
@@ -154,7 +141,7 @@
             btnAddFood.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnAddFood.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAddFood.ForeColor = Color.White;
-            btnAddFood.Location = new Point(12, 8);
+            btnAddFood.Location = new Point(11, 8);
             btnAddFood.Name = "btnAddFood";
             btnAddFood.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnAddFood.Size = new Size(154, 56);
@@ -173,7 +160,7 @@
             btnClose.FillColor = Color.FromArgb(233, 94, 119);
             btnClose.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnClose.ForeColor = Color.White;
-            btnClose.Location = new Point(172, 8);
+            btnClose.Location = new Point(171, 8);
             btnClose.Name = "btnClose";
             btnClose.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnClose.Size = new Size(154, 56);
@@ -221,7 +208,7 @@
             nmPrice.CustomizableEdges = customizableEdges11;
             nmPrice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             nmPrice.Location = new Point(22, 395);
-            nmPrice.Margin = new Padding(3, 4, 3, 4);
+            nmPrice.Margin = new Padding(3, 5, 3, 5);
             nmPrice.Name = "nmPrice";
             nmPrice.ShadowDecoration.CustomizableEdges = customizableEdges12;
             nmPrice.Size = new Size(286, 51);
@@ -248,7 +235,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(22, 262);
+            label7.Location = new Point(22, 261);
             label7.Name = "label7";
             label7.Size = new Size(69, 20);
             label7.TabIndex = 18;
@@ -259,8 +246,8 @@
             nmQuantity.BackColor = Color.Transparent;
             nmQuantity.CustomizableEdges = customizableEdges15;
             nmQuantity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            nmQuantity.Location = new Point(383, 395);
-            nmQuantity.Margin = new Padding(3, 4, 3, 4);
+            nmQuantity.Location = new Point(383, 285);
+            nmQuantity.Margin = new Padding(3, 5, 3, 5);
             nmQuantity.Name = "nmQuantity";
             nmQuantity.ShadowDecoration.CustomizableEdges = customizableEdges16;
             nmQuantity.Size = new Size(286, 51);
@@ -270,7 +257,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(383, 371);
+            label9.Location = new Point(383, 261);
             label9.Name = "label9";
             label9.Size = new Size(65, 20);
             label9.TabIndex = 19;
@@ -296,37 +283,18 @@
             cboType.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cboType.ForeColor = Color.FromArgb(68, 88, 112);
             cboType.ItemHeight = 30;
-            cboType.Items.AddRange(new object[] { "1", "2", "3" });
+            cboType.Items.AddRange(new object[] { "Sáng", "Chiều" });
             cboType.Location = new Point(383, 188);
             cboType.Name = "cboType";
             cboType.ShadowDecoration.CustomizableEdges = customizableEdges18;
             cboType.Size = new Size(286, 36);
             cboType.TabIndex = 21;
             // 
-            // cboPromotion_ID
-            // 
-            cboPromotion_ID.BackColor = Color.Transparent;
-            cboPromotion_ID.CustomizableEdges = customizableEdges19;
-            cboPromotion_ID.DrawMode = DrawMode.OwnerDrawFixed;
-            cboPromotion_ID.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboPromotion_ID.FocusedColor = Color.FromArgb(94, 148, 255);
-            cboPromotion_ID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cboPromotion_ID.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cboPromotion_ID.ForeColor = Color.FromArgb(68, 88, 112);
-            cboPromotion_ID.ItemHeight = 30;
-            cboPromotion_ID.Items.AddRange(new object[] { "1" });
-            cboPromotion_ID.Location = new Point(383, 285);
-            cboPromotion_ID.Name = "cboPromotion_ID";
-            cboPromotion_ID.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            cboPromotion_ID.Size = new Size(286, 36);
-            cboPromotion_ID.TabIndex = 23;
-            // 
             // AddProduct
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(731, 553);
-            Controls.Add(cboPromotion_ID);
             Controls.Add(label10);
             Controls.Add(cboType);
             Controls.Add(nmQuantity);
@@ -334,7 +302,6 @@
             Controls.Add(label7);
             Controls.Add(cboCategory_ID);
             Controls.Add(nmPrice);
-            Controls.Add(label4);
             Controls.Add(label6);
             Controls.Add(txtFood_Name);
             Controls.Add(label8);
@@ -343,6 +310,7 @@
             Controls.Add(guna2Panel1);
             Name = "AddProduct";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += AddProduct_Load;
             guna2Panel2.ResumeLayout(false);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
@@ -354,7 +322,6 @@
         }
 
         #endregion
-        private Label label4;
         private Label label6;
         private Guna.UI2.WinForms.Guna2TextBox txtFood_Name;
         private Label label8;
@@ -372,6 +339,5 @@
         private Label label9;
         private Label label10;
         private Guna.UI2.WinForms.Guna2ComboBox cboType;
-        private Guna.UI2.WinForms.Guna2ComboBox cboPromotion_ID;
     }
 }

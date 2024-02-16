@@ -20,41 +20,76 @@ namespace PTPMUD_Project
             InitializeComponent();
             foodBus = new FoodBUS();
             categoryBus = new CategoryBUS();
+            load();
         }
 
         FoodBUS foodBus;
         CategoryBUS categoryBus;
+        #region Methods
+
+        void load()
+        {
+
+            loadCategoryIntoCombobox(cboCategory_ID);
+        }
+        void loadCategoryIntoCombobox(System.Windows.Forms.ComboBox cb)
+        {
+            cb.DataSource = categoryBus.getALLCategory();
+            cb.DisplayMember = "categoryName";
+        }
+
+        #endregion
+        #region Events
         private void btnAddFood_Click(object sender, EventArgs e)
         {
             try
             {
-                
-                
-                Food food = new Food
-                {
-                    foodName = txtFood_Name.Text,
-                    price = (float)nmPrice.Value,
-                    categoryID = Int32.Parse(cboCategory_ID.ValueMember.ToString()),
-                    quantity = (int)nmQuantity.Value,
-                    type = Int32.Parse(cboType.Text),
-                    promotionID = Int32.Parse(cboPromotion_ID.Text)
+                string foodName = txtFood_Name.Text;
+                float price = (float)nmPrice.Value;
+                int cateID = (cboCategory_ID.SelectedItem as Category).categoryID;
+                int quantity = (int)nmQuantity.Value;
+                int type = 0;
 
-                };
-                bool result = foodBus.InsertFood(food);
-                if (result)
+                if (cboType.SelectedItem != null)
                 {
-                    MessageBox.Show("Thêm thành công!");
-                    this.Close();
+                    string selectedType = cboType.SelectedItem.ToString();
+                    if (selectedType == "Sáng")
+                    {
+                        type = 1;
+                    }
+                    else if (selectedType == "Chiều")
+                    {
+                        type = 2;
+                    }
+                }
+
+                if (foodBus.InsertFood(foodName, price, cateID, quantity, type))
+                {
+                    DialogResult dialogResult = MessageBox.Show("Thêm thành công! Bạn muốn thêm tiếp không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        txtFood_Name.Text = "";
+                        nmPrice.Value = 0;
+                        nmQuantity.Value = 0;
+                    }
+                    else
+                    {
+                        DialogResult = DialogResult.OK;
+                        Close();
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Thêm thất bại!");
+                    MessageBox.Show("Có lỗi khi thêm thức ăn");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -70,21 +105,13 @@ namespace PTPMUD_Project
 
         private void cboCategory_ID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Category> cate = categoryBus.getALLCategory();
-            System.Windows.Forms.ComboBox comboBox = new System.Windows.Forms.ComboBox();
-            cboCategory_ID.DataSource = cate;
-            cboCategory_ID.DisplayMember = "Category_Name";
-            cboCategory_ID.ValueMember = "Category_ID";
-            foreach (Category c in cate)
-            {
-                ListItem item = new ListItem(c.categoryName, c.categoryID);
 
-                // Thêm ListItem vào ComboBox
-                cboCategory_ID.Items.Add(item);
-            }
-            comboBox.DisplayMember = "Text";
+        }
+        #endregion
 
-            comboBox.ValueMember = "Value";
+        private void AddProduct_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
