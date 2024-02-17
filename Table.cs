@@ -25,6 +25,7 @@ namespace PTPMUD_Project
             FoodBus = new FoodBUS();
             billBus = new BillBUS();
             billInfoBus = new BillInfoBUS();
+            VoucherBus = new VoucherBUS();
             load();
         }
         TableFoodBUS tableFoodBus;
@@ -33,12 +34,15 @@ namespace PTPMUD_Project
         FoodBUS FoodBus;
         BillBUS billBus;
         BillInfoBUS billInfoBus;
+        VoucherBUS VoucherBus;
         #region Methods
         void load()
         {
             loadTable();
             loadCategory();
             loadComboboxTable(cboTable);
+            float discountValue = VoucherBus.getDiscountValue();
+            nmDiscount.Value = (decimal)discountValue;
         }
         void loadCategory()
         {
@@ -134,17 +138,27 @@ namespace PTPMUD_Project
             int idBill = billBus.GetUnCheckBillIDByTableID(table.idTable);
             int foodID = (cboFood.SelectedItem as Food).foodID;
             int count = (int)nmQuantity.Value;
-            if (idBill == -1)
+            int quantity = FoodBus.getQuantityFood(foodID);
+            if (count < quantity)
             {
-                billBus.InsertBill(table.idTable);
-                billInfoBus.InsertBillInfo(billBus.GetMaxIDBill(), foodID, count);
+                if (idBill == -1)
+                {
+                    billBus.InsertBill(table.idTable);
+                    billInfoBus.InsertBillInfo(billBus.GetMaxIDBill(), foodID, count);
+                }
+                else
+                {
+                    billInfoBus.InsertBillInfo(idBill, foodID, count);
+                }
+                ShowBill(table.idTable);
+                loadTable();
             }
             else
             {
-                billInfoBus.InsertBillInfo(idBill, foodID, count);
+                MessageBox.Show("Nhập quá số lượng món ăn trong kho! Yêu cầu nhập lại");
+                return;
             }
-            ShowBill(table.idTable);
-            loadTable();
+
         }
 
         private void btnSwitchTable_Click(object sender, EventArgs e)
@@ -153,9 +167,34 @@ namespace PTPMUD_Project
             int id2 = (cboTable.SelectedItem as TableFood).idTable;
             if (MessageBox.Show(string.Format("Do you really want to move table {0} to table {1} ?", (lsvBill.Tag as TableFood).tableName, (cboTable.SelectedItem as TableFood).tableName), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-               tableFoodBus.SwitchTable(id1, id2);
+                tableFoodBus.SwitchTable(id1, id2);
                 loadTable();
             }
+        }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            TableFood table = lsvBill.Tag as TableFood; // lấy được table hiện tại
+            float discountValue = VoucherBus.getDiscountValue();
+            nmDiscount.Value = (decimal)discountValue;
+            int idBill = billBus.GetUnCheckBillIDByTableID(table.idTable);
+            double totalPrice = double.Parse(txbTotalPrice.Text, NumberStyles.Currency, new CultureInfo("vi-VN"));
+            double finalTotalPrice = totalPrice - (totalPrice / 100) * discountValue;
+
+            if (idBill != -1)
+            {
+                if (MessageBox.Show(string.Format("Bạn có chăc thanh toán hóa đơn cho bàn {0}\n Tổng tiền - (Tổng tiền / 100) x Giảm giá\n=> {1} - ({1} / 100) x {2} = {3} ", table.tableName, totalPrice, discountValue, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    billBus.CheckOut(idBill, (float)finalTotalPrice);
+                    ShowBill(table.idTable);
+                    loadTable();
+                }
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         #endregion
 
@@ -169,6 +208,6 @@ namespace PTPMUD_Project
 
         }
 
-       
+
     }
 }

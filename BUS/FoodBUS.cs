@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -67,6 +68,16 @@ namespace PTPMUD_Project.BUS
             return foddList;
         }
 
+        public Food GetFoodByID(int id)
+        {
+            return foodDAO.getFoodByID(id);
+        }
+
+        public int getQuantityFood(int id)
+        {
+           return foodDAO.getQuantityFood(id);
+        }
+
         public bool InsertFood(string foodName, float price, int categoryID, int quantity, int type)
         {
             try
@@ -81,6 +92,10 @@ namespace PTPMUD_Project.BUS
             }
         }
 
+        public bool UpdateFood(int idFood, string foodName, float price, int categoryID, int quantity, int type)
+        {
+            return foodDAO.updateFood(idFood,foodName,price, categoryID, quantity, type);
+        }
         public bool DeleteFood(int idFood)
         {
             return foodDAO.deleteFood(idFood);

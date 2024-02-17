@@ -16,6 +16,10 @@ namespace PTPMUD_Project.DTO
         public int categoryID { get; set; }
         public string categoryName { get; set; }
 
-        
+        public Category(DataRow row)
+        {
+            this.categoryID = (int)row["Category_ID"];
+            this.categoryName = row["Category_Name"].ToString();
+        }
     }
 }

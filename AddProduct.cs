@@ -15,9 +15,11 @@ namespace PTPMUD_Project
 {
     public partial class AddProduct : Form
     {
+        
         public AddProduct()
         {
             InitializeComponent();
+            
             foodBus = new FoodBUS();
             categoryBus = new CategoryBUS();
             load();
@@ -53,11 +55,11 @@ namespace PTPMUD_Project
                 if (cboType.SelectedItem != null)
                 {
                     string selectedType = cboType.SelectedItem.ToString();
-                    if (selectedType == "Morning")
+                    if (selectedType == "Sáng")
                     {
                         type = 1;
                     }
-                    else if (selectedType == "Afternoon")
+                    else if (selectedType == "Chiều")
                     {
                         type = 2;
                     }
@@ -65,7 +67,7 @@ namespace PTPMUD_Project
 
                 if (foodBus.InsertFood(foodName, price, cateID, quantity, type))
                 {
-                    DialogResult dialogResult = MessageBox.Show("Add success! Do you want more?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult dialogResult = MessageBox.Show("Thêm thành công! Bạn muốn thêm tiếp không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)
                     {
                         txtFood_Name.Text = "";
@@ -81,12 +83,12 @@ namespace PTPMUD_Project
                 }
                 else
                 {
-                    MessageBox.Show("Error adding item");
+                    MessageBox.Show("Lỗi khi đang thêm món");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
 
 

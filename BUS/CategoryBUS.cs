@@ -45,7 +45,12 @@ namespace PTPMUD_Project.BUS
             }
             return list;
         }
+        public Category GetCategoryByID(int id)
+        {
+            return categoryDAO.getCategoryByID(id);
+        }
 
-        
+
+
     }
 }

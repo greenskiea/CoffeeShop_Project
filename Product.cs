@@ -112,10 +112,18 @@ namespace PTPMUD_Project
         }
         private void btnEditFood_Click(object sender, EventArgs e)
         {
-            EditProduct editProduct = new EditProduct();
-            this.Hide();
-            editProduct.ShowDialog();
-            this.Show();
+            if (lsvProduct.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lsvProduct.SelectedItems[0];
+
+                int id = Convert.ToInt32(selectedItem.SubItems[0].Text);
+                Food foods = foodBus.GetFoodByID(id);
+                EditProduct editProduct = new EditProduct(foods);
+                this.Hide();
+                editProduct.ShowDialog();
+                this.Show();
+            }
+           
         }
 
         private void btnDeleteFood_Click(object sender, EventArgs e)
@@ -126,7 +134,7 @@ namespace PTPMUD_Project
                 int id = Convert.ToInt32(selectedItem.SubItems[0].Text);
                 if (foodBus.DeleteFood(id))
                 {
-                    MessageBox.Show("Xóa món thành công");
+                    MessageBox.Show("Delete item successfully");
                     loadListFood();
                     //if (deleteFood != null)
                     //    deleteFood(this, new EventArgs());
@@ -134,7 +142,7 @@ namespace PTPMUD_Project
                 }
                 else
                 {
-                    MessageBox.Show("Có lối khi Xóa món ăn");
+                    MessageBox.Show("Error while deleting item");
                 }
 
 

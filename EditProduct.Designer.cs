@@ -46,6 +46,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label10 = new Label();
             cboType = new Guna.UI2.WinForms.Guna2ComboBox();
             nmQuantity = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -62,6 +64,8 @@
             btnSaveFood = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             btnClose = new Guna.UI2.WinForms.Guna2Button();
+            txtIDFood = new Guna.UI2.WinForms.Guna2TextBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)nmQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nmPrice).BeginInit();
             guna2Panel1.SuspendLayout();
@@ -72,7 +76,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(383, 164);
+            label10.Location = new Point(366, 386);
             label10.Name = "label10";
             label10.Size = new Size(40, 20);
             label10.TabIndex = 34;
@@ -82,6 +86,7 @@
             // 
             cboType.BackColor = Color.Transparent;
             cboType.CustomizableEdges = customizableEdges1;
+            cboType.DisplayMember = "jjj";
             cboType.DrawMode = DrawMode.OwnerDrawFixed;
             cboType.DropDownStyle = ComboBoxStyle.DropDownList;
             cboType.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -90,18 +95,19 @@
             cboType.ForeColor = Color.FromArgb(68, 88, 112);
             cboType.ItemHeight = 30;
             cboType.Items.AddRange(new object[] { "Sáng", "Chiều" });
-            cboType.Location = new Point(383, 188);
+            cboType.Location = new Point(366, 410);
             cboType.Name = "cboType";
             cboType.ShadowDecoration.CustomizableEdges = customizableEdges2;
             cboType.Size = new Size(286, 36);
             cboType.TabIndex = 33;
+            cboType.ValueMember = "jjj";
             // 
             // nmQuantity
             // 
             nmQuantity.BackColor = Color.Transparent;
             nmQuantity.CustomizableEdges = customizableEdges3;
             nmQuantity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            nmQuantity.Location = new Point(383, 285);
+            nmQuantity.Location = new Point(366, 197);
             nmQuantity.Margin = new Padding(3, 5, 3, 5);
             nmQuantity.Name = "nmQuantity";
             nmQuantity.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -111,7 +117,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(383, 261);
+            label9.Location = new Point(366, 173);
             label9.Name = "label9";
             label9.Size = new Size(65, 20);
             label9.TabIndex = 31;
@@ -120,7 +126,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(22, 261);
+            label7.Location = new Point(50, 387);
             label7.Name = "label7";
             label7.Size = new Size(69, 20);
             label7.TabIndex = 30;
@@ -137,10 +143,10 @@
             cboCategory_ID.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cboCategory_ID.ForeColor = Color.FromArgb(68, 88, 112);
             cboCategory_ID.ItemHeight = 30;
-            cboCategory_ID.Location = new Point(22, 285);
+            cboCategory_ID.Location = new Point(50, 410);
             cboCategory_ID.Name = "cboCategory_ID";
             cboCategory_ID.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            cboCategory_ID.Size = new Size(286, 36);
+            cboCategory_ID.Size = new Size(287, 36);
             cboCategory_ID.TabIndex = 29;
             // 
             // nmPrice
@@ -148,8 +154,9 @@
             nmPrice.BackColor = Color.Transparent;
             nmPrice.CustomizableEdges = customizableEdges7;
             nmPrice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            nmPrice.Location = new Point(22, 395);
+            nmPrice.Location = new Point(366, 285);
             nmPrice.Margin = new Padding(3, 5, 3, 5);
+            nmPrice.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             nmPrice.Name = "nmPrice";
             nmPrice.ShadowDecoration.CustomizableEdges = customizableEdges8;
             nmPrice.Size = new Size(286, 51);
@@ -158,7 +165,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(22, 371);
+            label6.Location = new Point(367, 260);
             label6.Name = "label6";
             label6.Size = new Size(41, 20);
             label6.TabIndex = 25;
@@ -175,7 +182,7 @@
             txtFood_Name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtFood_Name.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtFood_Name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtFood_Name.Location = new Point(22, 188);
+            txtFood_Name.Location = new Point(50, 285);
             txtFood_Name.Margin = new Padding(3, 5, 3, 5);
             txtFood_Name.Name = "txtFood_Name";
             txtFood_Name.PasswordChar = '\0';
@@ -188,7 +195,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(21, 164);
+            label5.Location = new Point(48, 261);
             label5.Name = "label5";
             label5.Size = new Size(49, 20);
             label5.TabIndex = 26;
@@ -204,7 +211,7 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Panel1.Size = new Size(800, 125);
+            guna2Panel1.Size = new Size(722, 125);
             guna2Panel1.TabIndex = 24;
             // 
             // label1
@@ -244,6 +251,7 @@
             btnSaveFood.Size = new Size(154, 56);
             btnSaveFood.TabIndex = 0;
             btnSaveFood.Text = "SAVE";
+            btnSaveFood.Click += btnSaveFood_Click;
             // 
             // guna2Panel2
             // 
@@ -255,7 +263,7 @@
             guna2Panel2.Location = new Point(0, 476);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2Panel2.Size = new Size(800, 71);
+            guna2Panel2.Size = new Size(722, 71);
             guna2Panel2.TabIndex = 23;
             // 
             // btnClose
@@ -275,12 +283,46 @@
             btnClose.Size = new Size(154, 56);
             btnClose.TabIndex = 0;
             btnClose.Text = "CLOSE";
+            btnClose.Click += btnClose_Click;
+            // 
+            // txtIDFood
+            // 
+            txtIDFood.CustomizableEdges = customizableEdges19;
+            txtIDFood.DefaultText = "";
+            txtIDFood.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtIDFood.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtIDFood.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtIDFood.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtIDFood.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtIDFood.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtIDFood.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtIDFood.Location = new Point(50, 197);
+            txtIDFood.Margin = new Padding(3, 4, 3, 4);
+            txtIDFood.Name = "txtIDFood";
+            txtIDFood.PasswordChar = '\0';
+            txtIDFood.PlaceholderText = "";
+            txtIDFood.SelectedText = "";
+            txtIDFood.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            txtIDFood.Size = new Size(286, 51);
+            txtIDFood.TabIndex = 35;
+            txtIDFood.TextChanged += txtIDFood_TextChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(50, 164);
+            label2.Name = "label2";
+            label2.Size = new Size(24, 20);
+            label2.TabIndex = 36;
+            label2.Text = "ID";
             // 
             // EditProduct
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 547);
+            ClientSize = new Size(722, 547);
+            Controls.Add(label2);
+            Controls.Add(txtIDFood);
             Controls.Add(label10);
             Controls.Add(cboType);
             Controls.Add(nmQuantity);
@@ -295,6 +337,7 @@
             Controls.Add(guna2Panel2);
             Name = "EditProduct";
             Text = "EditProduct";
+            Load += EditProduct_Load;
             ((System.ComponentModel.ISupportInitialize)nmQuantity).EndInit();
             ((System.ComponentModel.ISupportInitialize)nmPrice).EndInit();
             guna2Panel1.ResumeLayout(false);
@@ -323,5 +366,7 @@
         private Guna.UI2.WinForms.Guna2Button btnSaveFood;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button btnClose;
+        private Guna.UI2.WinForms.Guna2TextBox txtIDFood;
+        private Label label2;
     }
 }

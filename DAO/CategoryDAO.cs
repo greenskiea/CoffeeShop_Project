@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PTPMUD_Project.DTO;
 
 namespace PTPMUD_Project.DAO
 {
@@ -33,6 +34,19 @@ namespace PTPMUD_Project.DAO
             return dt;
         }
 
-        
+        public Category getCategoryByID(int id)
+        {
+            Category category = null;
+            string query = "Select * from Category where Category_ID = " + id;
+            DataTable data = sqlSystem.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                category = new Category(item);
+                return category;
+            }
+            return category;
+        }
+
+
     }
 }

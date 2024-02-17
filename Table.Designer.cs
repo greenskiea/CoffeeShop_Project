@@ -118,6 +118,7 @@
             btnClose.Size = new Size(108, 56);
             btnClose.TabIndex = 1;
             btnClose.Text = "Close";
+            btnClose.Click += btnClose_Click;
             // 
             // guna2Panel1
             // 
@@ -244,6 +245,7 @@
             btnCheckout.Size = new Size(91, 56);
             btnCheckout.TabIndex = 3;
             btnCheckout.Text = "Checkout";
+            btnCheckout.Click += btnCheckout_Click;
             // 
             // txbTotalPrice
             // 
@@ -344,6 +346,7 @@
             nmQuantity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             nmQuantity.Location = new Point(397, 16);
             nmQuantity.Margin = new Padding(3, 4, 3, 4);
+            nmQuantity.Minimum = new decimal(new int[] { 2, 0, 0, int.MinValue });
             nmQuantity.Name = "nmQuantity";
             nmQuantity.ShadowDecoration.CustomizableEdges = customizableEdges18;
             nmQuantity.Size = new Size(62, 30);

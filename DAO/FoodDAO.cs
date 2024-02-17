@@ -35,6 +35,16 @@ namespace PTPMUD_Project.DAO
             return dt;
         }
 
+        public Food getFoodByID(int id)
+        {
+            DataTable data = sqlSystem.ExecuteSelectAllQuery("Select * from Food where Food_ID = " + id);
+            foreach (DataRow item in data.Rows)
+            {
+                return new Food(item);
+            }
+            return null;
+        }
+
         public DataTable GetFoodByCategoryID(int _id)
         {
             string query = "select * from [Food] where Category_ID = @ID_Category";
@@ -45,6 +55,29 @@ namespace PTPMUD_Project.DAO
             };
             return sqlSystem.ExecuteSelectQuery(query, sqlParameters);
         }
+
+        public int getQuantityFood(int id)
+        {
+            int quantity = -1; // Giá trị mặc định nếu không tìm thấy dữ liệu
+
+            string query = "SELECT Quantity FROM Food WHERE Food_ID = " + id;
+            DataTable dt = sqlSystem.ExecuteQuery(query);
+
+            if (dt.Rows.Count > 0)
+            {
+                // Lấy giá trị quantity từ dòng đầu tiên của DataTable
+                quantity = Convert.ToInt32(dt.Rows[0]["Quantity"]);
+            }
+
+            return quantity;
+        }
+
+        public bool updateFood(int idFood, string foodName, float price, int categoryID, int quantity, int type)
+        {
+            int result = sqlSystem.ExecuteNonQuery("exec USP_UpdateFood @idFood , @foodName , @price , @categoryID , @quantity , @type", new object[] { idFood, foodName, price, categoryID, quantity, type });
+            return result > 0;
+        }
+
 
         public bool InsertFood(string foodName, float price, int categoryID, int quantity, int type)
         {

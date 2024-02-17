@@ -42,5 +42,12 @@ namespace PTPMUD_Project.BUS
             return billDAO.getMaxIDBill();
         }
 
+        public void CheckOut(int id, float totalPrice)
+        {
+            billDAO.checkOut(id, totalPrice);
+        }
+
+
+
     }
 }

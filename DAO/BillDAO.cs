@@ -29,21 +29,20 @@ namespace PTPMUD_Project.DAO
             }
             return -1;
         }
-        //public void checkOut(int id, int discount, float totalPrice)
-        //{
-        //    DataTable dt = new DataTable();
-        //    string query = "Update Bill set status = 1 , DateCheckOut = GETDATE(), " + "discount = " + discount + ", totalPrice = " + totalPrice + " where id = " + id;
-        //    try
-        //    {
+        public void checkOut(int id, float totalPrice)
+        {
+            try
+            {
 
-        //        dt = sqlSystem.ExecuteSelectAllQuery(query);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
-        //    return dt;
-        //}
+                 sqlSystem.ExecuteNonQuery("exec USP_CheckOut @idBill , @totalPrice", new object[] {id,totalPrice});
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+       
         public void insertBill(int idTable)
         {
             
