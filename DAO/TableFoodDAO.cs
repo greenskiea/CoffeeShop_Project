@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace PTPMUD_Project.DAO
         {
             sqlSystem = new SqlSystem();
         }
-
+      
         public DataTable GetTableList()
         {
 
@@ -64,9 +65,36 @@ namespace PTPMUD_Project.DAO
 
         public bool inserTable(string tableName, string status, string note)
         {
-            string query = string.Format("Insert Table_Food (Food_Table_Name, Status, note) Values (N'{0}',N'{1}', N'{2}')", tableName, status, note);
+            string query = string.Format("Insert Table_Food (Food_Table_Name, Status, note) Values (N'{0}', N'{1}', N'{2}')", tableName, status, note);
             int result = sqlSystem.ExecuteNonQuery(query);
             return result > 0;
+        }
+
+        public bool updateTable(int idTable, string tableName, string status, string note)
+        {
+            string query = string.Format("Update Table_Food Set Food_Table_Name = N'{0}' , Status = N'{1}' , note = N'{2}' Where Food_Table_ID = {3}", tableName, status, note, idTable);
+            int result = sqlSystem.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool DeleteTable(string idTable)
+        {
+            try
+            {
+                string query = "DELETE FROM Table_Food WHERE Food_Table_ID = @idTable";
+
+                SqlParameter[] parameters =
+                {
+            new SqlParameter("@idTable", SqlDbType.NVarChar) { Value = idTable }
+            };
+
+                return sqlSystem.ExecuteDeleteQuery(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
         }
     }
 }

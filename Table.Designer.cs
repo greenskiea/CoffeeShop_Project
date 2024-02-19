@@ -54,9 +54,9 @@
             splitContainer1 = new SplitContainer();
             dtgvTable = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1 = new Panel();
-            btnDeleteFood = new Guna.UI2.WinForms.Guna2ImageButton();
-            btnEditFood = new Guna.UI2.WinForms.Guna2ImageButton();
-            btnAddFood = new Guna.UI2.WinForms.Guna2ImageButton();
+            btnDeleteTable = new Guna.UI2.WinForms.Guna2ImageButton();
+            btnEditTable = new Guna.UI2.WinForms.Guna2ImageButton();
+            btnAddTable = new Guna.UI2.WinForms.Guna2ImageButton();
             panel2 = new Panel();
             txtNote = new Guna.UI2.WinForms.Guna2TextBox();
             label5 = new Label();
@@ -191,9 +191,9 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnDeleteFood);
-            panel1.Controls.Add(btnEditFood);
-            panel1.Controls.Add(btnAddFood);
+            panel1.Controls.Add(btnDeleteTable);
+            panel1.Controls.Add(btnEditTable);
+            panel1.Controls.Add(btnAddTable);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
@@ -201,59 +201,59 @@
             panel1.Size = new Size(635, 79);
             panel1.TabIndex = 0;
             // 
-            // btnDeleteFood
+            // btnDeleteTable
             // 
-            btnDeleteFood.BackColor = Color.Transparent;
-            btnDeleteFood.CheckedState.ImageSize = new Size(64, 64);
-            btnDeleteFood.HoverState.ImageSize = new Size(64, 64);
-            btnDeleteFood.Image = (Image)resources.GetObject("btnDeleteFood.Image");
-            btnDeleteFood.ImageOffset = new Point(0, 0);
-            btnDeleteFood.ImageRotate = 0F;
-            btnDeleteFood.ImageSize = new Size(50, 50);
-            btnDeleteFood.Location = new Point(525, 4);
-            btnDeleteFood.Margin = new Padding(3, 4, 3, 4);
-            btnDeleteFood.Name = "btnDeleteFood";
-            btnDeleteFood.PressedState.ImageSize = new Size(64, 64);
-            btnDeleteFood.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            btnDeleteFood.Size = new Size(78, 73);
-            btnDeleteFood.TabIndex = 6;
-            btnDeleteFood.Click += btnDeleteFood_Click;
+            btnDeleteTable.BackColor = Color.Transparent;
+            btnDeleteTable.CheckedState.ImageSize = new Size(64, 64);
+            btnDeleteTable.HoverState.ImageSize = new Size(64, 64);
+            btnDeleteTable.Image = (Image)resources.GetObject("btnDeleteTable.Image");
+            btnDeleteTable.ImageOffset = new Point(0, 0);
+            btnDeleteTable.ImageRotate = 0F;
+            btnDeleteTable.ImageSize = new Size(50, 50);
+            btnDeleteTable.Location = new Point(525, 4);
+            btnDeleteTable.Margin = new Padding(3, 4, 3, 4);
+            btnDeleteTable.Name = "btnDeleteTable";
+            btnDeleteTable.PressedState.ImageSize = new Size(64, 64);
+            btnDeleteTable.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            btnDeleteTable.Size = new Size(78, 73);
+            btnDeleteTable.TabIndex = 6;
+            btnDeleteTable.Click += btnDeleteTable_Click;
             // 
-            // btnEditFood
+            // btnEditTable
             // 
-            btnEditFood.BackColor = Color.Transparent;
-            btnEditFood.CheckedState.ImageSize = new Size(64, 64);
-            btnEditFood.HoverState.ImageSize = new Size(64, 64);
-            btnEditFood.Image = Properties.Resources.Update_icon;
-            btnEditFood.ImageOffset = new Point(0, 0);
-            btnEditFood.ImageRotate = 0F;
-            btnEditFood.ImageSize = new Size(50, 50);
-            btnEditFood.Location = new Point(280, 3);
-            btnEditFood.Margin = new Padding(3, 4, 3, 4);
-            btnEditFood.Name = "btnEditFood";
-            btnEditFood.PressedState.ImageSize = new Size(64, 64);
-            btnEditFood.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnEditFood.Size = new Size(75, 73);
-            btnEditFood.TabIndex = 5;
-            btnEditFood.Click += btnEditFood_Click;
+            btnEditTable.BackColor = Color.Transparent;
+            btnEditTable.CheckedState.ImageSize = new Size(64, 64);
+            btnEditTable.HoverState.ImageSize = new Size(64, 64);
+            btnEditTable.Image = Properties.Resources.Update_icon;
+            btnEditTable.ImageOffset = new Point(0, 0);
+            btnEditTable.ImageRotate = 0F;
+            btnEditTable.ImageSize = new Size(50, 50);
+            btnEditTable.Location = new Point(280, 3);
+            btnEditTable.Margin = new Padding(3, 4, 3, 4);
+            btnEditTable.Name = "btnEditTable";
+            btnEditTable.PressedState.ImageSize = new Size(64, 64);
+            btnEditTable.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnEditTable.Size = new Size(75, 73);
+            btnEditTable.TabIndex = 5;
+            btnEditTable.Click += btnEditTable_Click;
             // 
-            // btnAddFood
+            // btnAddTable
             // 
-            btnAddFood.BackColor = Color.Transparent;
-            btnAddFood.CheckedState.ImageSize = new Size(64, 64);
-            btnAddFood.HoverState.ImageSize = new Size(64, 64);
-            btnAddFood.Image = Properties.Resources.Plus_icon;
-            btnAddFood.ImageOffset = new Point(0, 0);
-            btnAddFood.ImageRotate = 0F;
-            btnAddFood.ImageSize = new Size(50, 50);
-            btnAddFood.Location = new Point(14, 3);
-            btnAddFood.Margin = new Padding(3, 4, 3, 4);
-            btnAddFood.Name = "btnAddFood";
-            btnAddFood.PressedState.ImageSize = new Size(64, 64);
-            btnAddFood.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            btnAddFood.Size = new Size(71, 72);
-            btnAddFood.TabIndex = 3;
-            btnAddFood.Click += btnAddFood_Click;
+            btnAddTable.BackColor = Color.Transparent;
+            btnAddTable.CheckedState.ImageSize = new Size(64, 64);
+            btnAddTable.HoverState.ImageSize = new Size(64, 64);
+            btnAddTable.Image = Properties.Resources.Plus_icon;
+            btnAddTable.ImageOffset = new Point(0, 0);
+            btnAddTable.ImageRotate = 0F;
+            btnAddTable.ImageSize = new Size(50, 50);
+            btnAddTable.Location = new Point(14, 3);
+            btnAddTable.Margin = new Padding(3, 4, 3, 4);
+            btnAddTable.Name = "btnAddTable";
+            btnAddTable.PressedState.ImageSize = new Size(64, 64);
+            btnAddTable.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            btnAddTable.Size = new Size(71, 72);
+            btnAddTable.TabIndex = 3;
+            btnAddTable.Click += btnAddTable_Click;
             // 
             // panel2
             // 
@@ -440,9 +440,9 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTableName;
         private Label label4;
         private Label label3;
-        private Guna.UI2.WinForms.Guna2ImageButton btnAddFood;
-        private Guna.UI2.WinForms.Guna2ImageButton btnEditFood;
-        private Guna.UI2.WinForms.Guna2ImageButton btnDeleteFood;
+        private Guna.UI2.WinForms.Guna2ImageButton btnAddTable;
+        private Guna.UI2.WinForms.Guna2ImageButton btnEditTable;
+        private Guna.UI2.WinForms.Guna2ImageButton btnDeleteTable;
         private Guna.UI2.WinForms.Guna2TextBox txtNote;
         private Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txtTableID;

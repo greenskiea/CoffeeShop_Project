@@ -42,7 +42,11 @@ namespace PTPMUD_Project.DAO
             }
         }
 
-       
+        public void deleteBillByTableID(int id)
+        {
+
+            sqlSystem.ExecuteQuery("Delete Bill where Table_ID = " + id);
+        }
         public void insertBill(int idTable)
         {
             

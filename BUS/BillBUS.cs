@@ -47,7 +47,10 @@ namespace PTPMUD_Project.BUS
             billDAO.checkOut(id, totalPrice);
         }
 
-
+        public void DeleteBillByTableID(int id)
+        {
+            billDAO.deleteBillByTableID(id);
+        }
 
     }
 }

@@ -20,11 +20,11 @@ namespace PTPMUD_Project
         {
             InitializeComponent();
             tableFoodBus = new TableFoodBUS();
-
+            billBus = new BillBUS();
             load();
         }
         TableFoodBUS tableFoodBus;
-
+        BillBUS billBus;
         #region Methods
         void load()
         {
@@ -71,7 +71,8 @@ namespace PTPMUD_Project
         {
 
         }
-        private void btnAddFood_Click(object sender, EventArgs e)
+
+        private void btnAddTable_Click(object sender, EventArgs e)
         {
             string tableName = txtTableName.Text;
             string status = cboStatus.SelectedItem as string;
@@ -80,7 +81,7 @@ namespace PTPMUD_Project
             if (tableFoodBus.InserTable(tableName, status, note))
             {
                 MessageBox.Show("Thêm món thành công");
-                //loadListFood();
+                loadListTable();
                 //if (insertFood != null)
                 //    insertFood(this, new EventArgs());
 
@@ -91,15 +92,43 @@ namespace PTPMUD_Project
             }
         }
 
-        private void btnEditFood_Click(object sender, EventArgs e)
+        private void btnEditTable_Click(object sender, EventArgs e)
         {
+            string tableName = txtTableName.Text;
+            string status = cboStatus.SelectedItem as string;
+            string note = txtNote.Text;
+            int id = Convert.ToInt32(txtTableID.Text);
 
+            if (tableFoodBus.UpdateTable(id, tableName, status, note))
+            {
+                MessageBox.Show("Sửa món thành công");
+                loadListTable();
+                //if (updateFood != null)
+                //    updateFood(this, new EventArgs());
+            }
+            else
+            {
+                MessageBox.Show("Có lối khi sửa món ăn");
+            }
         }
 
-        private void btnDeleteFood_Click(object sender, EventArgs e)
+        private void btnDeleteTable_Click(object sender, EventArgs e)
         {
+            string id = txtTableID.Text;
+            if (tableFoodBus.DeleteTable(id))
+            {
+                MessageBox.Show("Xóa món thành công");
+                loadListTable();
+                //if (deleteFood != null)
+                //    deleteFood(this, new EventArgs());
 
+            }
+            else
+            {
+                MessageBox.Show("Có lỗii khi Xóa món ăn");
+            }
         }
+
         #endregion
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -112,6 +141,6 @@ namespace PTPMUD_Project
 
         }
 
-
+        
     }
 }
