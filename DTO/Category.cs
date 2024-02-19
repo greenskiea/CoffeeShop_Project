@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace PTPMUD_Project.DTO
 {
-    internal class Category
+    public class Category
     {
         public Category() { 
 

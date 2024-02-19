@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Table));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -43,93 +48,46 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            btnClose = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             label2 = new Label();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             splitContainer1 = new SplitContainer();
-            flbTable = new FlowLayoutPanel();
-            panel2 = new Panel();
-            btnSwitchTable = new Button();
-            btnDiscount = new Button();
-            nmDiscount = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            btnCheckout = new Guna.UI2.WinForms.Guna2Button();
-            txbTotalPrice = new Guna.UI2.WinForms.Guna2TextBox();
-            cboTable = new Guna.UI2.WinForms.Guna2ComboBox();
-            lsvBill = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
+            dtgvTable = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1 = new Panel();
-            nmQuantity = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            btnAddFood = new Guna.UI2.WinForms.Guna2Button();
-            cboFood = new ComboBox();
-            cbocategory = new ComboBox();
-            guna2Panel2.SuspendLayout();
+            btnDeleteFood = new Guna.UI2.WinForms.Guna2ImageButton();
+            btnEditFood = new Guna.UI2.WinForms.Guna2ImageButton();
+            btnAddFood = new Guna.UI2.WinForms.Guna2ImageButton();
+            panel2 = new Panel();
+            txtNote = new Guna.UI2.WinForms.Guna2TextBox();
+            label5 = new Label();
+            cboStatus = new Guna.UI2.WinForms.Guna2ComboBox();
+            txtTableName = new Guna.UI2.WinForms.Guna2TextBox();
+            txtTableID = new Guna.UI2.WinForms.Guna2TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            label1 = new Label();
+            guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nmDiscount).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvTable).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nmQuantity).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // guna2Panel2
-            // 
-            guna2Panel2.Controls.Add(btnClose);
-            guna2Panel2.CustomizableEdges = customizableEdges3;
-            guna2Panel2.Dock = DockStyle.Bottom;
-            guna2Panel2.FillColor = Color.Gainsboro;
-            guna2Panel2.Location = new Point(0, 665);
-            guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel2.Size = new Size(1098, 76);
-            guna2Panel2.TabIndex = 3;
-            // 
-            // btnClose
-            // 
-            btnClose.AutoRoundedCorners = true;
-            btnClose.BackColor = Color.Gainsboro;
-            btnClose.BorderRadius = 27;
-            customizableEdges1.TopRight = false;
-            btnClose.CustomizableEdges = customizableEdges1;
-            btnClose.DisabledState.BorderColor = Color.DarkGray;
-            btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnClose.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnClose.FillColor = Color.FromArgb(50, 55, 89);
-            btnClose.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClose.ForeColor = Color.White;
-            btnClose.Location = new Point(12, 3);
-            btnClose.Name = "btnClose";
-            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnClose.Size = new Size(108, 56);
-            btnClose.TabIndex = 1;
-            btnClose.Text = "Close";
-            btnClose.Click += btnClose_Click;
             // 
             // guna2Panel1
             // 
             guna2Panel1.Controls.Add(label2);
             guna2Panel1.Controls.Add(guna2PictureBox1);
-            guna2Panel1.CustomizableEdges = customizableEdges7;
+            guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.Dock = DockStyle.Top;
             guna2Panel1.FillColor = Color.FromArgb(50, 55, 89);
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.Size = new Size(1098, 125);
             guna2Panel1.TabIndex = 2;
             // 
@@ -137,23 +95,24 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(137, 39);
+            label2.Location = new Point(114, 39);
             label2.Name = "label2";
-            label2.Size = new Size(91, 32);
+            label2.Size = new Size(79, 37);
             label2.TabIndex = 3;
-            label2.Text = "Header";
+            label2.Text = "Table";
             // 
             // guna2PictureBox1
             // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges5;
+            guna2PictureBox1.BackColor = Color.Transparent;
+            guna2PictureBox1.CustomizableEdges = customizableEdges1;
             guna2PictureBox1.Image = Properties.Resources.Table_icon;
             guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(12, 12);
+            guna2PictureBox1.Location = new Point(26, 15);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2PictureBox1.Size = new Size(120, 100);
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2PictureBox1.Size = new Size(58, 81);
             guna2PictureBox1.TabIndex = 2;
             guna2PictureBox1.TabStop = false;
             // 
@@ -165,229 +124,282 @@
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(flbTable);
+            splitContainer1.Panel1.Controls.Add(dtgvTable);
+            splitContainer1.Panel1.Controls.Add(panel1);
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(panel2);
-            splitContainer1.Panel2.Controls.Add(lsvBill);
-            splitContainer1.Panel2.Controls.Add(panel1);
-            splitContainer1.Size = new Size(1098, 540);
-            splitContainer1.SplitterDistance = 575;
+            splitContainer1.Size = new Size(1098, 616);
+            splitContainer1.SplitterDistance = 635;
+            splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 4;
             // 
-            // flbTable
+            // dtgvTable
             // 
-            flbTable.Dock = DockStyle.Fill;
-            flbTable.Location = new Point(0, 0);
-            flbTable.Name = "flbTable";
-            flbTable.Size = new Size(575, 540);
-            flbTable.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(btnSwitchTable);
-            panel2.Controls.Add(btnDiscount);
-            panel2.Controls.Add(nmDiscount);
-            panel2.Controls.Add(btnCheckout);
-            panel2.Controls.Add(txbTotalPrice);
-            panel2.Controls.Add(cboTable);
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 453);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(519, 87);
-            panel2.TabIndex = 2;
-            // 
-            // btnSwitchTable
-            // 
-            btnSwitchTable.Location = new Point(0, 3);
-            btnSwitchTable.Name = "btnSwitchTable";
-            btnSwitchTable.Size = new Size(113, 29);
-            btnSwitchTable.TabIndex = 4;
-            btnSwitchTable.Text = "Switch tables";
-            btnSwitchTable.UseVisualStyleBackColor = true;
-            btnSwitchTable.Click += btnSwitchTable_Click;
-            // 
-            // btnDiscount
-            // 
-            btnDiscount.Location = new Point(119, 3);
-            btnDiscount.Name = "btnDiscount";
-            btnDiscount.Size = new Size(94, 29);
-            btnDiscount.TabIndex = 5;
-            btnDiscount.Text = "Discount";
-            btnDiscount.UseVisualStyleBackColor = true;
-            // 
-            // nmDiscount
-            // 
-            nmDiscount.BackColor = Color.Transparent;
-            nmDiscount.CustomizableEdges = customizableEdges9;
-            nmDiscount.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            nmDiscount.Location = new Point(119, 39);
-            nmDiscount.Margin = new Padding(3, 4, 3, 4);
-            nmDiscount.Name = "nmDiscount";
-            nmDiscount.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            nmDiscount.Size = new Size(93, 36);
-            nmDiscount.TabIndex = 6;
-            // 
-            // btnCheckout
-            // 
-            btnCheckout.BorderRadius = 10;
-            btnCheckout.CustomizableEdges = customizableEdges11;
-            btnCheckout.DisabledState.BorderColor = Color.DarkGray;
-            btnCheckout.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnCheckout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnCheckout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnCheckout.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCheckout.ForeColor = Color.White;
-            btnCheckout.Location = new Point(425, 3);
-            btnCheckout.Name = "btnCheckout";
-            btnCheckout.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnCheckout.Size = new Size(91, 56);
-            btnCheckout.TabIndex = 3;
-            btnCheckout.Text = "Checkout";
-            btnCheckout.Click += btnCheckout_Click;
-            // 
-            // txbTotalPrice
-            // 
-            txbTotalPrice.CustomizableEdges = customizableEdges13;
-            txbTotalPrice.DefaultText = "";
-            txbTotalPrice.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txbTotalPrice.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txbTotalPrice.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txbTotalPrice.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txbTotalPrice.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTotalPrice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txbTotalPrice.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTotalPrice.Location = new Point(219, 19);
-            txbTotalPrice.Margin = new Padding(3, 4, 3, 4);
-            txbTotalPrice.Name = "txbTotalPrice";
-            txbTotalPrice.PasswordChar = '\0';
-            txbTotalPrice.PlaceholderText = "";
-            txbTotalPrice.ReadOnly = true;
-            txbTotalPrice.SelectedText = "";
-            txbTotalPrice.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            txbTotalPrice.Size = new Size(191, 38);
-            txbTotalPrice.TabIndex = 2;
-            txbTotalPrice.TextChanged += guna2TextBox1_TextChanged;
-            // 
-            // cboTable
-            // 
-            cboTable.BackColor = Color.Transparent;
-            cboTable.CustomizableEdges = customizableEdges15;
-            cboTable.DrawMode = DrawMode.OwnerDrawFixed;
-            cboTable.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboTable.FocusedColor = Color.FromArgb(94, 148, 255);
-            cboTable.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cboTable.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cboTable.ForeColor = Color.FromArgb(68, 88, 112);
-            cboTable.ItemHeight = 30;
-            cboTable.Location = new Point(0, 38);
-            cboTable.Name = "cboTable";
-            cboTable.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            cboTable.Size = new Size(113, 36);
-            cboTable.TabIndex = 0;
-            // 
-            // lsvBill
-            // 
-            lsvBill.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5 });
-            lsvBill.FullRowSelect = true;
-            lsvBill.GridLines = true;
-            lsvBill.Location = new Point(3, 74);
-            lsvBill.Name = "lsvBill";
-            lsvBill.Size = new Size(513, 376);
-            lsvBill.TabIndex = 1;
-            lsvBill.UseCompatibleStateImageBehavior = false;
-            lsvBill.View = View.Details;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Food Name";
-            columnHeader1.Width = 130;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Quantity";
-            columnHeader2.TextAlign = HorizontalAlignment.Center;
-            columnHeader2.Width = 78;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Price";
-            columnHeader3.TextAlign = HorizontalAlignment.Center;
-            columnHeader3.Width = 80;
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "Total Price";
-            columnHeader4.TextAlign = HorizontalAlignment.Center;
-            columnHeader4.Width = 90;
-            // 
-            // columnHeader5
-            // 
-            columnHeader5.Text = "Note";
-            columnHeader5.TextAlign = HorizontalAlignment.Center;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dtgvTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dtgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dtgvTable.ColumnHeadersHeight = 15;
+            dtgvTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dtgvTable.DefaultCellStyle = dataGridViewCellStyle3;
+            dtgvTable.Dock = DockStyle.Fill;
+            dtgvTable.GridColor = Color.FromArgb(231, 229, 255);
+            dtgvTable.Location = new Point(0, 79);
+            dtgvTable.Margin = new Padding(3, 4, 3, 4);
+            dtgvTable.Name = "dtgvTable";
+            dtgvTable.RowHeadersVisible = false;
+            dtgvTable.RowHeadersWidth = 51;
+            dtgvTable.RowTemplate.Height = 25;
+            dtgvTable.Size = new Size(635, 537);
+            dtgvTable.TabIndex = 1;
+            dtgvTable.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dtgvTable.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dtgvTable.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dtgvTable.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dtgvTable.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dtgvTable.ThemeStyle.BackColor = Color.White;
+            dtgvTable.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dtgvTable.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dtgvTable.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtgvTable.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtgvTable.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dtgvTable.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dtgvTable.ThemeStyle.HeaderStyle.Height = 15;
+            dtgvTable.ThemeStyle.ReadOnly = false;
+            dtgvTable.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dtgvTable.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dtgvTable.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtgvTable.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dtgvTable.ThemeStyle.RowsStyle.Height = 25;
+            dtgvTable.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dtgvTable.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // panel1
             // 
-            panel1.Controls.Add(nmQuantity);
+            panel1.Controls.Add(btnDeleteFood);
+            panel1.Controls.Add(btnEditFood);
             panel1.Controls.Add(btnAddFood);
-            panel1.Controls.Add(cboFood);
-            panel1.Controls.Add(cbocategory);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(519, 71);
+            panel1.Size = new Size(635, 79);
             panel1.TabIndex = 0;
             // 
-            // nmQuantity
+            // btnDeleteFood
             // 
-            nmQuantity.BackColor = Color.Transparent;
-            nmQuantity.CustomizableEdges = customizableEdges17;
-            nmQuantity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            nmQuantity.Location = new Point(397, 16);
-            nmQuantity.Margin = new Padding(3, 4, 3, 4);
-            nmQuantity.Minimum = new decimal(new int[] { 2, 0, 0, int.MinValue });
-            nmQuantity.Name = "nmQuantity";
-            nmQuantity.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            nmQuantity.Size = new Size(62, 30);
-            nmQuantity.TabIndex = 4;
-            nmQuantity.ValueChanged += guna2NumericUpDown1_ValueChanged;
+            btnDeleteFood.BackColor = Color.Transparent;
+            btnDeleteFood.CheckedState.ImageSize = new Size(64, 64);
+            btnDeleteFood.HoverState.ImageSize = new Size(64, 64);
+            btnDeleteFood.Image = (Image)resources.GetObject("btnDeleteFood.Image");
+            btnDeleteFood.ImageOffset = new Point(0, 0);
+            btnDeleteFood.ImageRotate = 0F;
+            btnDeleteFood.ImageSize = new Size(50, 50);
+            btnDeleteFood.Location = new Point(525, 4);
+            btnDeleteFood.Margin = new Padding(3, 4, 3, 4);
+            btnDeleteFood.Name = "btnDeleteFood";
+            btnDeleteFood.PressedState.ImageSize = new Size(64, 64);
+            btnDeleteFood.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            btnDeleteFood.Size = new Size(78, 73);
+            btnDeleteFood.TabIndex = 6;
+            btnDeleteFood.Click += btnDeleteFood_Click;
+            // 
+            // btnEditFood
+            // 
+            btnEditFood.BackColor = Color.Transparent;
+            btnEditFood.CheckedState.ImageSize = new Size(64, 64);
+            btnEditFood.HoverState.ImageSize = new Size(64, 64);
+            btnEditFood.Image = Properties.Resources.Update_icon;
+            btnEditFood.ImageOffset = new Point(0, 0);
+            btnEditFood.ImageRotate = 0F;
+            btnEditFood.ImageSize = new Size(50, 50);
+            btnEditFood.Location = new Point(280, 3);
+            btnEditFood.Margin = new Padding(3, 4, 3, 4);
+            btnEditFood.Name = "btnEditFood";
+            btnEditFood.PressedState.ImageSize = new Size(64, 64);
+            btnEditFood.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnEditFood.Size = new Size(75, 73);
+            btnEditFood.TabIndex = 5;
+            btnEditFood.Click += btnEditFood_Click;
             // 
             // btnAddFood
             // 
-            btnAddFood.BorderRadius = 20;
-            btnAddFood.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            btnAddFood.CustomizableEdges = customizableEdges19;
-            btnAddFood.DisabledState.BorderColor = Color.DarkGray;
-            btnAddFood.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAddFood.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAddFood.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAddFood.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAddFood.ForeColor = Color.White;
-            btnAddFood.Location = new Point(248, 6);
+            btnAddFood.BackColor = Color.Transparent;
+            btnAddFood.CheckedState.ImageSize = new Size(64, 64);
+            btnAddFood.HoverState.ImageSize = new Size(64, 64);
+            btnAddFood.Image = Properties.Resources.Plus_icon;
+            btnAddFood.ImageOffset = new Point(0, 0);
+            btnAddFood.ImageRotate = 0F;
+            btnAddFood.ImageSize = new Size(50, 50);
+            btnAddFood.Location = new Point(14, 3);
+            btnAddFood.Margin = new Padding(3, 4, 3, 4);
             btnAddFood.Name = "btnAddFood";
-            btnAddFood.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            btnAddFood.Size = new Size(113, 54);
+            btnAddFood.PressedState.ImageSize = new Size(64, 64);
+            btnAddFood.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            btnAddFood.Size = new Size(71, 72);
             btnAddFood.TabIndex = 3;
-            btnAddFood.Text = "Add dishes";
             btnAddFood.Click += btnAddFood_Click;
             // 
-            // cboFood
+            // panel2
             // 
-            cboFood.FormattingEnabled = true;
-            cboFood.Location = new Point(3, 40);
-            cboFood.Name = "cboFood";
-            cboFood.Size = new Size(209, 28);
-            cboFood.TabIndex = 2;
+            panel2.Controls.Add(txtNote);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(cboStatus);
+            panel2.Controls.Add(txtTableName);
+            panel2.Controls.Add(txtTableID);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label1);
+            panel2.Location = new Point(3, 3);
+            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(455, 609);
+            panel2.TabIndex = 0;
             // 
-            // cbocategory
+            // txtNote
             // 
-            cbocategory.FormattingEnabled = true;
-            cbocategory.Location = new Point(3, 3);
-            cbocategory.Name = "cbocategory";
-            cbocategory.Size = new Size(209, 28);
-            cbocategory.TabIndex = 1;
-            cbocategory.SelectedIndexChanged += cbocategory_SelectedIndexChanged;
+            txtNote.BorderColor = Color.FromArgb(64, 64, 64);
+            txtNote.CustomizableEdges = customizableEdges8;
+            txtNote.DefaultText = "";
+            txtNote.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtNote.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtNote.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtNote.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtNote.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtNote.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNote.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtNote.Location = new Point(165, 304);
+            txtNote.Margin = new Padding(3, 5, 3, 5);
+            txtNote.Multiline = true;
+            txtNote.Name = "txtNote";
+            txtNote.PasswordChar = '\0';
+            txtNote.PlaceholderText = "";
+            txtNote.SelectedText = "";
+            txtNote.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            txtNote.Size = new Size(257, 271);
+            txtNote.TabIndex = 7;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(38, 304);
+            label5.Name = "label5";
+            label5.Size = new Size(97, 30);
+            label5.TabIndex = 6;
+            label5.Text = "Ghi chú:";
+            // 
+            // cboStatus
+            // 
+            cboStatus.BackColor = Color.Transparent;
+            cboStatus.BorderColor = Color.Black;
+            cboStatus.CustomizableEdges = customizableEdges10;
+            cboStatus.DrawMode = DrawMode.OwnerDrawFixed;
+            cboStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboStatus.FocusedColor = Color.FromArgb(94, 148, 255);
+            cboStatus.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cboStatus.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cboStatus.ForeColor = Color.FromArgb(68, 88, 112);
+            cboStatus.ItemHeight = 30;
+            cboStatus.Items.AddRange(new object[] { "Trống", "Có người" });
+            cboStatus.Location = new Point(165, 223);
+            cboStatus.Margin = new Padding(3, 4, 3, 4);
+            cboStatus.Name = "cboStatus";
+            cboStatus.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            cboStatus.Size = new Size(257, 36);
+            cboStatus.TabIndex = 5;
+            cboStatus.SelectedIndexChanged += cboStatus_SelectedIndexChanged;
+            // 
+            // txtTableName
+            // 
+            txtTableName.BorderColor = Color.Black;
+            txtTableName.CustomizableEdges = customizableEdges12;
+            txtTableName.DefaultText = "";
+            txtTableName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtTableName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtTableName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtTableName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtTableName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTableName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTableName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTableName.Location = new Point(165, 136);
+            txtTableName.Margin = new Padding(3, 5, 3, 5);
+            txtTableName.Name = "txtTableName";
+            txtTableName.PasswordChar = '\0';
+            txtTableName.PlaceholderText = "";
+            txtTableName.SelectedText = "";
+            txtTableName.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            txtTableName.Size = new Size(257, 48);
+            txtTableName.TabIndex = 4;
+            // 
+            // txtTableID
+            // 
+            txtTableID.BorderColor = Color.Black;
+            txtTableID.CustomizableEdges = customizableEdges14;
+            txtTableID.DefaultText = "";
+            txtTableID.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtTableID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtTableID.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtTableID.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtTableID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTableID.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTableID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTableID.Location = new Point(165, 41);
+            txtTableID.Margin = new Padding(3, 5, 3, 5);
+            txtTableID.Name = "txtTableID";
+            txtTableID.PasswordChar = '\0';
+            txtTableID.PlaceholderText = "";
+            txtTableID.ReadOnly = true;
+            txtTableID.SelectedText = "";
+            txtTableID.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            txtTableID.Size = new Size(257, 48);
+            txtTableID.TabIndex = 3;
+            txtTableID.TextChanged += txtTableID_TextChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(34, 223);
+            label4.Name = "label4";
+            label4.Size = new Size(124, 30);
+            label4.TabIndex = 2;
+            label4.Text = "Trạng thái:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(34, 136);
+            label3.Name = "label3";
+            label3.Size = new Size(100, 30);
+            label3.TabIndex = 1;
+            label3.Text = "Tên Bàn:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(34, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(42, 30);
+            label1.TabIndex = 0;
+            label1.Text = "ID:";
             // 
             // Table
             // 
@@ -396,13 +408,11 @@
             BackColor = Color.White;
             ClientSize = new Size(1098, 741);
             Controls.Add(splitContainer1);
-            Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Table";
             Text = "Table";
-            guna2Panel2.ResumeLayout(false);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
@@ -410,39 +420,32 @@
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)nmDiscount).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvTable).EndInit();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)nmQuantity).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Button btnClose;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Label label2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private SplitContainer splitContainer1;
-        private FlowLayoutPanel flbTable;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button btnAddFood;
-        private ComboBox cboFood;
-        private ComboBox cbocategory;
+        private Guna.UI2.WinForms.Guna2DataGridView dtgvTable;
         private Panel panel2;
-        private ListView lsvBill;
-        private Guna.UI2.WinForms.Guna2NumericUpDown nmQuantity;
-        private Guna.UI2.WinForms.Guna2NumericUpDown nmDiscount;
-        private Guna.UI2.WinForms.Guna2Button btnCheckout;
-        private Guna.UI2.WinForms.Guna2TextBox txbTotalPrice;
-        private Guna.UI2.WinForms.Guna2ComboBox cboTable;
-        private Button btnSwitchTable;
-        private Button btnDiscount;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
+        private Guna.UI2.WinForms.Guna2ComboBox cboStatus;
+        private Guna.UI2.WinForms.Guna2TextBox txtTableName;
+        private Label label4;
+        private Label label3;
+        private Guna.UI2.WinForms.Guna2ImageButton btnAddFood;
+        private Guna.UI2.WinForms.Guna2ImageButton btnEditFood;
+        private Guna.UI2.WinForms.Guna2ImageButton btnDeleteFood;
+        private Guna.UI2.WinForms.Guna2TextBox txtNote;
+        private Label label5;
+        private Guna.UI2.WinForms.Guna2TextBox txtTableID;
+        private Label label1;
     }
 }

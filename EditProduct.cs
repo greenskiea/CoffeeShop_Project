@@ -23,7 +23,7 @@ namespace PTPMUD_Project
             get { return foods; }
 
 
-            set { foods = value; loadFood(foods); }
+            set { foods = value; }
         }
         public EditProduct(Food food)
         {
@@ -31,23 +31,23 @@ namespace PTPMUD_Project
             this.Foods = food;
             foodBus = new FoodBUS();
             categoryBus = new CategoryBUS();
-            load();
+            loadFood(foods);
         }
         FoodBUS foodBus;
         CategoryBUS categoryBus;
         #region Methods
-        public void load()
-        {
 
-            loadCategoryIntoCombobox(cboCategory_ID);
-        }
         public void loadFood(Food food)
         {
             txtIDFood.Text = Foods.foodID.ToString();
             txtFood_Name.Text = Foods.foodName.ToString();
             nmPrice.Value = (decimal)Foods.price;
-            cboCategory_ID.SelectedItem = Foods.categoryID;
             nmQuantity.Value = (decimal)Foods.quantity;
+
+            cboCategory_ID.DataSource = categoryBus.getALLCategory();
+            cboCategory_ID.DisplayMember = "categoryName";
+            cboCategory_ID.ValueMember = "categoryID";
+            cboCategory_ID.SelectedValue = Foods.categoryID;
 
             int type = Foods.type;
             if (type == 1)
@@ -61,14 +61,10 @@ namespace PTPMUD_Project
 
 
         }
-        public void loadCategoryIntoCombobox(System.Windows.Forms.ComboBox cb)
-        {
-            cb.DataSource = categoryBus.getALLCategory();
-            cb.DisplayMember = "categoryName";
-        }
 
 
 
+        
         public void UpdateFoodInfo()
         {
             int idFood = Convert.ToInt32(txtIDFood.Text);
@@ -137,25 +133,8 @@ namespace PTPMUD_Project
         }
         private void txtIDFood_TextChanged(object sender, EventArgs e)
         {
-            
-                int id = (cboCategory_ID.SelectedItem as Category).categoryID;
 
-                Category category = categoryBus.GetCategoryByID(id);
-                cboCategory_ID.SelectedItem = category;
 
-                int index = -1;
-                int i = 0;
-                foreach (Category item in cboCategory_ID.Items)
-                {
-                    if (item.categoryID == category.categoryID)
-                    {
-                        index = i; break;
-                    }
-                    i++;
-
-                }
-                cboCategory_ID.SelectedIndex = index;
-            
         }
         #endregion
 
