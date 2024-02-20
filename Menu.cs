@@ -82,6 +82,13 @@ namespace PTPMUD_Project
                 {
                     btnAdmin.Visible = false;
                 }
+                else
+                {
+                    btnAdmin.Visible = true;
+
+
+
+                }
             }
         }
 

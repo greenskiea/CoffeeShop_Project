@@ -92,10 +92,10 @@
             guna2Panel2.CustomizableEdges = customizableEdges3;
             guna2Panel2.Dock = DockStyle.Bottom;
             guna2Panel2.FillColor = Color.Gainsboro;
-            guna2Panel2.Location = new Point(0, 665);
+            guna2Panel2.Location = new Point(0, 705);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel2.Size = new Size(1098, 76);
+            guna2Panel2.Size = new Size(1346, 76);
             guna2Panel2.TabIndex = 3;
             // 
             // btnClose
@@ -130,7 +130,7 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Panel1.Size = new Size(1098, 125);
+            guna2Panel1.Size = new Size(1346, 125);
             guna2Panel1.TabIndex = 2;
             // 
             // label2
@@ -147,13 +147,15 @@
             // 
             // guna2PictureBox1
             // 
+            guna2PictureBox1.BackColor = Color.Transparent;
             guna2PictureBox1.CustomizableEdges = customizableEdges5;
             guna2PictureBox1.Image = Properties.Resources.Table_icon;
             guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(12, 12);
+            guna2PictureBox1.Location = new Point(12, 3);
             guna2PictureBox1.Name = "guna2PictureBox1";
             guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2PictureBox1.Size = new Size(120, 100);
+            guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox1.TabIndex = 2;
             guna2PictureBox1.TabStop = false;
             // 
@@ -172,8 +174,8 @@
             splitContainer1.Panel2.Controls.Add(panel2);
             splitContainer1.Panel2.Controls.Add(lsvBill);
             splitContainer1.Panel2.Controls.Add(panel1);
-            splitContainer1.Size = new Size(1098, 540);
-            splitContainer1.SplitterDistance = 575;
+            splitContainer1.Size = new Size(1346, 580);
+            splitContainer1.SplitterDistance = 704;
             splitContainer1.TabIndex = 4;
             // 
             // flbTable
@@ -181,7 +183,7 @@
             flbTable.Dock = DockStyle.Fill;
             flbTable.Location = new Point(0, 0);
             flbTable.Name = "flbTable";
-            flbTable.Size = new Size(575, 540);
+            flbTable.Size = new Size(704, 580);
             flbTable.TabIndex = 0;
             // 
             // panel2
@@ -193,9 +195,9 @@
             panel2.Controls.Add(txbTotalPrice);
             panel2.Controls.Add(cboTable);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 453);
+            panel2.Location = new Point(0, 493);
             panel2.Name = "panel2";
-            panel2.Size = new Size(519, 87);
+            panel2.Size = new Size(638, 87);
             panel2.TabIndex = 2;
             // 
             // btnSwitchTable
@@ -239,7 +241,7 @@
             btnCheckout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnCheckout.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnCheckout.ForeColor = Color.White;
-            btnCheckout.Location = new Point(425, 3);
+            btnCheckout.Location = new Point(486, 18);
             btnCheckout.Name = "btnCheckout";
             btnCheckout.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnCheckout.Size = new Size(91, 56);
@@ -258,7 +260,7 @@
             txbTotalPrice.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txbTotalPrice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txbTotalPrice.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txbTotalPrice.Location = new Point(219, 19);
+            txbTotalPrice.Location = new Point(233, 36);
             txbTotalPrice.Margin = new Padding(3, 4, 3, 4);
             txbTotalPrice.Name = "txbTotalPrice";
             txbTotalPrice.PasswordChar = '\0';
@@ -266,7 +268,7 @@
             txbTotalPrice.ReadOnly = true;
             txbTotalPrice.SelectedText = "";
             txbTotalPrice.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            txbTotalPrice.Size = new Size(191, 38);
+            txbTotalPrice.Size = new Size(226, 38);
             txbTotalPrice.TabIndex = 2;
             txbTotalPrice.TextChanged += guna2TextBox1_TextChanged;
             // 
@@ -294,10 +296,11 @@
             lsvBill.GridLines = true;
             lsvBill.Location = new Point(3, 74);
             lsvBill.Name = "lsvBill";
-            lsvBill.Size = new Size(513, 376);
+            lsvBill.Size = new Size(536, 376);
             lsvBill.TabIndex = 1;
             lsvBill.UseCompatibleStateImageBehavior = false;
             lsvBill.View = View.Details;
+            lsvBill.SelectedIndexChanged += lsvBill_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
@@ -336,7 +339,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(519, 71);
+            panel1.Size = new Size(638, 71);
             panel1.TabIndex = 0;
             // 
             // nmQuantity
@@ -394,7 +397,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1098, 741);
+            ClientSize = new Size(1346, 781);
             Controls.Add(splitContainer1);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);

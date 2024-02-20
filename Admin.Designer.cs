@@ -40,6 +40,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             btnAdd = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
@@ -47,6 +49,8 @@
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             btnUpdate = new Guna.UI2.WinForms.Guna2PictureBox();
             btnDelete = new Guna.UI2.WinForms.Guna2PictureBox();
+            txtSearchName = new Guna.UI2.WinForms.Guna2TextBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)btnAdd).BeginInit();
             ((System.ComponentModel.ISupportInitialize)EmployeeDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
@@ -179,12 +183,47 @@
             btnDelete.TabStop = false;
             btnDelete.Click += btnDelete_Click;
             // 
+            // txtSearchName
+            // 
+            txtSearchName.CustomizableEdges = customizableEdges9;
+            txtSearchName.DefaultText = "";
+            txtSearchName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtSearchName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtSearchName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtSearchName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtSearchName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSearchName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSearchName.ForeColor = Color.Black;
+            txtSearchName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSearchName.Location = new Point(974, 106);
+            txtSearchName.Margin = new Padding(3, 4, 3, 4);
+            txtSearchName.Name = "txtSearchName";
+            txtSearchName.PasswordChar = '\0';
+            txtSearchName.PlaceholderText = "Search .....";
+            txtSearchName.SelectedText = "";
+            txtSearchName.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtSearchName.Size = new Size(296, 46);
+            txtSearchName.TabIndex = 13;
+            txtSearchName.TextChanged += txtSearchName_TextChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(974, 62);
+            label2.Name = "label2";
+            label2.Size = new Size(123, 28);
+            label2.TabIndex = 14;
+            label2.Text = "Filter Name";
+            // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1346, 781);
+            Controls.Add(label2);
+            Controls.Add(txtSearchName);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
             Controls.Add(guna2PictureBox1);
@@ -215,5 +254,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox btnUpdate;
         private Guna.UI2.WinForms.Guna2PictureBox btnDelete;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearchName;
+        private Label label2;
     }
 }

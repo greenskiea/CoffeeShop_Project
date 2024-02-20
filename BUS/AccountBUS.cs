@@ -135,5 +135,45 @@ namespace PTPMUD_Project.BUS
                 return false;
             }
         }
+
+        public List<Account> SearchByName(string name)
+        {
+            List<Account> accountList = new List<Account>();
+
+            try
+            {
+                DataTable dataTable = accountDAO.SearchByName(name);
+
+                if (dataTable != null && dataTable.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        Account account = new Account
+                        {
+                            Id = Convert.ToInt32(row["User_ID"]),
+                            Username = row["Username"].ToString(),
+                            Password = row["Password"].ToString(),
+                            Type = row["Type"].ToString(),
+                            Email = row["Email"].ToString(),
+                            Name = row["Name"].ToString(),
+                            Address = row["Address"].ToString(),
+                            PhoneNumber = row["Phone"].ToString(),
+                            Personal_ID = row["Personal_ID"].ToString(),
+                            DOB = row["DOB"].ToString(),
+                            Gender = Convert.ToInt32(row["Gender"])
+                            // Add other properties as needed
+                        };
+
+                        accountList.Add(account);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+
+            return accountList;
+        }
     }
 }

@@ -208,6 +208,9 @@ namespace PTPMUD_Project
 
         }
 
+        private void lsvBill_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

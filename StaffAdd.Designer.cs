@@ -409,6 +409,7 @@
             txtDOB.Size = new Size(173, 36);
             txtDOB.TabIndex = 8;
             txtDOB.ValidatingType = typeof(DateTime);
+            txtDOB.MaskInputRejected += txtDOB_MaskInputRejected;
             // 
             // label9
             // 

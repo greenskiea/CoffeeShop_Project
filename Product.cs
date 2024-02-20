@@ -123,12 +123,13 @@ namespace PTPMUD_Project
                 editProduct.ShowDialog();
                 this.Show();
             }
-           
+
         }
 
         private void btnDeleteFood_Click(object sender, EventArgs e)
         {
-            if (lsvProduct.SelectedItems.Count > 0) {
+            if (lsvProduct.SelectedItems.Count > 0)
+            {
                 ListViewItem selectedItem = lsvProduct.SelectedItems[0];
 
                 int id = Convert.ToInt32(selectedItem.SubItems[0].Text);
@@ -148,7 +149,7 @@ namespace PTPMUD_Project
 
 
             }
-                
+
         }
         #endregion
 
