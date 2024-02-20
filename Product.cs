@@ -40,13 +40,25 @@ namespace PTPMUD_Project
             List<Food> foodList = foodBus.getALLFood();
             foreach (Food f in foodList)
             {
+                Category category = categoryBus.GetCategoryByID(f.categoryID);
+                string categoryName = (category != null) ? category.categoryName : "Unknown";
+                string types = "";
+                int type = f.type;
+                if(type == 1)
+                {
+                    types = "Sáng";
+                }
+                else if(type == 2)
+                {
+                    types = "Chiều";
+                }
 
                 ListViewItem item = new ListViewItem(new string[] { f.foodID.ToString() });
                 item.SubItems.Add(f.foodName.ToString());
                 item.SubItems.Add(f.price.ToString());
-                item.SubItems.Add(f.categoryID.ToString());
+                item.SubItems.Add(categoryName);
                 item.SubItems.Add(f.quantity.ToString());
-                item.SubItems.Add(f.type.ToString());
+                item.SubItems.Add(types);
                 lsvProduct.Items.Add(item);
 
             }
@@ -101,10 +113,7 @@ namespace PTPMUD_Project
             this.Show();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
         {

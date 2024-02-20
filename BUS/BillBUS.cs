@@ -33,9 +33,9 @@ namespace PTPMUD_Project.BUS
             billDAO.insertBill(idTable);
         }
 
-        public DataTable GetListBillByDate(DateTime checkedDate)
+        public DataTable GetListBillByDate(DateTime checkedFrom, DateTime checkedTo)
         {
-            return billDAO.getListBillByDate(checkedDate);
+            return billDAO.getListBillByDate(checkedFrom, checkedTo);
         }
         public int GetMaxIDBill()
         {
@@ -47,7 +47,10 @@ namespace PTPMUD_Project.BUS
             billDAO.checkOut(id, totalPrice);
         }
 
-
+        public void DeleteBillByTableID(int id)
+        {
+            billDAO.deleteBillByTableID(id);
+        }
 
     }
 }

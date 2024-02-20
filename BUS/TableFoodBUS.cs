@@ -53,5 +53,24 @@ namespace PTPMUD_Project.BUS
         {
             tableFoodDAO.switchTable(id1, id2);
         }
+
+        public string GetStatusByID(int id)
+        {
+            return tableFoodDAO.GetStatusByID(id);  
+        }
+
+        public bool InserTable(string tableName, string status, string note)
+        {
+            return tableFoodDAO.inserTable(tableName, status, note);
+        }
+
+        public bool UpdateTable(int idTable, string tableName, string status, string note)
+        {
+            return tableFoodDAO.updateTable(idTable, tableName, status, note);
+        }
+        public bool DeleteTable(string idTable)
+        {
+            return tableFoodDAO.DeleteTable(idTable);
+        }    
     }
 }

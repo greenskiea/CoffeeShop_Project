@@ -42,7 +42,11 @@ namespace PTPMUD_Project.DAO
             }
         }
 
-       
+        public void deleteBillByTableID(int id)
+        {
+
+            sqlSystem.ExecuteQuery("Delete Bill where Table_ID = " + id);
+        }
         public void insertBill(int idTable)
         {
             
@@ -58,13 +62,13 @@ namespace PTPMUD_Project.DAO
             
         }
 
-        public DataTable getListBillByDate(DateTime checkedDate)
+        public DataTable getListBillByDate(DateTime checkedFrom, DateTime checkedTo)
         {
             DataTable dt = new DataTable();
             try
             {
 
-                dt = sqlSystem.ExecuteQuery("exec USP_GetListBillByDate @checked", new object[] { checkedDate });
+                dt = sqlSystem.ExecuteQuery("exec USP_GetListBillByDate @checkedFrom , @checkedTo", new object[] { checkedFrom, checkedTo });
             }
             catch (Exception ex)
             {
@@ -86,5 +90,7 @@ namespace PTPMUD_Project.DAO
             }
             
         }
+
+        
     }
 }

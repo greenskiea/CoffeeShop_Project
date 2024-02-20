@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PTPMUD_Project.BUS;
+using PTPMUD_Project.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,36 @@ namespace PTPMUD_Project
         public Home()
         {
             InitializeComponent();
+            billBus = new BillBUS();
+            load();
         }
+        BillBUS billBus;
+        #region Methods
+        void load()
+        {
+            loadDateTimePickerBill();
+            loadListBillbyDate(dtpkFromDate.Value, dtpkToDate.Value);
+        }
+        void loadDateTimePickerBill()
+        {
+            DateTime today = DateTime.Now;
+            dtpkFromDate.Value = new DateTime(today.Year, today.Month, 1);
+            dtpkToDate.Value = dtpkFromDate.Value.AddMonths(1).AddDays(-1);
+        }
+
+        void loadListBillbyDate(DateTime checkedFrom, DateTime checkedTo)
+        {
+            dtgvBill.DataSource = billBus.GetListBillByDate(checkedFrom, checkedTo);
+        }
+        #endregion
+
+        #region Events
+        private void btnViewBill_Click(object sender, EventArgs e)
+        {
+            loadListBillbyDate(dtpkFromDate.Value, dtpkToDate.Value);
+        }
+        #endregion
+
+
     }
 }
