@@ -122,7 +122,7 @@
             EmployeeDataGridView.Size = new Size(1223, 453);
             EmployeeDataGridView.TabIndex = 3;
             EmployeeDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            EmployeeDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            EmployeeDataGridView.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             EmployeeDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
             EmployeeDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
             EmployeeDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;

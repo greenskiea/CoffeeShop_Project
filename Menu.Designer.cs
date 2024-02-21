@@ -313,6 +313,7 @@
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
             Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Menu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";

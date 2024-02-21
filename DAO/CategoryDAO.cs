@@ -47,8 +47,65 @@ namespace PTPMUD_Project.DAO
             return category;
         }
 
-      
+        public bool InsertCategory(string CategoryName)
+        {
+            try
+            {
+                string query = "INSERT INTO Category (Category_Name) Values (@CategoryName)";
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@CategoryName", SqlDbType.NVarChar) { Value = CategoryName },
+                };
+                return sqlSystem.ExecuteInsertQuery(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
 
+        public bool UpdateCategory(int Category_ID, string Category_Name)
+        {
+            try
+            {
+                string query = "UPDATE Category SET " +
+                               "Category_Name = @Category_Name " +
+                               "WHERE Category_ID = @Category_ID";
 
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@Category_Name", SqlDbType.NVarChar) { Value = Category_Name },
+                    new SqlParameter("@Category_ID", SqlDbType.Int) {Value = Category_ID}
+                };
+
+                return sqlSystem.ExecuteUpdateQuery(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
+
+        public bool DeleteCategory(string Category_ID)
+        {
+            try
+            {
+                string query = "DELETE FROM Category WHERE Category_ID = @Category_ID";
+
+                SqlParameter[] parameters =
+                {
+            new SqlParameter("@Category_ID", SqlDbType.NVarChar) { Value = Category_ID }
+            };
+
+                return sqlSystem.ExecuteDeleteQuery(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
     }
 }

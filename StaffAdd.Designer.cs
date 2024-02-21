@@ -195,6 +195,7 @@
             label2.Size = new Size(91, 25);
             label2.TabIndex = 1;
             label2.Text = "Username";
+            label2.Click += label2_Click;
             // 
             // txtUsername
             // 
@@ -216,6 +217,7 @@
             txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtUsername.Size = new Size(286, 51);
             txtUsername.TabIndex = 1;
+            txtUsername.TextChanged += txtUsername_TextChanged;
             // 
             // label3
             // 

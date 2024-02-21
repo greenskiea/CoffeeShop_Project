@@ -44,11 +44,11 @@ namespace PTPMUD_Project
                 string categoryName = (category != null) ? category.categoryName : "Unknown";
                 string types = "";
                 int type = f.type;
-                if(type == 1)
+                if (type == 1)
                 {
                     types = "Sáng";
                 }
-                else if(type == 2)
+                else if (type == 2)
                 {
                     types = "Chiều";
                 }
@@ -81,6 +81,9 @@ namespace PTPMUD_Project
                 treeView1.Nodes.Add(tn);
                 //treeView1.ExpandAll();
             }
+
+            CategoryGridView.DataSource = categoryBus.getALLCategory();
+            CategoryGridView.Columns["categoryID"].Visible = false;
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -163,5 +166,129 @@ namespace PTPMUD_Project
         #endregion
 
 
+        private void AddCatebtn_Click(object sender, EventArgs e)
+        {
+            ChangeCate changeCate = new ChangeCate();
+            changeCate.FormClosed += (s, args) => RefreshDataGridView();
+            changeCate.ShowDialog();
+        }
+
+        public void RefreshDataGridView()
+        {
+            CategoryGridView.DataSource = categoryBus.getALLCategory();
+        }
+
+        private void EditCateBtn_Click(object sender, EventArgs e)
+        {
+            if (CategoryGridView.SelectedRows.Count > 0)
+            {
+                Category SelectedCategory = (Category)CategoryGridView.SelectedRows[0].DataBoundItem;
+                ChangeCate changeCate = new ChangeCate(SelectedCategory);
+                changeCate.FormClosed += (s, args) => RefreshDataGridView();
+                changeCate.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select an account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DeleteCatebtn_Click(object sender, EventArgs e)
+        {
+            if (CategoryGridView.SelectedRows.Count > 0)
+            {
+                string CategoryID = CategoryGridView.SelectedRows[0].Cells["categoryID"].Value.ToString();
+
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    bool success = categoryBus.DeleteCategory(CategoryID);
+
+                    if (success)
+                    {
+                        CategoryGridView.DataSource = categoryBus.getALLCategory();
+                        MessageBox.Show("Account deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SearchProductTxt_TextChanged(object sender, EventArgs e)
+        {
+            SearchProducts(SearchProductTxt.Text);
+        }
+
+        private void SearchProducts(string keyword)
+        {
+            // Xóa tất cả các mục hiện tại trong ListView
+            lsvProduct.Items.Clear();
+
+            // Lấy danh sách tất cả các sản phẩm
+            List<Food> foodList = foodBus.getALLFood();
+
+            // Lặp qua từng sản phẩm để tìm kiếm và hiển thị
+            foreach (Food f in foodList)
+            {
+                // Kiểm tra xem tên sản phẩm chứa từ khoá tìm kiếm
+                if (f.foodName.ToLower().Contains(keyword.ToLower()))
+                {
+                    Category category = categoryBus.GetCategoryByID(f.categoryID);
+                    string categoryName = (category != null) ? category.categoryName : "Unknown";
+                    string types = "";
+                    int type = f.type;
+                    if (type == 1)
+                    {
+                        types = "Sáng";
+                    }
+                    else if (type == 2)
+                    {
+                        types = "Chiều";
+                    }
+
+                    ListViewItem item = new ListViewItem(new string[] { f.foodID.ToString() });
+                    item.SubItems.Add(f.foodName.ToString());
+                    item.SubItems.Add(f.price.ToString());
+                    item.SubItems.Add(categoryName);
+                    item.SubItems.Add(f.quantity.ToString());
+                    item.SubItems.Add(types);
+                    lsvProduct.Items.Add(item);
+                }
+            }
+        }
+
+        private void guna2TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(guna2TabControl1.SelectedTab == tabProduct)
+            {
+                SearchProductTxt.Visible = true;
+                List<Category> cateList = categoryBus.getALLCategory();
+                foreach (Category cate in cateList)
+                {
+                    TreeNode tn = new TreeNode(cate.categoryName);
+                    tn.Name = cate.categoryName;
+                    tn.Tag = cate.categoryID;
+                    treeView1.Nodes.Add(tn);
+                    label1.Text = "Food";
+                    //treeView1.ExpandAll();
+                }
+                label2.Visible = true;
+            }
+            else
+            {
+                SearchProductTxt.Visible = false;
+                label2.Visible = false;
+                treeView1.Nodes.Clear();
+                label1.Text = "Category";
+            }
+        }
     }
 }

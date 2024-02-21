@@ -29,25 +29,34 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             label2 = new Label();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            SearchProductTxt = new Guna.UI2.WinForms.Guna2TextBox();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             label1 = new Label();
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
-            tabPage1 = new TabPage();
+            tabProduct = new TabPage();
             panel2 = new Panel();
             lsvProduct = new ListView();
             colFood_ID = new ColumnHeader();
@@ -60,32 +69,38 @@
             btnAddFood = new Guna.UI2.WinForms.Guna2ImageButton();
             btnDeleteFood = new Guna.UI2.WinForms.Guna2ImageButton();
             btnEditFood = new Guna.UI2.WinForms.Guna2ImageButton();
-            tabPage2 = new TabPage();
+            tabCategory = new TabPage();
+            DeleteCatebtn = new Guna.UI2.WinForms.Guna2Button();
+            EditCateBtn = new Guna.UI2.WinForms.Guna2Button();
+            AddCatebtn = new Guna.UI2.WinForms.Guna2Button();
+            CategoryGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             treeView1 = new TreeView();
             panel1 = new Panel();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2TabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
+            tabProduct.SuspendLayout();
             panel2.SuspendLayout();
             guna2Panel2.SuspendLayout();
+            tabCategory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CategoryGridView).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // guna2Panel1
             // 
             guna2Panel1.Controls.Add(label2);
-            guna2Panel1.Controls.Add(guna2TextBox1);
+            guna2Panel1.Controls.Add(SearchProductTxt);
             guna2Panel1.Controls.Add(guna2PictureBox1);
             guna2Panel1.Controls.Add(label1);
-            guna2Panel1.CustomizableEdges = customizableEdges5;
+            guna2Panel1.CustomizableEdges = customizableEdges22;
             guna2Panel1.Dock = DockStyle.Top;
             guna2Panel1.FillColor = Color.FromArgb(50, 55, 89);
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Panel1.Size = new Size(1430, 134);
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            guna2Panel1.Size = new Size(1346, 134);
             guna2Panel1.TabIndex = 0;
             guna2Panel1.Paint += guna2Panel1_Paint;
             // 
@@ -101,40 +116,41 @@
             label2.TabIndex = 4;
             label2.Text = "Search";
             // 
-            // guna2TextBox1
+            // SearchProductTxt
             // 
-            guna2TextBox1.CustomizableEdges = customizableEdges1;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.IconLeft = (Image)resources.GetObject("guna2TextBox1.IconLeft");
-            guna2TextBox1.Location = new Point(657, 58);
-            guna2TextBox1.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox1.Multiline = true;
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PasswordChar = '\0';
-            guna2TextBox1.PlaceholderText = "Search Here";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2TextBox1.Size = new Size(342, 44);
-            guna2TextBox1.TabIndex = 3;
+            SearchProductTxt.CustomizableEdges = customizableEdges18;
+            SearchProductTxt.DefaultText = "";
+            SearchProductTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            SearchProductTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            SearchProductTxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            SearchProductTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            SearchProductTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            SearchProductTxt.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            SearchProductTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            SearchProductTxt.IconLeft = (Image)resources.GetObject("SearchProductTxt.IconLeft");
+            SearchProductTxt.Location = new Point(657, 58);
+            SearchProductTxt.Margin = new Padding(3, 4, 3, 4);
+            SearchProductTxt.Multiline = true;
+            SearchProductTxt.Name = "SearchProductTxt";
+            SearchProductTxt.PasswordChar = '\0';
+            SearchProductTxt.PlaceholderText = "Search Here";
+            SearchProductTxt.SelectedText = "";
+            SearchProductTxt.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            SearchProductTxt.Size = new Size(342, 44);
+            SearchProductTxt.TabIndex = 3;
+            SearchProductTxt.TextChanged += SearchProductTxt_TextChanged;
             // 
             // guna2PictureBox1
             // 
             guna2PictureBox1.BackColor = Color.Transparent;
-            guna2PictureBox1.CustomizableEdges = customizableEdges3;
+            guna2PictureBox1.CustomizableEdges = customizableEdges20;
             guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.InitialImage = (Image)resources.GetObject("guna2PictureBox1.InitialImage");
             guna2PictureBox1.Location = new Point(46, 23);
             guna2PictureBox1.MinimumSize = new Size(60, 60);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges21;
             guna2PictureBox1.Size = new Size(60, 60);
             guna2PictureBox1.TabIndex = 2;
             guna2PictureBox1.TabStop = false;
@@ -153,8 +169,8 @@
             // 
             // guna2TabControl1
             // 
-            guna2TabControl1.Controls.Add(tabPage1);
-            guna2TabControl1.Controls.Add(tabPage2);
+            guna2TabControl1.Controls.Add(tabProduct);
+            guna2TabControl1.Controls.Add(tabCategory);
             guna2TabControl1.ItemSize = new Size(180, 40);
             guna2TabControl1.Location = new Point(248, 152);
             guna2TabControl1.Name = "guna2TabControl1";
@@ -179,17 +195,18 @@
             guna2TabControl1.TabIndex = 0;
             guna2TabControl1.TabMenuBackColor = Color.FromArgb(33, 42, 57);
             guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
+            guna2TabControl1.SelectedIndexChanged += guna2TabControl1_SelectedIndexChanged;
             // 
-            // tabPage1
+            // tabProduct
             // 
-            tabPage1.Controls.Add(panel2);
-            tabPage1.Location = new Point(4, 44);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1174, 502);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Product";
-            tabPage1.UseVisualStyleBackColor = true;
+            tabProduct.Controls.Add(panel2);
+            tabProduct.Location = new Point(4, 44);
+            tabProduct.Name = "tabProduct";
+            tabProduct.Padding = new Padding(3);
+            tabProduct.Size = new Size(1174, 502);
+            tabProduct.TabIndex = 0;
+            tabProduct.Text = "Product";
+            tabProduct.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -249,11 +266,11 @@
             guna2Panel2.Controls.Add(btnAddFood);
             guna2Panel2.Controls.Add(btnDeleteFood);
             guna2Panel2.Controls.Add(btnEditFood);
-            guna2Panel2.CustomizableEdges = customizableEdges10;
+            guna2Panel2.CustomizableEdges = customizableEdges27;
             guna2Panel2.Dock = DockStyle.Bottom;
             guna2Panel2.Location = new Point(0, 436);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges28;
             guna2Panel2.Size = new Size(1171, 68);
             guna2Panel2.TabIndex = 4;
             // 
@@ -269,7 +286,7 @@
             btnAddFood.Location = new Point(13, 6);
             btnAddFood.Name = "btnAddFood";
             btnAddFood.PressedState.ImageSize = new Size(64, 64);
-            btnAddFood.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            btnAddFood.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btnAddFood.Size = new Size(62, 54);
             btnAddFood.TabIndex = 2;
             btnAddFood.Click += btnAddFood_Click;
@@ -286,7 +303,7 @@
             btnDeleteFood.Location = new Point(727, 3);
             btnDeleteFood.Name = "btnDeleteFood";
             btnDeleteFood.PressedState.ImageSize = new Size(64, 64);
-            btnDeleteFood.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnDeleteFood.ShadowDecoration.CustomizableEdges = customizableEdges25;
             btnDeleteFood.Size = new Size(68, 55);
             btnDeleteFood.TabIndex = 5;
             btnDeleteFood.Click += btnDeleteFood_Click;
@@ -303,27 +320,144 @@
             btnEditFood.Location = new Point(334, 8);
             btnEditFood.Name = "btnEditFood";
             btnEditFood.PressedState.ImageSize = new Size(64, 64);
-            btnEditFood.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            btnEditFood.ShadowDecoration.CustomizableEdges = customizableEdges26;
             btnEditFood.Size = new Size(66, 55);
             btnEditFood.TabIndex = 4;
             btnEditFood.Click += btnEditFood_Click;
             // 
-            // tabPage2
+            // tabCategory
             // 
-            tabPage2.Location = new Point(4, 44);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1174, 502);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Category";
-            tabPage2.UseVisualStyleBackColor = true;
+            tabCategory.Controls.Add(DeleteCatebtn);
+            tabCategory.Controls.Add(EditCateBtn);
+            tabCategory.Controls.Add(AddCatebtn);
+            tabCategory.Controls.Add(CategoryGridView);
+            tabCategory.Location = new Point(4, 44);
+            tabCategory.Name = "tabCategory";
+            tabCategory.Padding = new Padding(3);
+            tabCategory.Size = new Size(1174, 502);
+            tabCategory.TabIndex = 1;
+            tabCategory.Text = "Category";
+            tabCategory.UseVisualStyleBackColor = true;
+            // 
+            // DeleteCatebtn
+            // 
+            DeleteCatebtn.AutoRoundedCorners = true;
+            DeleteCatebtn.BorderRadius = 22;
+            DeleteCatebtn.CustomizableEdges = customizableEdges29;
+            DeleteCatebtn.DisabledState.BorderColor = Color.DarkGray;
+            DeleteCatebtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            DeleteCatebtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            DeleteCatebtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            DeleteCatebtn.FillColor = Color.FromArgb(233, 94, 119);
+            DeleteCatebtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DeleteCatebtn.ForeColor = Color.White;
+            DeleteCatebtn.Location = new Point(405, 305);
+            DeleteCatebtn.Name = "DeleteCatebtn";
+            DeleteCatebtn.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            DeleteCatebtn.Size = new Size(179, 47);
+            DeleteCatebtn.TabIndex = 8;
+            DeleteCatebtn.Text = "DELETE";
+            DeleteCatebtn.Click += DeleteCatebtn_Click;
+            // 
+            // EditCateBtn
+            // 
+            EditCateBtn.AutoRoundedCorners = true;
+            EditCateBtn.BorderRadius = 22;
+            EditCateBtn.CustomizableEdges = customizableEdges31;
+            EditCateBtn.DisabledState.BorderColor = Color.DarkGray;
+            EditCateBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            EditCateBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            EditCateBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            EditCateBtn.FillColor = Color.FromArgb(0, 192, 0);
+            EditCateBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            EditCateBtn.ForeColor = Color.White;
+            EditCateBtn.Location = new Point(405, 207);
+            EditCateBtn.Name = "EditCateBtn";
+            EditCateBtn.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            EditCateBtn.Size = new Size(179, 47);
+            EditCateBtn.TabIndex = 7;
+            EditCateBtn.Text = "EDIT";
+            EditCateBtn.Click += EditCateBtn_Click;
+            // 
+            // AddCatebtn
+            // 
+            AddCatebtn.AutoRoundedCorners = true;
+            AddCatebtn.BorderRadius = 22;
+            AddCatebtn.CustomizableEdges = customizableEdges33;
+            AddCatebtn.DisabledState.BorderColor = Color.DarkGray;
+            AddCatebtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            AddCatebtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            AddCatebtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            AddCatebtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AddCatebtn.ForeColor = Color.White;
+            AddCatebtn.Location = new Point(405, 118);
+            AddCatebtn.Name = "AddCatebtn";
+            AddCatebtn.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            AddCatebtn.Size = new Size(179, 47);
+            AddCatebtn.TabIndex = 6;
+            AddCatebtn.Text = "ADD";
+            AddCatebtn.Click += AddCatebtn_Click;
+            // 
+            // CategoryGridView
+            // 
+            dataGridViewCellStyle4.BackColor = Color.White;
+            CategoryGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            CategoryGridView.BorderStyle = BorderStyle.Fixed3D;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            CategoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            CategoryGridView.ColumnHeadersHeight = 50;
+            CategoryGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            CategoryGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            CategoryGridView.GridColor = Color.FromArgb(231, 229, 255);
+            CategoryGridView.Location = new Point(57, 23);
+            CategoryGridView.Name = "CategoryGridView";
+            CategoryGridView.ReadOnly = true;
+            CategoryGridView.RowHeadersVisible = false;
+            CategoryGridView.RowHeadersWidth = 51;
+            CategoryGridView.RowTemplate.Height = 29;
+            CategoryGridView.Size = new Size(282, 460);
+            CategoryGridView.TabIndex = 0;
+            CategoryGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            CategoryGridView.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CategoryGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            CategoryGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            CategoryGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            CategoryGridView.ThemeStyle.BackColor = Color.White;
+            CategoryGridView.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            CategoryGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(0, 48, 96);
+            CategoryGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            CategoryGridView.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CategoryGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            CategoryGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            CategoryGridView.ThemeStyle.HeaderStyle.Height = 50;
+            CategoryGridView.ThemeStyle.ReadOnly = true;
+            CategoryGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
+            CategoryGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            CategoryGridView.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            CategoryGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(64, 64, 64);
+            CategoryGridView.ThemeStyle.RowsStyle.Height = 29;
+            CategoryGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            CategoryGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // treeView1
             // 
             treeView1.Dock = DockStyle.Fill;
             treeView1.Location = new Point(0, 0);
             treeView1.Name = "treeView1";
-            treeView1.Size = new Size(250, 580);
+            treeView1.Size = new Size(250, 647);
             treeView1.TabIndex = 1;
             treeView1.AfterSelect += treeView1_AfterSelect;
             // 
@@ -333,7 +467,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 134);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 580);
+            panel1.Size = new Size(250, 647);
             panel1.TabIndex = 2;
             // 
             // guna2BorderlessForm1
@@ -346,7 +480,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.White;
-            ClientSize = new Size(1430, 714);
+            ClientSize = new Size(1346, 781);
             Controls.Add(panel1);
             Controls.Add(guna2TabControl1);
             Controls.Add(guna2Panel1);
@@ -361,9 +495,11 @@
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             guna2TabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
+            tabProduct.ResumeLayout(false);
             panel2.ResumeLayout(false);
             guna2Panel2.ResumeLayout(false);
+            tabCategory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)CategoryGridView).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -388,10 +524,14 @@
         private ColumnHeader colType;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
+        private TabPage tabProduct;
+        private TabPage tabCategory;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox SearchProductTxt;
+        private Guna.UI2.WinForms.Guna2DataGridView CategoryGridView;
+        private Guna.UI2.WinForms.Guna2Button DeleteCatebtn;
+        private Guna.UI2.WinForms.Guna2Button EditCateBtn;
+        private Guna.UI2.WinForms.Guna2Button AddCatebtn;
     }
 }
