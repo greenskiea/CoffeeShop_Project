@@ -52,5 +52,10 @@ namespace PTPMUD_Project.BUS
             billDAO.deleteBillByTableID(id);
         }
 
+        public DateTime? CheckVoucherDate(int id)
+        {
+            return billDAO.checkVoucherDate(id);
+        }
+
     }
 }

@@ -55,6 +55,7 @@ namespace PTPMUD_Project
                     string[] listPara = query.Split(' ');
                     int i = 0;
                     foreach (string item in listPara)
+                    
                     {
                         if (item.Contains('@'))
                         {

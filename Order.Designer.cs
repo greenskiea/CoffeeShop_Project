@@ -42,17 +42,17 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             label2 = new Label();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             splitContainer1 = new SplitContainer();
             flbTable = new FlowLayoutPanel();
             panel2 = new Panel();
+            cboDiscountValue = new ComboBox();
+            txtNote = new TextBox();
+            label4 = new Label();
             btnSwitchTable = new Button();
             btnDiscount = new Button();
-            nmDiscount = new Guna.UI2.WinForms.Guna2NumericUpDown();
             btnCheckout = new Guna.UI2.WinForms.Guna2Button();
             txbTotalPrice = new Guna.UI2.WinForms.Guna2TextBox();
             cboTable = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -61,7 +61,6 @@
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
             panel1 = new Panel();
             nmQuantity = new Guna.UI2.WinForms.Guna2NumericUpDown();
             btnAddFood = new Guna.UI2.WinForms.Guna2Button();
@@ -74,7 +73,6 @@
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nmDiscount).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nmQuantity).BeginInit();
             SuspendLayout();
@@ -146,17 +144,44 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(cboDiscountValue);
+            panel2.Controls.Add(txtNote);
+            panel2.Controls.Add(label4);
             panel2.Controls.Add(btnSwitchTable);
             panel2.Controls.Add(btnDiscount);
-            panel2.Controls.Add(nmDiscount);
             panel2.Controls.Add(btnCheckout);
             panel2.Controls.Add(txbTotalPrice);
             panel2.Controls.Add(cboTable);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 535);
+            panel2.Location = new Point(0, 494);
             panel2.Name = "panel2";
-            panel2.Size = new Size(553, 87);
+            panel2.Size = new Size(553, 128);
             panel2.TabIndex = 2;
+            // 
+            // cboDiscountValue
+            // 
+            cboDiscountValue.FormattingEnabled = true;
+            cboDiscountValue.Location = new Point(119, 37);
+            cboDiscountValue.Name = "cboDiscountValue";
+            cboDiscountValue.Size = new Size(93, 28);
+            cboDiscountValue.TabIndex = 9;
+            // 
+            // txtNote
+            // 
+            txtNote.Location = new Point(71, 86);
+            txtNote.Name = "txtNote";
+            txtNote.Size = new Size(479, 27);
+            txtNote.TabIndex = 8;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(3, 89);
+            label4.Name = "label4";
+            label4.Size = new Size(45, 20);
+            label4.TabIndex = 7;
+            label4.Text = "Note:";
+            label4.Click += label4_Click;
             // 
             // btnSwitchTable
             // 
@@ -166,48 +191,38 @@
             btnSwitchTable.TabIndex = 4;
             btnSwitchTable.Text = "Switch tables";
             btnSwitchTable.UseVisualStyleBackColor = true;
+            btnSwitchTable.Click += btnSwitchTable_Click;
             // 
             // btnDiscount
             // 
             btnDiscount.Location = new Point(119, 3);
             btnDiscount.Name = "btnDiscount";
-            btnDiscount.Size = new Size(94, 29);
+            btnDiscount.Size = new Size(93, 29);
             btnDiscount.TabIndex = 5;
             btnDiscount.Text = "Discount";
             btnDiscount.UseVisualStyleBackColor = true;
             // 
-            // nmDiscount
-            // 
-            nmDiscount.BackColor = Color.Transparent;
-            nmDiscount.CustomizableEdges = customizableEdges5;
-            nmDiscount.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            nmDiscount.Location = new Point(119, 39);
-            nmDiscount.Margin = new Padding(3, 5, 3, 5);
-            nmDiscount.Name = "nmDiscount";
-            nmDiscount.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            nmDiscount.Size = new Size(93, 36);
-            nmDiscount.TabIndex = 6;
-            // 
             // btnCheckout
             // 
             btnCheckout.BorderRadius = 10;
-            btnCheckout.CustomizableEdges = customizableEdges7;
+            btnCheckout.CustomizableEdges = customizableEdges5;
             btnCheckout.DisabledState.BorderColor = Color.DarkGray;
             btnCheckout.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCheckout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnCheckout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnCheckout.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnCheckout.ForeColor = Color.White;
-            btnCheckout.Location = new Point(425, 3);
+            btnCheckout.Location = new Point(432, 3);
             btnCheckout.Name = "btnCheckout";
-            btnCheckout.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnCheckout.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnCheckout.Size = new Size(91, 56);
             btnCheckout.TabIndex = 3;
             btnCheckout.Text = "Checkout";
+            btnCheckout.Click += btnCheckout_Click;
             // 
             // txbTotalPrice
             // 
-            txbTotalPrice.CustomizableEdges = customizableEdges9;
+            txbTotalPrice.CustomizableEdges = customizableEdges7;
             txbTotalPrice.DefaultText = "";
             txbTotalPrice.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txbTotalPrice.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -223,14 +238,14 @@
             txbTotalPrice.PlaceholderText = "";
             txbTotalPrice.ReadOnly = true;
             txbTotalPrice.SelectedText = "";
-            txbTotalPrice.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txbTotalPrice.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txbTotalPrice.Size = new Size(191, 37);
             txbTotalPrice.TabIndex = 2;
             // 
             // cboTable
             // 
             cboTable.BackColor = Color.Transparent;
-            cboTable.CustomizableEdges = customizableEdges11;
+            cboTable.CustomizableEdges = customizableEdges9;
             cboTable.DrawMode = DrawMode.OwnerDrawFixed;
             cboTable.DropDownStyle = ComboBoxStyle.DropDownList;
             cboTable.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -238,15 +253,15 @@
             cboTable.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cboTable.ForeColor = Color.FromArgb(68, 88, 112);
             cboTable.ItemHeight = 30;
-            cboTable.Location = new Point(0, 37);
+            cboTable.Location = new Point(3, 37);
             cboTable.Name = "cboTable";
-            cboTable.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            cboTable.ShadowDecoration.CustomizableEdges = customizableEdges10;
             cboTable.Size = new Size(113, 36);
             cboTable.TabIndex = 0;
             // 
             // lsvBill
             // 
-            lsvBill.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5 });
+            lsvBill.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             lsvBill.Dock = DockStyle.Fill;
             lsvBill.FullRowSelect = true;
             lsvBill.GridLines = true;
@@ -280,11 +295,6 @@
             columnHeader4.TextAlign = HorizontalAlignment.Center;
             columnHeader4.Width = 90;
             // 
-            // columnHeader5
-            // 
-            columnHeader5.Text = "Note";
-            columnHeader5.TextAlign = HorizontalAlignment.Center;
-            // 
             // panel1
             // 
             panel1.Controls.Add(nmQuantity);
@@ -300,21 +310,22 @@
             // nmQuantity
             // 
             nmQuantity.BackColor = Color.Transparent;
-            nmQuantity.CustomizableEdges = customizableEdges13;
+            nmQuantity.CustomizableEdges = customizableEdges11;
             nmQuantity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             nmQuantity.Location = new Point(397, 16);
             nmQuantity.Margin = new Padding(3, 5, 3, 5);
             nmQuantity.Minimum = new decimal(new int[] { 2, 0, 0, int.MinValue });
             nmQuantity.Name = "nmQuantity";
-            nmQuantity.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            nmQuantity.ShadowDecoration.CustomizableEdges = customizableEdges12;
             nmQuantity.Size = new Size(62, 29);
             nmQuantity.TabIndex = 4;
+            nmQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // btnAddFood
             // 
             btnAddFood.BorderRadius = 20;
             btnAddFood.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            btnAddFood.CustomizableEdges = customizableEdges15;
+            btnAddFood.CustomizableEdges = customizableEdges13;
             btnAddFood.DisabledState.BorderColor = Color.DarkGray;
             btnAddFood.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAddFood.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -323,10 +334,11 @@
             btnAddFood.ForeColor = Color.White;
             btnAddFood.Location = new Point(248, 5);
             btnAddFood.Name = "btnAddFood";
-            btnAddFood.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnAddFood.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnAddFood.Size = new Size(113, 53);
             btnAddFood.TabIndex = 3;
             btnAddFood.Text = "Add dishes";
+            btnAddFood.Click += btnAddFood_Click;
             // 
             // cboFood
             // 
@@ -366,7 +378,7 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)nmDiscount).EndInit();
+            panel2.PerformLayout();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)nmQuantity).EndInit();
             ResumeLayout(false);
@@ -381,8 +393,6 @@
         private FlowLayoutPanel flbTable;
         private Panel panel2;
         private Button btnSwitchTable;
-        private Button btnDiscount;
-        private Guna.UI2.WinForms.Guna2NumericUpDown nmDiscount;
         private Guna.UI2.WinForms.Guna2Button btnCheckout;
         private Guna.UI2.WinForms.Guna2TextBox txbTotalPrice;
         private Guna.UI2.WinForms.Guna2ComboBox cboTable;
@@ -391,11 +401,14 @@
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2NumericUpDown nmQuantity;
         private Guna.UI2.WinForms.Guna2Button btnAddFood;
         private ComboBox cboFood;
         private ComboBox cbocategory;
+        private Label label4;
+        private TextBox txtNote;
+        private Button btnDiscount;
+        private ComboBox cboDiscountValue;
     }
 }

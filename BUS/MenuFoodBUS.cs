@@ -19,23 +19,7 @@ namespace PTPMUD_Project.BUS
 
         public List<MenuFood> GetListMenuByTable(int id)
         {
-            DataTable dt = new DataTable();
-            try
-            {
-                dt = menuFoodDAO.GetListMenuByTable(id);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            List<MenuFood> listMenu = new List<MenuFood>();
-
-            foreach (DataRow item in dt.Rows)
-            {
-                MenuFood menu = new MenuFood(item);
-                listMenu.Add(menu);
-            }
-            return listMenu;
+            return menuFoodDAO.GetListMenuByTable(id);
         }
     }
 }

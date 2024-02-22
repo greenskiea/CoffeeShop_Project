@@ -58,7 +58,7 @@ namespace PTPMUD_Project.DAO
 
         public int getQuantityFood(int id)
         {
-            int quantity = -1; // Giá trị mặc định nếu không tìm thấy dữ liệu
+            int quantity = -1;
 
             string query = "SELECT Quantity FROM Food WHERE Food_ID = " + id;
             DataTable dt = sqlSystem.ExecuteQuery(query);
@@ -123,7 +123,6 @@ namespace PTPMUD_Project.DAO
 
         public bool deleteFood(int idFood)
         {
-            BillInfoDAO.Instance.DeleteBillInfoByFoodID(idFood);
             string query = string.Format("Delete Food where Food_ID = {0}", idFood);
             int result = sqlSystem.ExecuteNonQuery(query);
             return result > 0;

@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PTPMUD_Project.DAO
@@ -33,8 +34,7 @@ namespace PTPMUD_Project.DAO
         {
             try
             {
-
-                 sqlSystem.ExecuteNonQuery("exec USP_CheckOut @idBill , @totalPrice", new object[] {id,totalPrice});
+                 sqlSystem.ExecuteNonQuery(string.Format("Update Bill Set Status_Bill = 1 , Date_Checked = GETDATE() , TotalPrice = {0} where Bill_ID = {1}", totalPrice, id));
             }
             catch (Exception ex)
             {
@@ -89,6 +89,18 @@ namespace PTPMUD_Project.DAO
                 return 1;
             }
             
+        }
+
+        public DateTime? checkVoucherDate(int id)
+        {
+            string query = "Select b.Date_Checked from Bill as b, Voucher as v where b.Date_Checked >= v.DateFrom_Discount and b.Date_Checked <= v.DateTo_Discount and b.Voucher_ID = v.Voucher_ID and b.Bill_ID = " + id;
+            DataTable dt = sqlSystem.ExecuteQuery(query);
+            if (dt.Rows.Count > 0)
+            {
+                DataRow dr = dt.Rows[0];
+                return (DateTime?)dr["Date_Checked"];
+            }
+            return null;
         }
 
         
