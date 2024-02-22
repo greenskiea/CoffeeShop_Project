@@ -34,6 +34,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -41,9 +44,11 @@
             btnViewBill = new Guna.UI2.WinForms.Guna2Button();
             dtpkToDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             dtpkFromDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            dtgvBill = new Guna.UI2.WinForms.Guna2DataGridView();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dtgvBill).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -53,9 +58,8 @@
             panel1.Controls.Add(dtpkFromDate);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(752, 94);
+            panel1.Size = new Size(1346, 114);
             panel1.TabIndex = 2;
             // 
             // btnViewBill
@@ -70,11 +74,10 @@
             btnViewBill.FillColor = Color.FromArgb(0, 127, 255);
             btnViewBill.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             btnViewBill.ForeColor = Color.White;
-            btnViewBill.Location = new Point(275, 16);
-            btnViewBill.Margin = new Padding(3, 2, 3, 2);
+            btnViewBill.Location = new Point(530, 29);
             btnViewBill.Name = "btnViewBill";
             btnViewBill.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnViewBill.Size = new Size(197, 42);
+            btnViewBill.Size = new Size(225, 56);
             btnViewBill.TabIndex = 3;
             btnViewBill.Text = "Thống Kê";
             btnViewBill.Click += btnViewBill_Click;
@@ -82,52 +85,67 @@
             // dtpkToDate
             // 
             dtpkToDate.Checked = true;
+            dtpkToDate.CustomFormat = "dd-MM-yyyy";
             dtpkToDate.CustomizableEdges = customizableEdges3;
             dtpkToDate.FillColor = Color.FromArgb(255, 255, 128);
             dtpkToDate.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dtpkToDate.Format = DateTimePickerFormat.Long;
-            dtpkToDate.Location = new Point(521, 24);
-            dtpkToDate.Margin = new Padding(3, 2, 3, 2);
+            dtpkToDate.Format = DateTimePickerFormat.Custom;
+            dtpkToDate.Location = new Point(811, 40);
             dtpkToDate.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpkToDate.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpkToDate.Name = "dtpkToDate";
             dtpkToDate.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            dtpkToDate.Size = new Size(219, 34);
+            dtpkToDate.Size = new Size(250, 45);
             dtpkToDate.TabIndex = 2;
             dtpkToDate.Value = new DateTime(2024, 2, 18, 17, 0, 5, 788);
             // 
             // dtpkFromDate
             // 
             dtpkFromDate.Checked = true;
+            dtpkFromDate.CustomFormat = "dd-MM-yyyy";
             dtpkFromDate.CustomizableEdges = customizableEdges5;
             dtpkFromDate.FillColor = Color.FromArgb(255, 255, 128);
             dtpkFromDate.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dtpkFromDate.Format = DateTimePickerFormat.Long;
-            dtpkFromDate.Location = new Point(12, 24);
-            dtpkFromDate.Margin = new Padding(3, 2, 3, 2);
+            dtpkFromDate.Format = DateTimePickerFormat.Custom;
+            dtpkFromDate.Location = new Point(230, 40);
             dtpkFromDate.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpkFromDate.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpkFromDate.Name = "dtpkFromDate";
             dtpkFromDate.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            dtpkFromDate.Size = new Size(219, 34);
+            dtpkFromDate.Size = new Size(250, 45);
             dtpkFromDate.TabIndex = 1;
             dtpkFromDate.Value = new DateTime(2024, 2, 18, 16, 59, 58, 756);
             // 
-            // dtgvBill
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart1.Legends.Add(legend1);
+            chart1.Location = new Point(14, 132);
+            chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chart1.Series.Add(series1);
+            chart1.Size = new Size(679, 530);
+            chart1.TabIndex = 3;
+            chart1.Text = "chart1";
+            // 
+            // DataGridView1
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
-            dtgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dtgvBill.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dtgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dtgvBill.ColumnHeadersHeight = 30;
-            dtgvBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DataGridView1.ColumnHeadersHeight = 50;
+            DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -135,52 +153,54 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dtgvBill.DefaultCellStyle = dataGridViewCellStyle3;
-            dtgvBill.Dock = DockStyle.Fill;
-            dtgvBill.GridColor = Color.FromArgb(231, 229, 255);
-            dtgvBill.Location = new Point(0, 94);
-            dtgvBill.Margin = new Padding(3, 2, 3, 2);
-            dtgvBill.Name = "dtgvBill";
-            dtgvBill.RowHeadersVisible = false;
-            dtgvBill.RowHeadersWidth = 51;
-            dtgvBill.RowTemplate.Height = 29;
-            dtgvBill.Size = new Size(752, 462);
-            dtgvBill.TabIndex = 3;
-            dtgvBill.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dtgvBill.ThemeStyle.AlternatingRowsStyle.Font = null;
-            dtgvBill.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            dtgvBill.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            dtgvBill.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dtgvBill.ThemeStyle.BackColor = Color.White;
-            dtgvBill.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            dtgvBill.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            dtgvBill.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            dtgvBill.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dtgvBill.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dtgvBill.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dtgvBill.ThemeStyle.HeaderStyle.Height = 30;
-            dtgvBill.ThemeStyle.ReadOnly = false;
-            dtgvBill.ThemeStyle.RowsStyle.BackColor = Color.White;
-            dtgvBill.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dtgvBill.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dtgvBill.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            dtgvBill.ThemeStyle.RowsStyle.Height = 29;
-            dtgvBill.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dtgvBill.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
+            DataGridView1.Location = new Point(715, 132);
+            DataGridView1.Name = "DataGridView1";
+            DataGridView1.ReadOnly = true;
+            DataGridView1.RowHeadersVisible = false;
+            DataGridView1.RowHeadersWidth = 51;
+            DataGridView1.RowTemplate.Height = 29;
+            DataGridView1.Size = new Size(577, 509);
+            DataGridView1.TabIndex = 4;
+            DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
+            DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            DataGridView1.ThemeStyle.BackColor = Color.White;
+            DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            DataGridView1.ThemeStyle.HeaderStyle.Height = 50;
+            DataGridView1.ThemeStyle.ReadOnly = true;
+            DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
+            DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            DataGridView1.ThemeStyle.RowsStyle.Height = 29;
+            DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(752, 556);
-            Controls.Add(dtgvBill);
+            ClientSize = new Size(1346, 781);
+            Controls.Add(DataGridView1);
+            Controls.Add(chart1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Home";
             Text = "Home";
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dtgvBill).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -188,7 +208,8 @@
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpkToDate;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpkFromDate;
-        private Guna.UI2.WinForms.Guna2DataGridView dtgvBill;
         private Guna.UI2.WinForms.Guna2Button btnViewBill;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridView1;
     }
 }

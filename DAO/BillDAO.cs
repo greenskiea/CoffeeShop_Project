@@ -3,11 +3,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PTPMUD_Project.DAO
 {
@@ -49,17 +51,17 @@ namespace PTPMUD_Project.DAO
         }
         public void insertBill(int idTable)
         {
-            
+
             try
             {
 
-                sqlSystem.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[] { idTable});
+                sqlSystem.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[] { idTable });
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            
+
         }
 
         public DataTable getListBillByDate(DateTime checkedFrom, DateTime checkedTo)
@@ -78,17 +80,17 @@ namespace PTPMUD_Project.DAO
         }
         public int getMaxIDBill()
         {
-            
+
             try
             {
 
-               return (int)sqlSystem.ExecuteScala("Select MAX(id) from Bill");
+                return (int)sqlSystem.ExecuteScala("Select MAX(id) from Bill");
             }
             catch
             {
                 return 1;
             }
-            
+
         }
 
         public DateTime? checkVoucherDate(int id)

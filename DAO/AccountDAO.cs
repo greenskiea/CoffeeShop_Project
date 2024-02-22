@@ -169,5 +169,27 @@ namespace PTPMUD_Project.DAO
                 return false;
             }
         }
+
+        public DataTable SearchByName(string name)
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT * FROM Account WHERE Name LIKE @Name and Type = 'Employee'";
+
+            try
+            {
+                SqlParameter[] parameters =
+                {
+            new SqlParameter("@Name", "%" + name + "%")
+        };
+
+                dt = sqlSystem.ExecuteSelectQuery(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+
+            return dt;
+        }
     }
 }

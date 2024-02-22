@@ -88,7 +88,7 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel1.Size = new Size(1098, 125);
+            guna2Panel1.Size = new Size(1346, 125);
             guna2Panel1.TabIndex = 2;
             // 
             // label2
@@ -130,8 +130,8 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(panel2);
-            splitContainer1.Size = new Size(1098, 616);
-            splitContainer1.SplitterDistance = 635;
+            splitContainer1.Size = new Size(1346, 656);
+            splitContainer1.SplitterDistance = 778;
             splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 4;
             // 
@@ -147,7 +147,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dtgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dtgvTable.ColumnHeadersHeight = 15;
+            dtgvTable.ColumnHeadersHeight = 50;
             dtgvTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -165,10 +165,10 @@
             dtgvTable.RowHeadersVisible = false;
             dtgvTable.RowHeadersWidth = 51;
             dtgvTable.RowTemplate.Height = 25;
-            dtgvTable.Size = new Size(635, 537);
+            dtgvTable.Size = new Size(778, 577);
             dtgvTable.TabIndex = 1;
             dtgvTable.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dtgvTable.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dtgvTable.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dtgvTable.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
             dtgvTable.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
             dtgvTable.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
@@ -176,10 +176,10 @@
             dtgvTable.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
             dtgvTable.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
             dtgvTable.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            dtgvTable.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtgvTable.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dtgvTable.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dtgvTable.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dtgvTable.ThemeStyle.HeaderStyle.Height = 15;
+            dtgvTable.ThemeStyle.HeaderStyle.Height = 50;
             dtgvTable.ThemeStyle.ReadOnly = false;
             dtgvTable.ThemeStyle.RowsStyle.BackColor = Color.White;
             dtgvTable.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -198,7 +198,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(635, 79);
+            panel1.Size = new Size(778, 79);
             panel1.TabIndex = 0;
             // 
             // btnDeleteTable
@@ -406,7 +406,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1098, 741);
+            ClientSize = new Size(1346, 781);
             Controls.Add(splitContainer1);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;

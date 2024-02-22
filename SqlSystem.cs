@@ -21,7 +21,7 @@ namespace PTPMUD_Project
         {
             myAdapter = new SqlDataAdapter();
             //conn = new SqlConnection(ConfigurationManager.ConnectionStrings["PTPMUD_Project.Properties.Settings.Setting"].ConnectionString);
-            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["CoffeeShop"].ConnectionString);
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["PTPMUD_Project.Properties.Settings.CoffeeShop"].ConnectionString);
         }
 
         /// <method>
@@ -44,7 +44,7 @@ namespace PTPMUD_Project
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
-            using (SqlConnection connection = new SqlConnection("Data Source=LAPTOP-R68U37J3\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-0DQ0VB6\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True"))
             {
                 connection.Open();
 
@@ -132,7 +132,7 @@ namespace PTPMUD_Project
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
-            using (SqlConnection connection = new SqlConnection("Data Source=LAPTOP-R68U37J3\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-0DQ0VB6\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True"))
             {
                 connection.Open();
 
@@ -163,7 +163,7 @@ namespace PTPMUD_Project
         public object ExecuteScala(string query, object[] parameter = null)
         {
             object data = 0;
-            using (SqlConnection connection = new SqlConnection("Data Source=LAPTOP-R68U37J3\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-0DQ0VB6\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True"))
             {
                 connection.Open();
 

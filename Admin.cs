@@ -82,13 +82,31 @@ namespace PTPMUD_Project
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(EmployeeDataGridView.SelectedRows.Count > 0)
+            if (EmployeeDataGridView.SelectedRows.Count > 0)
             {
                 Account selectedAccount = (Account)EmployeeDataGridView.SelectedRows[0].DataBoundItem;
 
                 StaffAdd staffAdd = new StaffAdd(selectedAccount);
                 staffAdd.FormClosed += (s, args) => RefreshDataGridView();
                 staffAdd.ShowDialog();
+            }
+        }
+
+        private void txtSearchName_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearchName.Text;
+
+            // Perform the search operation
+            List<Account> searchResults = accountBUS.SearchByName(searchText);
+
+            // Update the DataGridView with the search results
+            EmployeeDataGridView.DataSource = searchResults;
+
+            // Optionally, you can perform additional actions based on the search results
+            // For example, you might want to handle the case where there are no search results
+            if (searchResults.Count == 0)
+            {
+                MessageBox.Show("No matching records found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

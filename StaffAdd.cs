@@ -45,7 +45,12 @@ namespace PTPMUD_Project
             txtPerID.Text = SelectedAccount.Personal_ID;
             txtAddress.Text = SelectedAccount.Address;
             txtPhone.Text = SelectedAccount.PhoneNumber;
-            txtDOB.Text = SelectedAccount.DOB;
+
+            if (DateTime.TryParse(SelectedAccount.DOB, out DateTime dob))
+            {
+                txtDOB.Text = dob.ToString("MM/dd/yyyy");
+            }
+
             txtGender.SelectedIndex = SelectedAccount.Gender;
             btnAdd.Visible = false;
         }
@@ -170,6 +175,20 @@ namespace PTPMUD_Project
             {
                 MessageBox.Show("Cập nhật thất bại!");
             }
+        }
+
+        private void txtDOB_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
         }
     }
 }

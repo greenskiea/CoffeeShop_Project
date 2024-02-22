@@ -50,8 +50,43 @@ namespace PTPMUD_Project.BUS
             return categoryDAO.getCategoryByID(id);
         }
 
-        
+        public bool InsertCategory(string CategoryName)
+        {
+            try
+            {
+                return categoryDAO.InsertCategory(CategoryName);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
 
+        public bool UpdateCategory(int Id, string CategoryName)
+        {
+            try
+            {
+                return categoryDAO.UpdateCategory(Id, CategoryName);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
 
+        public bool DeleteCategory(string Id)
+        {
+            try
+            {
+                return categoryDAO.DeleteCategory(Id);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
     }
 }
