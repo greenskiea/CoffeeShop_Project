@@ -65,6 +65,9 @@ namespace PTPMUD_Project.BUS
         {
             return billDAO.checkVoucherDate(id);
         }
-
+        public bool SetDiscountValeByID(int idVoucher, int idBill)
+        {
+            return billDAO.setDiscountValeByID(idVoucher, idBill);
+        }
     }
 }

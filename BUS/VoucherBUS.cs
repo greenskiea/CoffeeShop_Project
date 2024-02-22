@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -59,6 +60,18 @@ namespace PTPMUD_Project.BUS
         public float getMaxPrice(int id)
         {
             return voucherDAO.getMaxPrice(id);
-        }    
+        }
+
+        public DateTime? GetVoucherDateFrom(int idVoucher)
+        {
+            return voucherDAO.getVoucherDateFrom(idVoucher);
+        }
+
+        public DateTime? GetVoucherDateTo( int idVoucher)
+        {
+           return voucherDAO.getVoucherDateTo(idVoucher);
+        }
+
+
     }
 }

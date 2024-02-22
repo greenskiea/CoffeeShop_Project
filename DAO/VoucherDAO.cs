@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PTPMUD_Project.DAO
 {
@@ -66,6 +67,38 @@ namespace PTPMUD_Project.DAO
             }
             return -1;
         }
+        public DateTime? getVoucherDateFrom(int idVoucher)
+        {
+            string query = "Select DateFrom_Discount from Voucher where Voucher_ID = " + idVoucher;
+            DataTable dt = sqlSystem.ExecuteQuery(query);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Voucher voucher = new Voucher();
+                    voucher.dateFrom = (DateTime?)dr["DateFrom_Discount"];
+                    return voucher.dateFrom;
+                }
+            }
+            return null;
+        }
+
+        public DateTime? getVoucherDateTo(int idVoucher)
+        {
+            string query = "Select DateTo_Discount from Voucher where Voucher_ID = " + idVoucher;
+            DataTable dt = sqlSystem.ExecuteQuery(query);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Voucher voucher = new Voucher();
+                    voucher.dateTo = (DateTime?)dr["DateTo_Discount"];
+                    return voucher.dateTo;
+                }
+            }
+            return null;
+        }
+
 
     }
 }

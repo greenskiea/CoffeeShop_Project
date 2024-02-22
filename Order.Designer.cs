@@ -50,7 +50,6 @@
             panel2 = new Panel();
             cboDiscountValue = new ComboBox();
             txtNote = new TextBox();
-            label4 = new Label();
             btnSwitchTable = new Button();
             btnDiscount = new Button();
             btnCheckout = new Guna.UI2.WinForms.Guna2Button();
@@ -66,6 +65,7 @@
             btnAddFood = new Guna.UI2.WinForms.Guna2Button();
             cboFood = new ComboBox();
             cbocategory = new ComboBox();
+            btnAddNote = new Button();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -144,9 +144,9 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnAddNote);
             panel2.Controls.Add(cboDiscountValue);
             panel2.Controls.Add(txtNote);
-            panel2.Controls.Add(label4);
             panel2.Controls.Add(btnSwitchTable);
             panel2.Controls.Add(btnDiscount);
             panel2.Controls.Add(btnCheckout);
@@ -165,6 +165,7 @@
             cboDiscountValue.Name = "cboDiscountValue";
             cboDiscountValue.Size = new Size(93, 28);
             cboDiscountValue.TabIndex = 9;
+            cboDiscountValue.SelectedIndexChanged += cboDiscountValue_SelectedIndexChanged;
             // 
             // txtNote
             // 
@@ -172,16 +173,6 @@
             txtNote.Name = "txtNote";
             txtNote.Size = new Size(479, 27);
             txtNote.TabIndex = 8;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(3, 89);
-            label4.Name = "label4";
-            label4.Size = new Size(45, 20);
-            label4.TabIndex = 7;
-            label4.Text = "Note:";
-            label4.Click += label4_Click;
             // 
             // btnSwitchTable
             // 
@@ -201,6 +192,7 @@
             btnDiscount.TabIndex = 5;
             btnDiscount.Text = "Discount";
             btnDiscount.UseVisualStyleBackColor = true;
+            btnDiscount.Click += btnDiscount_Click;
             // 
             // btnCheckout
             // 
@@ -358,6 +350,16 @@
             cbocategory.TabIndex = 1;
             cbocategory.SelectedIndexChanged += cbocategory_SelectedIndexChanged;
             // 
+            // btnAddNote
+            // 
+            btnAddNote.Location = new Point(3, 86);
+            btnAddNote.Name = "btnAddNote";
+            btnAddNote.Size = new Size(62, 29);
+            btnAddNote.TabIndex = 10;
+            btnAddNote.Text = "Note";
+            btnAddNote.UseVisualStyleBackColor = true;
+            btnAddNote.Click += btnAddNote_Click;
+            // 
             // Order
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -406,9 +408,9 @@
         private Guna.UI2.WinForms.Guna2Button btnAddFood;
         private ComboBox cboFood;
         private ComboBox cbocategory;
-        private Label label4;
         private TextBox txtNote;
         private Button btnDiscount;
         private ComboBox cboDiscountValue;
+        private Button btnAddNote;
     }
 }

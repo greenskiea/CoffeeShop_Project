@@ -15,6 +15,7 @@ namespace PTPMUD_Project
 {
     public partial class Order : Form
     {
+        private int idVoucher;
         public Order()
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace PTPMUD_Project
             loadCategory();
             loadComboboxTable(cboTable);
             loadVoucher(cboDiscountValue);
+            
 
 
 
@@ -109,6 +111,8 @@ namespace PTPMUD_Project
                 flbTable.Controls.Add(btn);
             }
         }
+
+       
         #endregion
 
         #region Events
@@ -118,17 +122,23 @@ namespace PTPMUD_Project
             lsvBill.Tag = (sender as Button).Tag;
             int idBill = billBus.GetUnCheckBillIDByTableID(tableID);
             float discountValue = VoucherBus.getDiscountValue(idBill);
-            if(discountValue != -1)
+            if (discountValue != -1)
             {
                 cboDiscountValue.Text = discountValue.ToString();
             }
             else
             {
                 cboDiscountValue.Text = "0";
-            }    
+            }
+            TableFood table = (sender as Button).Tag as TableFood;
+            txtNote.Text = table.note;
+            UpdateNoteTextBox(table.note);
             ShowBill(tableID);
         }
-
+        public void UpdateNoteTextBox(string note)
+        {
+            txtNote.Text = note;
+        }
         void loadComboboxTable(ComboBox cb)
         {
             cb.DataSource = tableFoodBus.getALLTable();
@@ -240,8 +250,44 @@ namespace PTPMUD_Project
             }
         }
 
-        
+        private void cboDiscountValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //cboDiscountValue.DataSource = VoucherBus.getALLVoucher();
+            //cboDiscountValue.DisplayMember = "discountValue";
+            cboDiscountValue.ValueMember = "Id";
+            idVoucher = (int)cboDiscountValue.SelectedValue;
+        }
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            TableFood table = lsvBill.Tag as TableFood; // lấy được table hiện tại
+            int idBill = billBus.GetUnCheckBillIDByTableID(table.idTable);
+            DateTime? dateFrom = VoucherBus.GetVoucherDateFrom(idVoucher);
+            DateTime? dateTo = VoucherBus.GetVoucherDateTo(idVoucher);
+            DateTime? voucehrDate = billBus.CheckVoucherDate(idBill);
 
+            if (voucehrDate >= dateFrom && voucehrDate <= dateTo)
+            {
+                if (billBus.SetDiscountValeByID(idVoucher, idBill))
+                {
+                    MessageBox.Show("Cập nhật giảm giá món ăn thành công");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Rất tiết Voucher đã không còn hạn sử dụng");
+            }
+
+        }
+        private void btnAddNote_Click(object sender, EventArgs e)
+        {
+            int idTable = (lsvBill.Tag as TableFood).idTable;
+            string note = txtNote.Text;
+            if(tableFoodBus.SetNoteTableFood(note, idTable))
+            {
+                MessageBox.Show("Thêm ghi chú thành công");
+            }
+        }
 
         #endregion
 
