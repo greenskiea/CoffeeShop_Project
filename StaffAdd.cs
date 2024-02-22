@@ -14,6 +14,8 @@ namespace PTPMUD_Project
 {
     public partial class StaffAdd : Form
     {
+        public string TypeSelected;
+        public Account SelectedAccount;
         public new DialogResult DialogResult { get; private set; }
         public StaffAdd()
         {
@@ -28,6 +30,7 @@ namespace PTPMUD_Project
             txtAddress.Text = "";
             txtPhone.Text = "";
             txtDOB.Text = "";
+            TypeSelected = "Employee";
             txtGender.SelectedIndex = -1;
             btnUpdate.Visible = false;
         }
@@ -45,7 +48,7 @@ namespace PTPMUD_Project
             txtPerID.Text = SelectedAccount.Personal_ID;
             txtAddress.Text = SelectedAccount.Address;
             txtPhone.Text = SelectedAccount.PhoneNumber;
-
+            TypeSelected = "Employee";
             if (DateTime.TryParse(SelectedAccount.DOB, out DateTime dob))
             {
                 txtDOB.Text = dob.ToString("MM/dd/yyyy");
@@ -55,7 +58,31 @@ namespace PTPMUD_Project
             btnAdd.Visible = false;
         }
 
-        public Account SelectedAccount;
+        private int IdSelected;
+        public StaffAdd(int Id)
+        {
+            InitializeComponent();
+            accountBUS = new AccountBUS();
+            txtPhone.KeyPress += new KeyPressEventHandler(txtPhone_KeyPress);
+            IdSelected = Id;
+            SelectedAccount = accountBUS.GetByID(Id);
+            txtUsername.Text = SelectedAccount.Username;
+            txtPass.Text = SelectedAccount.Password;
+            txtEmail.Text = SelectedAccount.Email;
+            txtName.Text = SelectedAccount.Name;
+            txtPerID.Text = SelectedAccount.Personal_ID;
+            txtAddress.Text = SelectedAccount.Address;
+            txtPhone.Text = SelectedAccount.PhoneNumber;
+            TypeSelected = "Admin";
+            if (DateTime.TryParse(SelectedAccount.DOB, out DateTime dob))
+            {
+                txtDOB.Text = dob.ToString("MM/dd/yyyy");
+            }
+
+            txtGender.SelectedIndex = SelectedAccount.Gender;
+            btnAdd.Visible = false;
+        }
+
 
 
         private AccountBUS accountBUS;
@@ -148,7 +175,7 @@ namespace PTPMUD_Project
             string Username = txtUsername.Text;
             string Password = txtPass.Text;
             string Email = txtEmail.Text;
-            string Type = "Employee";
+            string Type = TypeSelected;
             string Name = txtName.Text;
             string Personal_ID = txtPerID.Text;
             string Address = txtAddress.Text;

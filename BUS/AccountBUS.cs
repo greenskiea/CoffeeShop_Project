@@ -32,6 +32,7 @@ namespace PTPMUD_Project.BUS
                     {
                         DTO.Account account = new DTO.Account
                         {
+                            Id = Convert.ToInt32(row["User_ID"]),
                             Name = row["Name"].ToString(),
                             Type = row["Type"].ToString(),
                         };
@@ -46,6 +47,41 @@ namespace PTPMUD_Project.BUS
             }
 
             return accountList;
+        }
+
+        public DTO.Account GetByID(int Id)
+        {
+            DTO.Account account = null;
+
+            try
+            {
+                DataTable dataTable = accountDAO.GetByID(Id);
+
+                if (dataTable != null && dataTable.Rows.Count > 0)
+                {
+                    DataRow row = dataTable.Rows[0];
+                    account = new DTO.Account();
+                    string idString = row["User_ID"].ToString();
+                    account.Id = int.Parse(idString);
+                    account.Username = row["Username"].ToString();
+                    account.Password = row["Password"].ToString();
+                    account.Type = row["Type"].ToString();
+                    account.Email = row["Email"].ToString();
+                    account.Name = row["Name"].ToString();
+                    account.Address = row["Address"].ToString();
+                    account.PhoneNumber = row["Phone"].ToString();
+                    account.Personal_ID = row["Personal_ID"].ToString();
+                    account.DOB = row["DOB"].ToString();
+                    string genderString = row["Gender"].ToString();
+                    account.Gender = int.Parse(genderString);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+
+            return account;
         }
 
         public List<DTO.Account> GetAllStaff()

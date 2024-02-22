@@ -20,6 +20,8 @@ namespace PTPMUD_Project
         {
             InitializeComponent();
             accountBUS = new AccountBUS();
+            txtUsername.Text = string.Empty;
+            txtPass.Text = string.Empty;
         }
 
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)
@@ -47,6 +49,32 @@ namespace PTPMUD_Project
                 WarningDialog.Show("Invalid username and password, please try again!");
                 return;
             }
+        }
+
+        private void txtUsername_MouseHover(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Please Enter The UserName";
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPass_MouseHover(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Please Enter The Password";
+        }
+
+        private void btnLogin_MouseHover(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Press to Login";
+        }
+
+        private void btnExit_MouseHover(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Press to Exit App";
+
         }
     }
 }

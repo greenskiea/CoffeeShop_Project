@@ -145,7 +145,7 @@ namespace PTPMUD_Project.DAO
         {
             DateTime SD = startDate.Date;
             DateTime ED = endDate.Date;
-            string query = "select [Bill_ID], [Date_Checked], [TotalPrice]\r\nfrom [dbo].[Bill] \r\nwhere [Date_Checked] between @StartDate and @EndDate";
+            string query = "select [Bill_ID], [Date_Checked], [TotalPrice]\r\nfrom [dbo].[Bill] \r\nwhere [Date_Checked] between @StartDate and @EndDate and Status_Bill = 1";
             SqlParameter[] parameter =
                  {
             new SqlParameter("@StartDate", SD),
