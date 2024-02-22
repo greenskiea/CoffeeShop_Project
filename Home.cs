@@ -66,6 +66,9 @@ namespace PTPMUD_Project
                 chart1.ChartAreas[0].AxisX.Interval = 1;
                 chart1.Series[currentDate.ToString("dd-MM-yyyy")].IsValueShownAsLabel = true;
                 chart1.Visible = true;
+
+
+                //data grid view
                 var oder = billBus.GetAllBillGrid(dtpkFromDate.Value, dtpkToDate.Value);
                 DataGridView1.DataSource = oder;
             }
@@ -89,6 +92,8 @@ namespace PTPMUD_Project
                     chart1.Series[currentDate.ToString("dd-MM-yyyy")].IsValueShownAsLabel = true;
                 }
                 chart1.Visible = true;
+
+                //data grid view
                 var oder = billBus.GetAllBillGrid(dtpkFromDate.Value, dtpkToDate.Value);
                 DataGridView1.DataSource = oder;
             }
