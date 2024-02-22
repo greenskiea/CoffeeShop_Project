@@ -72,6 +72,19 @@ namespace PTPMUD_Project.BUS
            return voucherDAO.getVoucherDateTo(idVoucher);
         }
 
+        public bool DeleteVoucher(string Id)
+        {
+            try
+            {
+                return voucherDAO.deleteVoucher(Id);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
+
 
     }
 }

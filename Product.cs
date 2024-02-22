@@ -387,7 +387,31 @@ namespace PTPMUD_Project
 
         private void btnDeleteVoucher_Click(object sender, EventArgs e)
         {
+            if (dtgvVoucher.SelectedRows.Count > 0)
+            {
+                string voucherID = dtgvVoucher.SelectedRows[0].Cells["Id"].Value.ToString();
 
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    bool success = voucherBus.DeleteVoucher(voucherID);
+
+                    if (success)
+                    {
+                        dtgvVoucher.DataSource = voucherBus.getALLVoucher();
+                        MessageBox.Show("Account deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

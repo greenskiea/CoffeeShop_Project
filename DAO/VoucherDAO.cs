@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,6 +98,26 @@ namespace PTPMUD_Project.DAO
                 }
             }
             return null;
+        }
+
+        public bool deleteVoucher(string idVoucher)
+        {
+            try
+            {
+                string query = "DELETE FROM Voucher WHERE Voucher_ID = @idVoucher";
+
+                SqlParameter[] parameters =
+                {
+            new SqlParameter("@idVoucher", SqlDbType.NVarChar) { Value = idVoucher }
+            };
+
+                return sqlSystem.ExecuteDeleteQuery(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
         }
 
 
