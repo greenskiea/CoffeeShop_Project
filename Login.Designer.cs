@@ -49,8 +49,11 @@
             btnLogin = new Guna.UI2.WinForms.Guna2Button();
             btnExit = new Guna.UI2.WinForms.Guna2Button();
             WarningDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            statusStrip1 = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // guna2Panel1
@@ -85,7 +88,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(57, 227);
             label1.Name = "label1";
-            label1.Size = new Size(71, 19);
+            label1.Size = new Size(87, 23);
             label1.TabIndex = 1;
             label1.Text = "Username";
             // 
@@ -94,7 +97,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(57, 319);
             label2.Name = "label2";
-            label2.Size = new Size(67, 19);
+            label2.Size = new Size(80, 23);
             label2.TabIndex = 2;
             label2.Text = "Password";
             // 
@@ -118,6 +121,7 @@
             txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtUsername.Size = new Size(230, 48);
             txtUsername.TabIndex = 3;
+            txtUsername.MouseHover += txtUsername_MouseHover;
             // 
             // txtPass
             // 
@@ -141,6 +145,7 @@
             txtPass.TabIndex = 4;
             txtPass.UseSystemPasswordChar = true;
             txtPass.TextChanged += guna2TextBox2_TextChanged;
+            txtPass.MouseHover += txtPass_MouseHover;
             // 
             // btnLogin
             // 
@@ -160,6 +165,7 @@
             btnLogin.TabIndex = 5;
             btnLogin.Text = "Login";
             btnLogin.Click += btnLogin_Click;
+            btnLogin.MouseHover += btnLogin_MouseHover;
             // 
             // btnExit
             // 
@@ -180,6 +186,7 @@
             btnExit.TabIndex = 5;
             btnExit.Text = "Exit";
             btnExit.Click += btnExit_Click;
+            btnExit.MouseHover += btnExit_MouseHover;
             // 
             // WarningDialog
             // 
@@ -190,13 +197,31 @@
             WarningDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             WarningDialog.Text = null;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            statusStrip1.Location = new Point(0, 655);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(356, 26);
+            statusStrip1.TabIndex = 6;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(151, 20);
+            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Click += toolStripStatusLabel1_Click;
+            // 
             // Login
             // 
             AcceptButton = btnLogin;
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnExit;
             ClientSize = new Size(356, 681);
+            Controls.Add(statusStrip1);
             Controls.Add(btnExit);
             Controls.Add(btnLogin);
             Controls.Add(txtPass);
@@ -211,6 +236,8 @@
             Text = "Login";
             guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -226,5 +253,7 @@
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private Guna.UI2.WinForms.Guna2Button btnExit;
         private Guna.UI2.WinForms.Guna2MessageDialog WarningDialog;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

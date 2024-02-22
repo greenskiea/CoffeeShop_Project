@@ -39,6 +39,28 @@ namespace PTPMUD_Project.DAO
             return dt;
         }
 
+        public DataTable GetByID(int Id)
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT * FROM Account WHERE User_ID = @Id";
+
+            try
+            {
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@Id", Id)
+                };
+
+                dt = sqlSystem.ExecuteSelectQuery(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+
+            return dt;
+        }
+
         public DataTable getAllStaff()
         {
             DataTable dt = new DataTable();
