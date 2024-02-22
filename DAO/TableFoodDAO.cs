@@ -96,5 +96,12 @@ namespace PTPMUD_Project.DAO
                 return false;
             }
         }
+
+        public bool setNoteTableFood(string note,int id)
+        {
+            string query = string.Format("Update Table_Food Set note = N'{0}' where Food_Table_ID = {1} ", note,id);
+            int result = sqlSystem.ExecuteNonQuery(query);  
+            return result > 0;
+        }
     }
 }

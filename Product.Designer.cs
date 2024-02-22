@@ -59,6 +59,15 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             label2 = new Label();
             SearchProductTxt = new Guna.UI2.WinForms.Guna2TextBox();
@@ -88,6 +97,11 @@
             btnEditPro = new Guna.UI2.WinForms.Guna2Button();
             btnAddPro = new Guna.UI2.WinForms.Guna2Button();
             PromotionGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            tabVoucher = new TabPage();
+            btnDeleteVoucher = new Guna.UI2.WinForms.Guna2Button();
+            btnEditVoucher = new Guna.UI2.WinForms.Guna2Button();
+            btnAddVoucher = new Guna.UI2.WinForms.Guna2Button();
+            dtgvVoucher = new Guna.UI2.WinForms.Guna2DataGridView();
             treeView1 = new TreeView();
             panel1 = new Panel();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
@@ -101,6 +115,8 @@
             ((System.ComponentModel.ISupportInitialize)CategoryGridView).BeginInit();
             tabPromotion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PromotionGridView).BeginInit();
+            tabVoucher.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgvVoucher).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -188,6 +204,7 @@
             guna2TabControl1.Controls.Add(tabProduct);
             guna2TabControl1.Controls.Add(tabCategory);
             guna2TabControl1.Controls.Add(tabPromotion);
+            guna2TabControl1.Controls.Add(tabVoucher);
             guna2TabControl1.ItemSize = new Size(180, 40);
             guna2TabControl1.Location = new Point(248, 152);
             guna2TabControl1.Name = "guna2TabControl1";
@@ -595,6 +612,133 @@
             PromotionGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             PromotionGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
+            // tabVoucher
+            // 
+            tabVoucher.Controls.Add(btnDeleteVoucher);
+            tabVoucher.Controls.Add(btnEditVoucher);
+            tabVoucher.Controls.Add(btnAddVoucher);
+            tabVoucher.Controls.Add(dtgvVoucher);
+            tabVoucher.Location = new Point(4, 44);
+            tabVoucher.Name = "tabVoucher";
+            tabVoucher.Padding = new Padding(3);
+            tabVoucher.Size = new Size(1174, 502);
+            tabVoucher.TabIndex = 3;
+            tabVoucher.Text = "Voucher";
+            tabVoucher.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteVoucher
+            // 
+            btnDeleteVoucher.AutoRoundedCorners = true;
+            btnDeleteVoucher.BorderRadius = 22;
+            btnDeleteVoucher.CustomizableEdges = customizableEdges24;
+            btnDeleteVoucher.DisabledState.BorderColor = Color.DarkGray;
+            btnDeleteVoucher.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnDeleteVoucher.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnDeleteVoucher.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnDeleteVoucher.FillColor = Color.FromArgb(233, 94, 119);
+            btnDeleteVoucher.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDeleteVoucher.ForeColor = Color.White;
+            btnDeleteVoucher.Location = new Point(777, 292);
+            btnDeleteVoucher.Name = "btnDeleteVoucher";
+            btnDeleteVoucher.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            btnDeleteVoucher.Size = new Size(179, 47);
+            btnDeleteVoucher.TabIndex = 15;
+            btnDeleteVoucher.Text = "DELETE";
+            btnDeleteVoucher.Click += btnDeleteVoucher_Click;
+            // 
+            // btnEditVoucher
+            // 
+            btnEditVoucher.AutoRoundedCorners = true;
+            btnEditVoucher.BorderRadius = 22;
+            btnEditVoucher.CustomizableEdges = customizableEdges26;
+            btnEditVoucher.DisabledState.BorderColor = Color.DarkGray;
+            btnEditVoucher.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEditVoucher.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEditVoucher.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEditVoucher.FillColor = Color.FromArgb(0, 192, 0);
+            btnEditVoucher.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditVoucher.ForeColor = Color.White;
+            btnEditVoucher.Location = new Point(777, 194);
+            btnEditVoucher.Name = "btnEditVoucher";
+            btnEditVoucher.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            btnEditVoucher.Size = new Size(179, 47);
+            btnEditVoucher.TabIndex = 14;
+            btnEditVoucher.Text = "EDIT";
+            btnEditVoucher.Click += btnEditVoucher_Click;
+            // 
+            // btnAddVoucher
+            // 
+            btnAddVoucher.AutoRoundedCorners = true;
+            btnAddVoucher.BorderRadius = 22;
+            btnAddVoucher.CustomizableEdges = customizableEdges28;
+            btnAddVoucher.DisabledState.BorderColor = Color.DarkGray;
+            btnAddVoucher.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAddVoucher.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAddVoucher.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAddVoucher.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAddVoucher.ForeColor = Color.White;
+            btnAddVoucher.Location = new Point(777, 105);
+            btnAddVoucher.Name = "btnAddVoucher";
+            btnAddVoucher.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            btnAddVoucher.Size = new Size(179, 47);
+            btnAddVoucher.TabIndex = 13;
+            btnAddVoucher.Text = "ADD";
+            btnAddVoucher.Click += btnAddVoucher_Click;
+            // 
+            // dtgvVoucher
+            // 
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dtgvVoucher.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dtgvVoucher.BorderStyle = BorderStyle.Fixed3D;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dtgvVoucher.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dtgvVoucher.ColumnHeadersHeight = 50;
+            dtgvVoucher.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            dtgvVoucher.DefaultCellStyle = dataGridViewCellStyle9;
+            dtgvVoucher.GridColor = Color.FromArgb(231, 229, 255);
+            dtgvVoucher.Location = new Point(25, 6);
+            dtgvVoucher.Name = "dtgvVoucher";
+            dtgvVoucher.ReadOnly = true;
+            dtgvVoucher.RowHeadersVisible = false;
+            dtgvVoucher.RowHeadersWidth = 51;
+            dtgvVoucher.RowTemplate.Height = 29;
+            dtgvVoucher.Size = new Size(722, 460);
+            dtgvVoucher.TabIndex = 12;
+            dtgvVoucher.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dtgvVoucher.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dtgvVoucher.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dtgvVoucher.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dtgvVoucher.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dtgvVoucher.ThemeStyle.BackColor = Color.White;
+            dtgvVoucher.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dtgvVoucher.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(0, 48, 96);
+            dtgvVoucher.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtgvVoucher.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dtgvVoucher.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dtgvVoucher.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dtgvVoucher.ThemeStyle.HeaderStyle.Height = 50;
+            dtgvVoucher.ThemeStyle.ReadOnly = true;
+            dtgvVoucher.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dtgvVoucher.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dtgvVoucher.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtgvVoucher.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(64, 64, 64);
+            dtgvVoucher.ThemeStyle.RowsStyle.Height = 29;
+            dtgvVoucher.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dtgvVoucher.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            // 
             // treeView1
             // 
             treeView1.Dock = DockStyle.Fill;
@@ -645,6 +789,8 @@
             ((System.ComponentModel.ISupportInitialize)CategoryGridView).EndInit();
             tabPromotion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)PromotionGridView).EndInit();
+            tabVoucher.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dtgvVoucher).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -683,5 +829,10 @@
         private Guna.UI2.WinForms.Guna2Button btnEditPro;
         private Guna.UI2.WinForms.Guna2Button btnAddPro;
         private Guna.UI2.WinForms.Guna2DataGridView PromotionGridView;
+        private TabPage tabVoucher;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteVoucher;
+        private Guna.UI2.WinForms.Guna2Button btnEditVoucher;
+        private Guna.UI2.WinForms.Guna2Button btnAddVoucher;
+        private Guna.UI2.WinForms.Guna2DataGridView dtgvVoucher;
     }
 }

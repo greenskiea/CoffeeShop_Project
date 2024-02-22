@@ -17,12 +17,12 @@ namespace PTPMUD_Project.DTO
         public DateTime? dateTo { get; set; }
         public float maxPrice { get; set; }
 
-        public Voucher(DataRow row)
-        {
+        //public Voucher(DataRow row)
+        //{
           
-            this.discountValue = (float)Convert.ToDouble(row["Discount_Values"].ToString());
+        //    this.discountValue = (float)Convert.ToDouble(row["Discount_Values"].ToString());
 
-        }
+        //}
 
     }
 }

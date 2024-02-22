@@ -15,6 +15,7 @@ namespace PTPMUD_Project
 {
     public partial class Order : Form
     {
+        private int idVoucher;
         public Order()
         {
             InitializeComponent();
@@ -41,8 +42,11 @@ namespace PTPMUD_Project
             loadTable();
             loadCategory();
             loadComboboxTable(cboTable);
-            float discountValue = VoucherBus.getDiscountValue();
-            nmDiscount.Value = (decimal)discountValue;
+            loadVoucher(cboDiscountValue);
+            
+
+
+
         }
         void loadCategory()
         {
@@ -51,6 +55,12 @@ namespace PTPMUD_Project
             cbocategory.DisplayMember = "categoryName";
         }
 
+        void loadVoucher(ComboBox cb)
+        {
+            List<Voucher> listVoucher = VoucherBus.getALLVoucher();
+            cb.DataSource = listVoucher;
+            cb.DisplayMember = "discountValue";
+        }
         void loadFoodBycategoryID(int id)
         {
             List<Food> listFood = FoodBus.GetFoodByCategoryID(id);
@@ -101,6 +111,8 @@ namespace PTPMUD_Project
                 flbTable.Controls.Add(btn);
             }
         }
+
+       
         #endregion
 
         #region Events
@@ -108,14 +120,43 @@ namespace PTPMUD_Project
         {
             int tableID = ((sender as Button).Tag as TableFood).idTable;
             lsvBill.Tag = (sender as Button).Tag;
+            int idBill = billBus.GetUnCheckBillIDByTableID(tableID);
+            float discountValue = VoucherBus.getDiscountValue(idBill);
+            if (discountValue != -1)
+            {
+                cboDiscountValue.Text = discountValue.ToString();
+            }
+            else
+            {
+                cboDiscountValue.Text = "0";
+            }
+            TableFood table = (sender as Button).Tag as TableFood;
+            txtNote.Text = table.note;
+            UpdateNoteTextBox(table.note);
             ShowBill(tableID);
         }
-
+        public void UpdateNoteTextBox(string note)
+        {
+            txtNote.Text = note;
+        }
         void loadComboboxTable(ComboBox cb)
         {
             cb.DataSource = tableFoodBus.getALLTable();
             cb.DisplayMember = "tableName";
         }
+
+        private void cbocategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = 0;
+            ComboBox cb = sender as ComboBox;
+
+            if (cb.SelectedItem == null)
+                return;
+            Category selected = cb.SelectedItem as Category;
+            id = selected.categoryID;
+            loadFoodBycategoryID(id);
+        }
+
         private void btnAddFood_Click(object sender, EventArgs e)
         {
             TableFood table = lsvBill.Tag as TableFood;
@@ -129,6 +170,7 @@ namespace PTPMUD_Project
             int foodID = (cboFood.SelectedItem as Food).foodID;
             int count = (int)nmQuantity.Value;
             int quantity = FoodBus.getQuantityFood(foodID);
+            string nameFood = cboFood.SelectedItem as string;
             if (count < quantity)
             {
                 if (idBill == -1)
@@ -145,57 +187,108 @@ namespace PTPMUD_Project
             }
             else
             {
-                MessageBox.Show("Nhập quá số lượng món ăn trong kho! Yêu cầu nhập lại");
+                MessageBox.Show(string.Format("Nhập quá số lượng sản phẩm trong kho ({0} còn {1}! Yêu cầu nhập lại", nameFood, quantity));
                 return;
-            }
-
-        }
-        private void cbocategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int id = 0;
-            ComboBox cb = sender as ComboBox;
-
-            if (cb.SelectedItem == null)
-                return;
-            Category selected = cb.SelectedItem as Category;
-            id = selected.categoryID;
-            loadFoodBycategoryID(id);
-        }
-        private void btnSwitchTable_Click(object sender, EventArgs e)
-        {
-            int id1 = (lsvBill.Tag as TableFood).idTable;
-            int id2 = (cboTable.SelectedItem as TableFood).idTable;
-            if (MessageBox.Show(string.Format("Do you really want to move table {0} to table {1} ?", (lsvBill.Tag as TableFood).tableName, (cboTable.SelectedItem as TableFood).tableName), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                tableFoodBus.SwitchTable(id1, id2);
-                loadTable();
             }
         }
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
             TableFood table = lsvBill.Tag as TableFood; // lấy được table hiện tại
-            float discountValue = VoucherBus.getDiscountValue();
-            nmDiscount.Value = (decimal)discountValue;
             int idBill = billBus.GetUnCheckBillIDByTableID(table.idTable);
+            float discountValue = VoucherBus.getDiscountValue(idBill);
+            DateTime? voucehrDate = billBus.CheckVoucherDate(idBill);
+            float maxPrice = VoucherBus.getMaxPrice(idBill);
             double totalPrice = double.Parse(txbTotalPrice.Text, NumberStyles.Currency, new CultureInfo("vi-VN"));
             double finalTotalPrice = totalPrice - (totalPrice / 100) * discountValue;
 
             if (idBill != -1)
             {
-                if (MessageBox.Show(string.Format("Bạn có chăc thanh toán hóa đơn cho bàn {0}\n Tổng tiền - (Tổng tiền / 100) x Giảm giá\n=> {1} - ({1} / 100) x {2} = {3} ", table.tableName, totalPrice, discountValue, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (voucehrDate != null)
                 {
-                    billBus.CheckOut(idBill, (float)finalTotalPrice);
-                    ShowBill(table.idTable);
-                    loadTable();
+                    if (totalPrice > maxPrice)
+                    {
+                        if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\n Tổng tiền - (Tổng tiền / 100) x Giảm giá\n=> {1} - ({1} / 100) x {2} = {3} ", table.tableName, totalPrice, discountValue, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                        {
+                            billBus.CheckOut(idBill, (float)finalTotalPrice);
+                            ShowBill(table.idTable);
+                            loadTable();
+                        }
+                    }
+                    else
+                    {
+                        if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\n Tổng tiền = {1}", table.tableName, totalPrice), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                        {
+                            billBus.CheckOut(idBill, (float)totalPrice);
+                            ShowBill(table.idTable);
+                            loadTable();
+                        }
+                    }
+
                 }
+                else
+                {
+                    if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\n Tổng tiền = {1}", table.tableName, totalPrice), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        billBus.CheckOut(idBill, (float)totalPrice);
+                        ShowBill(table.idTable);
+                        loadTable();
+                    }
+                }
+
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnSwitchTable_Click(object sender, EventArgs e)
         {
-            this.Close();
+            int id1 = (lsvBill.Tag as TableFood).idTable;
+            int id2 = (cboTable.SelectedItem as TableFood).idTable;
+            if (MessageBox.Show(string.Format("Bạn có muốn chuyển bàn {0} sang bàn {1} ?", (lsvBill.Tag as TableFood).tableName, (cboTable.SelectedItem as TableFood).tableName), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                tableFoodBus.SwitchTable(id1, id2);
+                loadTable();
+            }
         }
+
+        private void cboDiscountValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //cboDiscountValue.DataSource = VoucherBus.getALLVoucher();
+            //cboDiscountValue.DisplayMember = "discountValue";
+            cboDiscountValue.ValueMember = "Id";
+            idVoucher = (int)cboDiscountValue.SelectedValue;
+        }
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            TableFood table = lsvBill.Tag as TableFood; // lấy được table hiện tại
+            int idBill = billBus.GetUnCheckBillIDByTableID(table.idTable);
+            DateTime? dateFrom = VoucherBus.GetVoucherDateFrom(idVoucher);
+            DateTime? dateTo = VoucherBus.GetVoucherDateTo(idVoucher);
+            DateTime? voucehrDate = billBus.CheckVoucherDate(idBill);
+
+            if (voucehrDate >= dateFrom && voucehrDate <= dateTo)
+            {
+                if (billBus.SetDiscountValeByID(idVoucher, idBill))
+                {
+                    MessageBox.Show("Cập nhật giảm giá món ăn thành công");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Rất tiết Voucher đã không còn hạn sử dụng");
+            }
+
+        }
+        private void btnAddNote_Click(object sender, EventArgs e)
+        {
+            int idTable = (lsvBill.Tag as TableFood).idTable;
+            string note = txtNote.Text;
+            if(tableFoodBus.SetNoteTableFood(note, idTable))
+            {
+                MessageBox.Show("Thêm ghi chú thành công");
+            }
+        }
+
         #endregion
 
 
@@ -204,6 +297,11 @@ namespace PTPMUD_Project
 
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        
     }
 }

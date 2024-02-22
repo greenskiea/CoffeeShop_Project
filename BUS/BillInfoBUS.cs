@@ -45,11 +45,9 @@ namespace PTPMUD_Project.BUS
 
         public void InsertBillInfo(int idBill, int idFood, int count)
         {
-            DataTable dt = new DataTable();
-
             try
             {
-                dt = billInfoDAO.insertBillInfo(idBill, idFood, count);
+              billInfoDAO.insertBillInfo(idBill, idFood, count);
             }
             catch (Exception ex)
             {

@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PTPMUD_Project.DAO
 {
@@ -16,20 +17,20 @@ namespace PTPMUD_Project.DAO
             sqlSystem = new SqlSystem();
         }
 
-        public DataTable GetListMenuByTable(int id)
+        public List<MenuFood> GetListMenuByTable(int id)
         {
 
-            DataTable dt = new DataTable();
-            string query = "Select f.Food_Name, bi.count, f.price, f.price*bi.count as totalPrice from Bill_Info as bi, Bill as b, Food as f where bi.Bill_ID = b.Bill_ID and bi.Food_ID = f.Food_ID and b.Status_Bill = 0 and b.Table_ID = " + id;
-            try
+            List<MenuFood> listMenu = new List<MenuFood>();
+            string query = "Select f.Food_Name , bi.count , f.price , f.price*bi.count as totalPrice from Bill_Info as bi , Bill as b , Food as f where bi.Bill_ID = b.Bill_ID and bi.Food_ID = f.Food_ID and b.Status_Bill = 0 and b.Table_ID = " + id;
+            
+            DataTable data = sqlSystem.ExecuteQuery(query);
+            
+            foreach (DataRow item in data.Rows)
             {
-                dt = sqlSystem.ExecuteSelectAllQuery(query);
+                MenuFood menu = new MenuFood(item);
+                listMenu.Add(menu);
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            return dt;
+            return listMenu;
 
 
 

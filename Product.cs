@@ -22,6 +22,7 @@ namespace PTPMUD_Project
             categoryBus = new CategoryBUS();
             promotionBus = new PromotionBUS();
             catelist = new List<Category>();
+            voucherBus = new VoucherBUS();
             lsvProduct.View = View.Details;
             load();
         }
@@ -30,6 +31,7 @@ namespace PTPMUD_Project
         FoodBUS foodBus;
         CategoryBUS categoryBus;
         PromotionBUS promotionBus;
+        VoucherBUS voucherBus;
 
         #region Methods
         void load()
@@ -88,6 +90,8 @@ namespace PTPMUD_Project
             CategoryGridView.Columns["categoryID"].Visible = false;
             PromotionGridView.DataSource = promotionBus.getAllPromotion();
             PromotionGridView.Columns["PromotionID"].Visible = false;
+            dtgvVoucher.DataSource = voucherBus.getALLVoucher();
+            dtgvVoucher.Columns["Id"].Visible = false;
 
         }
 
@@ -307,6 +311,13 @@ namespace PTPMUD_Project
                 treeView1.Nodes.Clear();
                 label1.Text = "Promotion";
             }
+            else if (guna2TabControl1.SelectedTab == tabVoucher)
+            {
+                SearchProductTxt.Visible = false;
+                label2.Visible = false;
+                treeView1.Nodes.Clear();
+                label1.Text = "Voucher";
+            }
         }
 
         public EditPro editPro;
@@ -356,6 +367,27 @@ namespace PTPMUD_Project
             {
                 MessageBox.Show("Please select an account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnAddVoucher_Click(object sender, EventArgs e)
+        {
+            EditVoucher editVoucher = new EditVoucher();
+            this.Hide();
+            editVoucher.ShowDialog();
+            this.Show();
+        }
+
+        private void btnEditVoucher_Click(object sender, EventArgs e)
+        {
+            EditVoucher editVoucher = new EditVoucher();
+            this.Hide();
+            editVoucher.ShowDialog();
+            this.Show();
+        }
+
+        private void btnDeleteVoucher_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

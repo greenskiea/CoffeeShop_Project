@@ -71,6 +71,11 @@ namespace PTPMUD_Project.BUS
         public bool DeleteTable(string idTable)
         {
             return tableFoodDAO.DeleteTable(idTable);
-        }    
+        }
+
+        public bool SetNoteTableFood(string note, int id)
+        {
+            return tableFoodDAO.setNoteTableFood(note, id);
+        }
     }
 }

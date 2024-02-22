@@ -55,25 +55,21 @@ namespace PTPMUD_Project.DAO
             
         }
 
-        public DataTable insertBillInfo(int idBill, int idFood, int count)
+        public void insertBillInfo(int idBill, int idFood, int count)
         {
-            DataTable dt = new DataTable();
             
             try
             {
 
-                dt = sqlSystem.ExecuteQuery("exec USP_InsertBillInfo @idBill , @idFood , @count", new object[] { idBill, idFood, count });
+                DataTable dt = sqlSystem.ExecuteQuery("exec USP_InsertBillInfo @idBill , @idFood , @count", new object[] { idBill, idFood, count });
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            return dt;
+            
         }
 
-        public void DeleteBillInfoByFoodID(int id)
-        {
-            sqlSystem.ExecuteQuery("Delete Bill_Info where Food_ID = " + id);
-        }
+        
     }
 }
