@@ -162,7 +162,7 @@ namespace PTPMUD_Project
         public object ExecuteScala(string query, object[] parameter = null)
         {
             object data = 0;
-            using (SqlConnection connection = new SqlConnection("Data Source=LAPTOP-R68U37J3\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-0DQ0VB6\\SQLEXPRESS;Initial Catalog=CoffeeShop;Integrated Security=True"))
             {
                 connection.Open();
 

@@ -20,6 +20,7 @@ namespace PTPMUD_Project
             InitializeComponent();
             foodBus = new FoodBUS();
             categoryBus = new CategoryBUS();
+            promotionBus = new PromotionBUS();
             catelist = new List<Category>();
             lsvProduct.View = View.Details;
             load();
@@ -28,6 +29,7 @@ namespace PTPMUD_Project
         List<Category> catelist;
         FoodBUS foodBus;
         CategoryBUS categoryBus;
+        PromotionBUS promotionBus;
 
         #region Methods
         void load()
@@ -84,6 +86,9 @@ namespace PTPMUD_Project
 
             CategoryGridView.DataSource = categoryBus.getALLCategory();
             CategoryGridView.Columns["categoryID"].Visible = false;
+            PromotionGridView.DataSource = promotionBus.getAllPromotion();
+            PromotionGridView.Columns["PromotionID"].Visible = false;
+
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -178,6 +183,11 @@ namespace PTPMUD_Project
             CategoryGridView.DataSource = categoryBus.getALLCategory();
         }
 
+        public void RefreshPromotionGridView()
+        {
+            PromotionGridView.DataSource = promotionBus.getAllPromotion();
+        }
+
         private void EditCateBtn_Click(object sender, EventArgs e)
         {
             if (CategoryGridView.SelectedRows.Count > 0)
@@ -267,7 +277,7 @@ namespace PTPMUD_Project
 
         private void guna2TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(guna2TabControl1.SelectedTab == tabProduct)
+            if (guna2TabControl1.SelectedTab == tabProduct)
             {
                 SearchProductTxt.Visible = true;
                 List<Category> cateList = categoryBus.getALLCategory();
@@ -282,12 +292,69 @@ namespace PTPMUD_Project
                 }
                 label2.Visible = true;
             }
-            else
+            else if (guna2TabControl1.SelectedTab == tabCategory)
             {
                 SearchProductTxt.Visible = false;
                 label2.Visible = false;
                 treeView1.Nodes.Clear();
                 label1.Text = "Category";
+            }
+
+            else if (guna2TabControl1.SelectedTab == tabPromotion)
+            {
+                SearchProductTxt.Visible = false;
+                label2.Visible = false;
+                treeView1.Nodes.Clear();
+                label1.Text = "Promotion";
+            }
+        }
+
+        public EditPro editPro;
+        private void btnAddPro_Click(object sender, EventArgs e)
+        {
+            editPro = new EditPro();
+            editPro.FormClosed += (s, args) => RefreshPromotionGridView();
+            editPro.ShowDialog();
+        }
+
+        private void btnEditPro_Click(object sender, EventArgs e)
+        {
+            if (PromotionGridView.SelectedRows.Count > 0)
+            {
+                Promotion selectedPro = (Promotion)PromotionGridView.SelectedRows[0].DataBoundItem;
+
+                editPro = new EditPro(selectedPro);
+                editPro.FormClosed += (s, args) => RefreshPromotionGridView();
+                editPro.ShowDialog();
+            }
+        }
+
+        private void btnExitPro_Click(object sender, EventArgs e)
+        {
+            if (PromotionGridView.SelectedRows.Count > 0)
+            {
+                string PromotionID = PromotionGridView.SelectedRows[0].Cells["PromotionID"].Value.ToString();
+
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    bool success = promotionBus.DeletePromotion(PromotionID);
+
+                    if (success)
+                    {
+                        PromotionGridView.DataSource = promotionBus.getAllPromotion();
+                        MessageBox.Show("Account deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

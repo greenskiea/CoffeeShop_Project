@@ -52,5 +52,14 @@ namespace PTPMUD_Project.BUS
             billDAO.deleteBillByTableID(id);
         }
 
+        public float GetAllBillChart(DateTime dateChecked)
+        {
+            return billDAO.GetTotalBillChart(dateChecked);
+        }
+
+        public List<DTO.Bill> GetAllBillGrid(DateTime startDate , DateTime endDate)
+        {
+            return billDAO.GetAllSalesByDate(startDate, endDate);
+        }
     }
 }
