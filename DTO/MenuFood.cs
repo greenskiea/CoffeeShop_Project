@@ -15,7 +15,6 @@ namespace PTPMUD_Project.DTO
             this.count = count;
             this.price = price;
             this.totalPrice = totalPrice;
-            this.discount = discount;
         }
 
         public MenuFood(DataRow row)
@@ -25,14 +24,12 @@ namespace PTPMUD_Project.DTO
             this.count = (int)row["count"];
             this.price = (float)Convert.ToDouble(row["price"].ToString());
             this.totalPrice = (float)Convert.ToDouble(row["totalPrice"].ToString());
-            this.discount = (float)Convert.ToDouble(row["Discount"].ToString());
         }
         public int foodId { get; set; }
         public string foodName {  get; set; }
         public int count { get; set; }
         public float price { get; set; }
         public float totalPrice { get; set; }
-        public float discount { get; set; }
         
     }
 }

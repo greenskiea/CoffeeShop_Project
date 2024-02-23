@@ -38,7 +38,7 @@ namespace PTPMUD_Project
 
         void loadListBillbyDate(DateTime checkedFrom, DateTime checkedTo)
         {
-            //dtgvBill.DataSource = billBus.GetListBillByDate(checkedFrom, checkedTo);
+            DataGridView1.DataSource = billBus.GetListBillByDate(checkedFrom, checkedTo);
         }
         #endregion
 
@@ -69,8 +69,8 @@ namespace PTPMUD_Project
 
 
                 //data grid view
-                var oder = billBus.GetAllBillGrid(dtpkFromDate.Value, dtpkToDate.Value);
-                DataGridView1.DataSource = oder;
+                //var oder = billBus.GetAllBillGrid(dtpkFromDate.Value, dtpkToDate.Value);
+                //DataGridView1.DataSource = oder;
             }
             else if (endDate > startDate)
             {
@@ -94,8 +94,8 @@ namespace PTPMUD_Project
                 chart1.Visible = true;
 
                 //data grid view
-                var oder = billBus.GetAllBillGrid(dtpkFromDate.Value, dtpkToDate.Value);
-                DataGridView1.DataSource = oder;
+                //var oder = billBus.GetAllBillGrid(dtpkFromDate.Value, dtpkToDate.Value);
+                //DataGridView1.DataSource = oder;
             }
             else
             {
