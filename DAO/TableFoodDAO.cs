@@ -99,9 +99,20 @@ namespace PTPMUD_Project.DAO
 
         public bool setNoteTableFood(string note,int id)
         {
-            string query = string.Format("Update Table_Food Set note = N'{0}' where Food_Table_ID = {1} ", note,id);
-            int result = sqlSystem.ExecuteNonQuery(query);  
-            return result > 0;
+            try { 
+            string query = "Update Table_Food Set note = @note where Food_Table_ID = @id ";
+            SqlParameter[] parameters =
+{
+                    new SqlParameter("@note", SqlDbType.NVarChar) { Value = note },
+                    new SqlParameter("@id", SqlDbType.Int) {Value = id}
+                };
+            return sqlSystem.ExecuteUpdateQuery(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
         }
     }
 }

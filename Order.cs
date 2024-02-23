@@ -26,6 +26,8 @@ namespace PTPMUD_Project
             billBus = new BillBUS();
             billInfoBus = new BillInfoBUS();
             VoucherBus = new VoucherBUS();
+            promotionBus = new PromotionBUS();
+            foodPromotionBus = new Food_PromotionBUS();
             load();
         }
         TableFoodBUS tableFoodBus;
@@ -35,7 +37,8 @@ namespace PTPMUD_Project
         BillBUS billBus;
         BillInfoBUS billInfoBus;
         VoucherBUS VoucherBus;
-
+        PromotionBUS promotionBus;
+        Food_PromotionBUS foodPromotionBus;
         #region Methods
         void load()
         {
@@ -43,7 +46,7 @@ namespace PTPMUD_Project
             loadCategory();
             loadComboboxTable(cboTable);
             loadVoucher(cboDiscountValue);
-            
+
 
 
 
@@ -71,13 +74,58 @@ namespace PTPMUD_Project
         {
             lsvBill.Items.Clear();
             List<MenuFood> listBillInfo = menuFoodBus.GetListMenuByTable(id);
+            List<Food> foodList = FoodBus.getALLFood();
+            List<Food_Promotion> foodPromotionList = foodPromotionBus.GetAllFood_Promotion();
             float totalPrice = 0;
+            float newPrice = 0;
             foreach (MenuFood item in listBillInfo)
             {
+                float price = (float)Convert.ToDouble(item.price.ToString());
+
+                float discountValue = promotionBus.GetPriceDiscountByIDFood(item.foodId);
+
+                float discount = 0;
+
+                DateTime? getdate = DateTime.Now.Date;
+                DateTime? dateFrom = promotionBus.GetDateFrom(item.foodId);
+                DateTime? dateTo = promotionBus.GetDateTo(item.foodId);
+                float priceDiscount = price - (price * discountValue) / 100;
                 ListViewItem lsvItem = new ListViewItem(item.foodName.ToString());
+
+
+                foreach (Food_Promotion food_pro in foodPromotionList)
+                {
+                    if (item.foodId == food_pro.Food_ID)
+                    {
+                        if (getdate >= dateFrom && getdate <= dateTo)
+                        {
+                            newPrice = priceDiscount;
+                            discount = discountValue;
+                            break;
+                        }
+                        else
+                        {
+                            newPrice = price;
+                            discount = 0;
+
+                        }
+                    }
+                    else
+                    {
+                        newPrice = price;
+                        discount = 0;
+                    }
+                }
+
+
+
                 lsvItem.SubItems.Add(item.count.ToString());
-                lsvItem.SubItems.Add(item.price.ToString());
+                lsvItem.SubItems.Add(newPrice.ToString());
+
                 lsvItem.SubItems.Add(item.totalPrice.ToString());
+
+                lsvItem.SubItems.Add(discount.ToString() + "%");
+
                 totalPrice += item.totalPrice;
                 lsvBill.Items.Add(lsvItem);
             }
@@ -112,7 +160,7 @@ namespace PTPMUD_Project
             }
         }
 
-       
+
         #endregion
 
         #region Events
@@ -132,7 +180,6 @@ namespace PTPMUD_Project
             }
             TableFood table = (sender as Button).Tag as TableFood;
             txtNote.Text = table.note;
-            UpdateNoteTextBox(table.note);
             ShowBill(tableID);
         }
         public void UpdateNoteTextBox(string note)
@@ -283,9 +330,15 @@ namespace PTPMUD_Project
         {
             int idTable = (lsvBill.Tag as TableFood).idTable;
             string note = txtNote.Text;
-            if(tableFoodBus.SetNoteTableFood(note, idTable))
+            bool result = tableFoodBus.SetNoteTableFood(note, idTable);
+            if (result)
             {
                 MessageBox.Show("Thêm ghi chú thành công");
+                UpdateNoteTextBox(note);
+            }
+            else
+            {
+                MessageBox.Show("Thêm ghi chú thất bại");
             }
         }
 
@@ -302,6 +355,6 @@ namespace PTPMUD_Project
 
         }
 
-        
+
     }
 }

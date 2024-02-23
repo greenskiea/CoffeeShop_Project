@@ -33,6 +33,7 @@ namespace PTPMUD_Project
             TypeSelected = "Employee";
             txtGender.SelectedIndex = -1;
             btnUpdate.Visible = false;
+            label1.Text = "Add Staff";
         }
 
         public StaffAdd(Account account)
@@ -56,6 +57,7 @@ namespace PTPMUD_Project
 
             txtGender.SelectedIndex = SelectedAccount.Gender;
             btnAdd.Visible = false;
+            label1.Text = "Edit Staff";
         }
 
         private int IdSelected;

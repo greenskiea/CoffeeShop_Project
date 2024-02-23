@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTPMUD_Project.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -7,6 +8,7 @@ using System.Management;
 using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PTPMUD_Project.DAO
 {
@@ -101,6 +103,53 @@ namespace PTPMUD_Project.DAO
                 Console.Write(ex.Message);
                 return false;
             }
+        }
+
+        public float getPriceDiscountByIDFood(int id)
+        {
+            DataTable dt = sqlSystem.ExecuteQuery("exec USP_FoodPromotion @idFood", new object[] {id});
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Promotion promotion = new Promotion();
+                    promotion.DiscountValue = (float)Convert.ToDouble(dr["Discount_Value"].ToString());
+                    return promotion.DiscountValue;
+                }
+            }
+            return -1;
+        }
+
+        public DateTime? getDateFrom(int id)
+        {
+            string query = "SELECT DateFrom_Discount FROM Food_Promotion fb JOIN Promotion p ON fb.Promotion_ID = p.Promotion_ID JOIN Food f ON fb.Food_ID = f.Food_ID where f.Food_ID = " + id;
+            DataTable dt = sqlSystem.ExecuteQuery(query);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Promotion promo = new Promotion();
+                    promo.DateFrom_Discount = (DateTime)dr["DateFrom_Discount"];
+                    return promo.DateFrom_Discount;
+                }
+            }
+            return null;
+        }
+
+        public DateTime? getDateTo(int id)
+        {
+            string query = "SELECT DateTo_Discount FROM Food_Promotion fb JOIN Promotion p ON fb.Promotion_ID = p.Promotion_ID JOIN Food f ON fb.Food_ID = f.Food_ID where f.Food_ID = " + id;
+            DataTable dt = sqlSystem.ExecuteQuery(query);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Promotion promo = new Promotion();
+                    promo.DateFrom_Discount = (DateTime)dr["DateTo_Discount"];
+                    return promo.DateFrom_Discount;
+                }
+            }
+            return null;
         }
     }
 }

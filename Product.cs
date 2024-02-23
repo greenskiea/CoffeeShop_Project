@@ -368,21 +368,29 @@ namespace PTPMUD_Project
                 MessageBox.Show("Please select an account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        public EditVoucher editVoucher;
         private void btnAddVoucher_Click(object sender, EventArgs e)
         {
-            EditVoucher editVoucher = new EditVoucher();
-            this.Hide();
+            editVoucher = new EditVoucher();
+            editVoucher.FormClosed += (s, args) => RefreshVoucher();
             editVoucher.ShowDialog();
-            this.Show();
+        }
+
+        public void RefreshVoucher()
+        {
+            dtgvVoucher.DataSource = voucherBus.getALLVoucher();
         }
 
         private void btnEditVoucher_Click(object sender, EventArgs e)
         {
-            EditVoucher editVoucher = new EditVoucher();
-            this.Hide();
-            editVoucher.ShowDialog();
-            this.Show();
+            if (dtgvVoucher.SelectedRows.Count > 0)
+            {
+                Voucher SelectedVou = (Voucher)dtgvVoucher.SelectedRows[0].DataBoundItem;
+
+                editVoucher = new EditVoucher(SelectedVou);
+                editVoucher.FormClosed += (s, args) => RefreshVoucher();
+                editVoucher.ShowDialog();
+            }
         }
 
         private void btnDeleteVoucher_Click(object sender, EventArgs e)

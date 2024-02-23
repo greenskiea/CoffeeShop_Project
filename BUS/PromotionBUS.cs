@@ -37,9 +37,16 @@ namespace PTPMUD_Project.BUS
                     Promotion promotion = new Promotion();
                     promotion.PromotionID = Convert.ToInt32(row["Promotion_ID"]);
                     promotion.PromotionName = row["Promotion_Name"].ToString();
-                    promotion.DiscountValue = Convert.ToSingle(row["Discount_Value"]); 
-                    promotion.DateFrom_Discount = ((DateTime)row["DateFrom_Discount"]).Date;
-                    promotion.DateTo_Discount = ((DateTime)row["DateTo_Discount"]).Date;
+                    promotion.DiscountValue = Convert.ToSingle(row["Discount_Value"]);
+                    if (row["DateFrom_Discount"] != DBNull.Value)
+                    {
+                        promotion.DateFrom_Discount = ((DateTime)row["DateFrom_Discount"]).Date;
+                    }
+                    if(row["DateTo_Discount"] != DBNull.Value)
+                    {
+                        promotion.DateTo_Discount = ((DateTime)row["DateTo_Discount"]).Date;
+                    }    
+                   
                     promotionList.Add(promotion);
                 }
             }
@@ -83,6 +90,21 @@ namespace PTPMUD_Project.BUS
                 Console.Write(ex.Message);
                 return false;
             }
+        }
+
+        public float GetPriceDiscountByIDFood(int id)
+        {
+            return promotionDAO.getPriceDiscountByIDFood(id);
+        }
+
+        public DateTime? GetDateFrom(int id)
+        {
+            return promotionDAO.getDateFrom(id);
+        }
+
+        public DateTime? GetDateTo(int id)
+        {
+            return promotionDAO.getDateTo(id);
         }
     }
 }

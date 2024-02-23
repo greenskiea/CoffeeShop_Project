@@ -85,6 +85,30 @@ namespace PTPMUD_Project.BUS
             }
         }
 
+        public bool InsertVoucher(string Code, float Discount_Values, DateTime DateFrom_Discount, DateTime DateTo_Discount, float MaxPricee)
+        {
+            try
+            {
+                return voucherDAO.InsertVoucher(Code, Discount_Values, DateFrom_Discount, DateTo_Discount, MaxPricee);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
 
+        public bool UpdateVoucher(int Id,string Code, float Discount_Values, DateTime DateFrom_Discount, DateTime DateTo_Discount, float MaxPricee)
+        {
+            try
+            {
+                return voucherDAO.UpdateVoucher(Id, Code, Discount_Values, DateFrom_Discount, DateTo_Discount, MaxPricee);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace PTPMUD_Project.DAO
         {
 
             List<MenuFood> listMenu = new List<MenuFood>();
-            string query = "Select f.Food_Name , bi.count , f.price , f.price*bi.count as totalPrice from Bill_Info as bi , Bill as b , Food as f where bi.Bill_ID = b.Bill_ID and bi.Food_ID = f.Food_ID and b.Status_Bill = 0 and b.Table_ID = " + id;
+            string query = "Select bi.Food_ID ,f.Food_Name , bi.count , f.price , f.price*bi.count as totalPrice, bi.Discount from Bill_Info as bi , Bill as b , Food as f where bi.Bill_ID = b.Bill_ID and bi.Food_ID = f.Food_ID and b.Status_Bill = 0 and b.Table_ID = " + id;
             
             DataTable data = sqlSystem.ExecuteQuery(query);
             

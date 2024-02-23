@@ -48,6 +48,7 @@
             splitContainer1 = new SplitContainer();
             flbTable = new FlowLayoutPanel();
             panel2 = new Panel();
+            btnAddNote = new Button();
             cboDiscountValue = new ComboBox();
             txtNote = new TextBox();
             btnSwitchTable = new Button();
@@ -65,7 +66,7 @@
             btnAddFood = new Guna.UI2.WinForms.Guna2Button();
             cboFood = new ComboBox();
             cbocategory = new ComboBox();
-            btnAddNote = new Button();
+            columnHeader5 = new ColumnHeader();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -157,6 +158,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(553, 128);
             panel2.TabIndex = 2;
+            // 
+            // btnAddNote
+            // 
+            btnAddNote.Location = new Point(3, 86);
+            btnAddNote.Name = "btnAddNote";
+            btnAddNote.Size = new Size(62, 29);
+            btnAddNote.TabIndex = 10;
+            btnAddNote.Text = "Note";
+            btnAddNote.UseVisualStyleBackColor = true;
+            btnAddNote.Click += btnAddNote_Click;
             // 
             // cboDiscountValue
             // 
@@ -253,7 +264,7 @@
             // 
             // lsvBill
             // 
-            lsvBill.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            lsvBill.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5 });
             lsvBill.Dock = DockStyle.Fill;
             lsvBill.FullRowSelect = true;
             lsvBill.GridLines = true;
@@ -350,15 +361,9 @@
             cbocategory.TabIndex = 1;
             cbocategory.SelectedIndexChanged += cbocategory_SelectedIndexChanged;
             // 
-            // btnAddNote
+            // columnHeader5
             // 
-            btnAddNote.Location = new Point(3, 86);
-            btnAddNote.Name = "btnAddNote";
-            btnAddNote.Size = new Size(62, 29);
-            btnAddNote.TabIndex = 10;
-            btnAddNote.Text = "Note";
-            btnAddNote.UseVisualStyleBackColor = true;
-            btnAddNote.Click += btnAddNote_Click;
+            columnHeader5.Text = "Discount";
             // 
             // Order
             // 
@@ -412,5 +417,6 @@
         private Button btnDiscount;
         private ComboBox cboDiscountValue;
         private Button btnAddNote;
+        private ColumnHeader columnHeader5;
     }
 }

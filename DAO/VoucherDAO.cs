@@ -77,7 +77,7 @@ namespace PTPMUD_Project.DAO
                 foreach (DataRow dr in dt.Rows)
                 {
                     Voucher voucher = new Voucher();
-                    voucher.dateFrom = (DateTime?)dr["DateFrom_Discount"];
+                    voucher.dateFrom = (DateTime)dr["DateFrom_Discount"];
                     return voucher.dateFrom;
                 }
             }
@@ -93,7 +93,7 @@ namespace PTPMUD_Project.DAO
                 foreach (DataRow dr in dt.Rows)
                 {
                     Voucher voucher = new Voucher();
-                    voucher.dateTo = (DateTime?)dr["DateTo_Discount"];
+                    voucher.dateTo = (DateTime)dr["DateTo_Discount"];
                     return voucher.dateTo;
                 }
             }
@@ -120,6 +120,57 @@ namespace PTPMUD_Project.DAO
             }
         }
 
+        public bool InsertVoucher(string Code, float Discount_Values, DateTime DateFrom_Discount, DateTime DateTo_Discount, float MaxPrice)
+        {
+            try
+            {
+                string query = "INSERT INTO Voucher (Code, Discount_Values, DateFrom_Discount, DateTo_Discount, MaxPrice) Values (@Code, @Discount_Values, @DateFrom_Discount, @DateTo_Discount, @MaxPrice)";
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@Code", SqlDbType.NVarChar) { Value = Code },
+                    new SqlParameter("@Discount_Values", SqlDbType.Float) { Value = Discount_Values },
+                    new SqlParameter("@DateFrom_Discount", SqlDbType.Date) { Value = DateFrom_Discount },
+                    new SqlParameter("@DateTo_Discount", SqlDbType.Date) { Value = DateTo_Discount },
+                    new SqlParameter("@MaxPrice", SqlDbType.Float) { Value = MaxPrice },
+                };
+                return sqlSystem.ExecuteInsertQuery(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
 
+        public bool UpdateVoucher(int Voucher_ID, string Code, float Discount_Values, DateTime DateFrom_Discount, DateTime DateTo_Discount, float MaxPrice)
+        {
+            try
+            {
+                string query = "UPDATE Voucher SET " +
+                               "Code = @Code ," +
+                               "Discount_Values = @Discount_Values ," +
+                               "DateFrom_Discount = @DateFrom_Discount ," +
+                               "DateTo_Discount = @DateTo_Discount ," +
+                               "MaxPrice = @MaxPrice " +
+                               "WHERE Voucher_ID = @Voucher_ID";
+
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@Code", SqlDbType.NVarChar) { Value = Code },
+                    new SqlParameter("@Discount_Values", SqlDbType.Float) { Value = Discount_Values },
+                    new SqlParameter("@DateFrom_Discount", SqlDbType.Date) { Value = DateFrom_Discount },
+                    new SqlParameter("@DateTo_Discount", SqlDbType.Date) { Value = DateTo_Discount },
+                    new SqlParameter("@MaxPrice", SqlDbType.Float) { Value = MaxPrice },
+                    new SqlParameter("@Voucher_ID", SqlDbType.Int) {Value = Voucher_ID}
+                };
+
+                return sqlSystem.ExecuteUpdateQuery(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
+        }
     }
 }
